@@ -1,0 +1,1373 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Macro Regime Dashboard — April 1, 2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns@3.0.0/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
+</head>
+<body>
+  <!-- HEADER -->
+  <header class="dash-header">
+    <div class="header-left">
+      <svg class="logo-icon" width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="2" y="2" width="24" height="24" rx="4" stroke="currentColor" stroke-width="1.5"/>
+        <path d="M7 20V12M11 20V8M15 20V14M19 20V10" stroke="#4F98A3" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+      <h1>MACRO REGIME DASHBOARD</h1>
+    </div>
+    <div class="header-right">
+      <span class="live-badge"><span class="live-dot"></span>LIVE</span>
+      <time datetime="2026-04-01">APR 01, 2026 — 10:26 AM PDT</time>
+    </div>
+  </header>
+
+  <main class="dash-main">
+    <!-- ═══════════════════════════════════════════════ -->
+    <!-- COMPONENT 1: KEY LEVELS GRID                   -->
+    <!-- ═══════════════════════════════════════════════ -->
+    <section class="panel key-levels-panel">
+      <div class="panel-header">
+        <h2>KEY LEVELS</h2>
+        <span class="panel-subtitle">Latest Official Releases & Live Prices</span>
+      </div>
+
+      <!-- GROUP: COOL IS GOOD (lower = green) -->
+      <div class="group-label">INFLATION &amp; LABOR <span class="group-rule">Cool is Good</span></div>
+      <div class="kl-grid kl-grid-7">
+        <!-- CPI -->
+        <div class="kl-card">
+          <div class="kl-label">CPI <span class="kl-freq">YoY</span></div>
+          <div class="kl-value color-white">2.4%</div>
+          <div class="kl-est">Est: 2.4%</div>
+          <div class="kl-tag tag-inline">IN-LINE</div>
+        </div>
+        <!-- Core CPI -->
+        <div class="kl-card">
+          <div class="kl-label">CORE CPI <span class="kl-freq">YoY</span></div>
+          <div class="kl-value color-white">2.5%</div>
+          <div class="kl-est">Est: 2.5%</div>
+          <div class="kl-tag tag-inline">IN-LINE</div>
+        </div>
+        <!-- PPI -->
+        <div class="kl-card">
+          <div class="kl-label">PPI <span class="kl-freq">YoY</span></div>
+          <div class="kl-value color-red">3.4%</div>
+          <div class="kl-est">Est: 2.6%</div>
+          <div class="kl-tag tag-hot">HOT</div>
+        </div>
+        <!-- PCE -->
+        <div class="kl-card">
+          <div class="kl-label">PCE <span class="kl-freq">YoY</span></div>
+          <div class="kl-value color-white">2.8%</div>
+          <div class="kl-est">Est: 2.8%</div>
+          <div class="kl-tag tag-inline">IN-LINE</div>
+        </div>
+        <!-- Core PCE -->
+        <div class="kl-card">
+          <div class="kl-label">CORE PCE <span class="kl-freq">YoY</span></div>
+          <div class="kl-value color-red">3.1%</div>
+          <div class="kl-est">Est: 2.8%</div>
+          <div class="kl-tag tag-hot">HOT</div>
+        </div>
+        <!-- Unemployment -->
+        <div class="kl-card">
+          <div class="kl-label">UNEMP <span class="kl-freq">Rate</span></div>
+          <div class="kl-value color-green">4.4%</div>
+          <div class="kl-est">Est: 4.3%</div>
+          <div class="kl-tag tag-cool">SOFT</div>
+        </div>
+        <!-- Initial Claims -->
+        <div class="kl-card">
+          <div class="kl-label">INIT CLAIMS <span class="kl-freq">Wkly</span></div>
+          <div class="kl-value color-white">210K</div>
+          <div class="kl-est">Est: 210K</div>
+          <div class="kl-tag tag-inline">IN-LINE</div>
+        </div>
+      </div>
+
+      <!-- GROUP: GROWTH IS GOOD (higher = green) -->
+      <div class="group-label">GROWTH &amp; SENTIMENT <span class="group-rule">Growth is Good</span></div>
+      <div class="kl-grid kl-grid-3">
+        <!-- NFP -->
+        <div class="kl-card">
+          <div class="kl-label">NFP <span class="kl-freq">MoM</span></div>
+          <div class="kl-value color-red">-92K</div>
+          <div class="kl-est">Est: +100K</div>
+          <div class="kl-tag tag-hot">MISS</div>
+        </div>
+        <!-- UMich Sentiment -->
+        <div class="kl-card">
+          <div class="kl-label">UMICH SENT <span class="kl-freq">Index</span></div>
+          <div class="kl-value color-red">53.3</div>
+          <div class="kl-est">Est: 55.5</div>
+          <div class="kl-tag tag-hot">MISS</div>
+        </div>
+        <!-- ISM Mfg -->
+        <div class="kl-card">
+          <div class="kl-label">ISM MFG <span class="kl-freq">PMI</span></div>
+          <div class="kl-value color-green">52.7</div>
+          <div class="kl-est">Est: 52.0</div>
+          <div class="kl-tag tag-cool">BEAT</div>
+        </div>
+      </div>
+
+      <!-- GROUP: MARKET ANCHORS (always white) -->
+      <div class="group-label">MARKET ANCHORS <span class="group-rule">Live Prices</span></div>
+      <div class="kl-grid kl-grid-6">
+        <!-- S&P 500 -->
+        <div class="kl-card">
+          <div class="kl-label">S&amp;P 500</div>
+          <div class="kl-value color-white">6,528</div>
+          <div class="kl-delta delta-up">+2.9% prev close</div>
+        </div>
+        <!-- 10Y Yield -->
+        <div class="kl-card">
+          <div class="kl-label">US 10Y YIELD</div>
+          <div class="kl-value color-white">4.33%</div>
+          <div class="kl-delta delta-down">-3bps</div>
+        </div>
+        <!-- DXY -->
+        <div class="kl-card">
+          <div class="kl-label">DXY</div>
+          <div class="kl-value color-white">100.49</div>
+          <div class="kl-delta delta-down">-0.6%</div>
+        </div>
+        <!-- WTI -->
+        <div class="kl-card">
+          <div class="kl-label">WTI CRUDE</div>
+          <div class="kl-value color-white">$101.56</div>
+          <div class="kl-delta delta-down">-1.3%</div>
+        </div>
+        <!-- VIX -->
+        <div class="kl-card">
+          <div class="kl-label">VIX</div>
+          <div class="kl-value color-white">25.25</div>
+          <div class="kl-delta delta-down">-17.5%</div>
+        </div>
+        <!-- Fed Funds -->
+        <div class="kl-card">
+          <div class="kl-label">FED FUNDS</div>
+          <div class="kl-value color-white">3.50–3.75%</div>
+          <div class="kl-delta delta-neutral">HOLD (2nd mtg)</div>
+        </div>
+      </div>
+
+      <!-- CITATION BLOCK -->
+      <div class="citation-block">
+        <span class="citation-label">Sources — Key Levels:</span>
+        <a href="https://www.bls.gov/news.release/cpi.nr0.htm" target="_blank">BLS CPI Feb 2026</a> ·
+        <a href="https://www.bls.gov/news.release/ppi.nr0.htm" target="_blank">BLS PPI Feb 2026</a> ·
+        <a href="https://www.bea.gov/news/2026/personal-income-and-outlays-january-2026" target="_blank">BEA PCE Jan 2026</a> ·
+        <a href="https://www.bls.gov/news.release/empsit.nr0.htm" target="_blank">BLS Employment Feb 2026</a> ·
+        <a href="https://tradingeconomics.com/united-states/jobless-claims" target="_blank">TradingEcon Claims</a> ·
+        <a href="https://www.sca.isr.umich.edu" target="_blank">UMich Surveys Mar 2026</a> ·
+        <a href="https://www.ismworld.org/supply-management-news-and-reports/reports/ism-pmi-reports/pmi/march/" target="_blank">ISM Mfg Mar 2026</a> ·
+        <a href="https://fred.stlouisfed.org/series/DGS10" target="_blank">FRED 10Y Yield</a> ·
+        <a href="https://fred.stlouisfed.org/series/FEDFUNDS" target="_blank">FRED Fed Funds</a> ·
+        <a href="https://tradingeconomics.com/united-states/currency" target="_blank">TradingEcon DXY</a> ·
+        <a href="https://tradingeconomics.com/commodity/crude-oil" target="_blank">TradingEcon WTI</a> ·
+        <a href="https://tradingeconomics.com/united-states/stock-market" target="_blank">TradingEcon S&amp;P 500</a> ·
+        <a href="https://tradingeconomics.com/vix:ind" target="_blank">TradingEcon VIX</a> ·
+        <a href="https://tradingeconomics.com/united-states/interest-rate" target="_blank">TradingEcon Fed Rate</a>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════ -->
+    <!-- COMPONENT 2: SIGNAL DISTRIBUTION GAUGE         -->
+    <!-- ═══════════════════════════════════════════════ -->
+    <section class="panel signal-panel">
+      <div class="panel-header">
+        <h2>SIGNAL DISTRIBUTION</h2>
+        <span class="panel-subtitle">15-Point Macro Regime Balance</span>
+      </div>
+
+      <div class="gauge-container">
+        <!-- Gauge bar -->
+        <div class="gauge-bar">
+          <div class="gauge-segment hawk-seg" style="flex: 3;">
+            <span class="seg-count">3</span>
+          </div>
+          <div class="gauge-segment dove-seg" style="flex: 2;">
+            <span class="seg-count">2</span>
+          </div>
+          <div class="gauge-segment tight-seg" style="flex: 3;">
+            <span class="seg-count">3</span>
+          </div>
+          <div class="gauge-segment neutral-seg" style="flex: 7;">
+            <span class="seg-count">7</span>
+          </div>
+        </div>
+        <div class="gauge-labels">
+          <span class="seg-label hawk-label">HAWKISH</span>
+          <span class="seg-label dove-label">DOVISH</span>
+          <span class="seg-label tight-label">TIGHTENING</span>
+          <span class="seg-label neutral-label">NEUTRAL</span>
+        </div>
+      </div>
+
+      <!-- Breakdown table -->
+      <div class="signal-breakdown">
+        <div class="sb-col hawk-col">
+          <h4 class="sb-title">HAWKISH <span>3 pts</span></h4>
+          <ul>
+            <li><span class="sb-check">+1</span> PPI 3.4% &gt; Est 2.6%</li>
+            <li><span class="sb-check">+1</span> Core PCE 3.1% &gt; Est 2.8%</li>
+            <li><span class="sb-check">+1</span> Fed Funds Rate paused (hold)</li>
+          </ul>
+        </div>
+        <div class="sb-col dove-col">
+          <h4 class="sb-title">DOVISH <span>2 pts</span></h4>
+          <ul>
+            <li><span class="sb-check">+1</span> Unemployment 4.4% &gt; Est 4.3%</li>
+            <li><span class="sb-check">+1</span> NFP -92K &lt; Est +100K</li>
+          </ul>
+        </div>
+        <div class="sb-col tight-col">
+          <h4 class="sb-title">TIGHTENING <span>3 pts</span></h4>
+          <ul>
+            <li><span class="sb-check">+1</span> 10Y Yield 4.33% &gt; 4.0%</li>
+            <li><span class="sb-check">+1</span> WTI $101.56 &gt; $80</li>
+            <li><span class="sb-check">+1</span> VIX 25.25 &gt; 20</li>
+          </ul>
+        </div>
+        <div class="sb-col neutral-col">
+          <h4 class="sb-title">NEUTRAL <span>7 pts</span></h4>
+          <ul>
+            <li>CPI in-line (2.4% = Est)</li>
+            <li>Core CPI in-line (2.5% = Est)</li>
+            <li>PCE in-line (2.8% = Est)</li>
+            <li>Claims in-line (210K = Est)</li>
+            <li>DXY 100.49 &lt; 103</li>
+            <li>VIX 25.25 &mdash; not &lt; 15</li>
+            <li>UMich / ISM not in rubric</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Momentum / Trend -->
+      <div class="momentum-row">
+        <div class="momentum-card">
+          <span class="momentum-label">THIS WEEK</span>
+          <span class="momentum-val">H3 / D2 / T3 / N7</span>
+        </div>
+        <div class="momentum-card">
+          <span class="momentum-label">LAST WEEK (Mar 25)</span>
+          <span class="momentum-val">H3 / D2 / T3 / N7</span>
+        </div>
+        <div class="momentum-card trend-card">
+          <span class="momentum-label">TREND</span>
+          <span class="momentum-val trend-val">🔼 Hawkish Acceleration &mdash; PPI surged to 3.4% (from 2.9%), Core PCE rose 3rd consecutive month to 3.1%, WTI broke $100, 10Y yields +29bps</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════ -->
+    <!-- COMPONENT 2B: BOTTOM LINE SYNTHESIS            -->
+    <!-- ═══════════════════════════════════════════════ -->
+    <section class="panel synthesis-panel">
+      <div class="panel-header">
+        <h2>BOTTOM LINE</h2>
+        <span class="panel-subtitle">24-Hour Macro Synthesis</span>
+      </div>
+
+      <div class="synthesis-body">
+        <p><strong>Fed &amp; Monetary:</strong> The Federal Reserve held the fed funds rate at 3.50–3.75% for a second consecutive meeting in March, with CME FedWatch pricing a 97.9% probability of another hold at the April 28-29 FOMC, while the median dot-plot projects just one 25bp cut for 2026 as Chair Powell acknowledged inflation remains above target amid oil-shock uncertainties.</p>
+        <p><strong>Labor &amp; Data:</strong> February nonfarm payrolls contracted 92,000 — the first negative print in over a year — driven by healthcare strike activity and continued federal workforce reductions (-330K since Oct 2024 peak), while JOLTS quits fell to 2.97 million (lowest since August 2020) and job openings dropped 358,000 to 6.88 million, confirming a "low-hire, low-fire" labor market regime.</p>
+        <p><strong>Fiscal &amp; Supply:</strong> WTI crude settled above $100/bbl for the first time since July 2022 as the US-Iran conflict disrupted Strait of Hormuz transit, pushing US gasoline to $4.02/gallon, with the IEA warning conditions will be "much worse" in April and contemplating emergency oil releases while ISM manufacturing prices surged to 78.3 — the highest since June 2022 — signaling acute upstream cost pass-through.</p>
+        <p><strong>Corporate:</strong> US equities staged a sharp 2.9% S&P 500 rally on March 31 after President Trump signaled a willingness to end the Iran conflict within weeks, though the index remains 5.5% below its February high; M&A activity hit a record $1.3 trillion in Q1 2026 per LSEG data, even as Nike warned of a 20% China sales decline and the VIX at 25.25 reflects persistent hedging demand.</p>
+        <p class="next-catalyst"><strong>Next Catalyst:</strong> March Employment Situation Report (NFP) — Friday, April 3, 2026 at 8:30 AM ET (<a href="https://www.bls.gov/schedule/news_release/empsit.htm" target="_blank">BLS</a>). February Retail Sales data also released today at 8:30 AM ET.</p>
+      </div>
+
+      <!-- CITATION BLOCK -->
+      <div class="citation-block">
+        <span class="citation-label">Sources — Bottom Line:</span>
+        <a href="https://finance.yahoo.com/news/live/fed-meeting-live-updates-federal-reserve-holds-rates-steady-forecasts-1-rate-cut-in-2026-180216872.html" target="_blank">Yahoo Finance Fed Recap</a> ·
+        <a href="https://www.bls.gov/news.release/empsit.nr0.htm" target="_blank">BLS Employment Feb 2026</a> ·
+        <a href="https://www.home.saxo/content/articles/macro/market-quick-take---1-april-2026-01042026" target="_blank">Saxo Bank Apr 1 Recap</a> ·
+        <a href="https://www.wsj.com/finance" target="_blank">WSJ Finance</a> ·
+        <a href="https://www.bloomberg.com" target="_blank">Bloomberg</a> ·
+        <a href="https://www.reuters.com/business/us-consumer-sentiment-slips-three-month-low-march-2026-03-27/" target="_blank">Reuters UMich</a> ·
+        <a href="https://www.mexc.com/news/990424" target="_blank">CME FedWatch via MEXC</a> ·
+        <a href="https://www.ismworld.org/supply-management-news-and-reports/reports/ism-pmi-reports/pmi/march/" target="_blank">ISM Mar 2026</a> ·
+        <a href="https://www.nuveen.com/en-us/insights/fixed-income/fixed-income-weekly-commentary" target="_blank">Nuveen Fixed Income</a> ·
+        <a href="https://www.thestreet.com/fed/looming-federal-reserve-meeting-shifts-bets-for-2026-interest-rate-cuts-due-to-oil-shock-from-iran-war" target="_blank">TheStreet Fed Outlook</a>
+      </div>
+    </section>
+    <!-- ═══════════════════════════════════════════════ -->
+    <!-- COMPONENT 3: FOMC OUTLOOK                      -->
+    <!-- ═══════════════════════════════════════════════ -->
+    <section class="panel fomc-panel">
+      <div class="panel-header">
+        <h2>FOMC OUTLOOK</h2>
+        <span class="panel-subtitle">CME FedWatch &amp; Fed SEP Projections</span>
+      </div>
+
+      <!-- TOP CARDS -->
+      <div class="fomc-top-cards">
+        <div class="fomc-card">
+          <div class="fomc-card-label">NEXT FOMC MEETING</div>
+          <div class="fomc-card-value">April 29, 2026</div>
+          <div class="fomc-card-sub">2-day meeting: Apr 28–29</div>
+        </div>
+        <div class="fomc-card">
+          <div class="fomc-card-label">MARKET CONSENSUS</div>
+          <div class="fomc-card-value">HOLD</div>
+          <div class="fomc-card-sub">97.4% probability — no change at 3.50–3.75%</div>
+        </div>
+        <div class="fomc-card">
+          <div class="fomc-card-label">SEP REAL GDP (2026)</div>
+          <div class="fomc-card-value">2.4%</div>
+          <div class="fomc-card-sub">Up from 2.3% in Dec '25 SEP</div>
+        </div>
+        <div class="fomc-card">
+          <div class="fomc-card-label">SEP CORE PCE (2026)</div>
+          <div class="fomc-card-value">2.7%</div>
+          <div class="fomc-card-sub">Up from 2.5% in Dec '25 SEP</div>
+        </div>
+      </div>
+
+      <!-- DISCONNECT ENGINE -->
+      <div class="disconnect-alert disconnect-green">
+        <span class="disconnect-icon">⚠</span>
+        <span class="disconnect-text"><strong>DISCONNECT ALERT:</strong> The market prices 0 cuts in 2026 (72.3% probability of year-end hold at 3.50–3.75%), while the Fed SEP median projects 1 cut to 3.375% — <em>market expects tighter policy than the Fed.</em></span>
+      </div>
+
+      <!-- RATE PROBABILITIES GRID -->
+      <div class="fomc-grid-wrapper">
+        <div class="fomc-grid-title">RATE PROBABILITIES BY MEETING <span class="fomc-grid-note">Highest probability per column highlighted</span></div>
+        <div class="fomc-grid-scroll">
+          <table class="fomc-prob-table">
+            <thead>
+              <tr>
+                <th class="rate-col">TARGET RATE</th>
+                <th>APR 29</th>
+                <th>JUN 17</th>
+                <th>JUL 29</th>
+                <th>SEP 16</th>
+                <th>OCT 28</th>
+                <th>DEC 9</th>
+                <th>JAN 27<br><span class="yr-tag">'27</span></th>
+                <th>MAR 17<br><span class="yr-tag">'27</span></th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- 3.75-4.00 -->
+              <tr>
+                <td class="rate-col">3.75–4.00%</td>
+                <td>2.6%</td>
+                <td>2.4%</td>
+                <td>2.3%</td>
+                <td>2.3%</td>
+                <td>2.2%</td>
+                <td>1.9%</td>
+                <td>1.8%</td>
+                <td>1.7%</td>
+              </tr>
+              <!-- 3.50-3.75 (CURRENT) -->
+              <tr class="current-rate-row">
+                <td class="rate-col">3.50–3.75% <span class="current-tag">CURRENT</span></td>
+                <td class="highlight-cell">97.4%</td>
+                <td class="highlight-cell">92.0%</td>
+                <td class="highlight-cell">88.2%</td>
+                <td class="highlight-cell">86.6%</td>
+                <td class="highlight-cell">84.8%</td>
+                <td class="highlight-cell">72.3%</td>
+                <td class="highlight-cell">67.4%</td>
+                <td class="highlight-cell">64.9%</td>
+              </tr>
+              <!-- 3.25-3.50 -->
+              <tr>
+                <td class="rate-col">3.25–3.50%</td>
+                <td>0.0%</td>
+                <td>5.6%</td>
+                <td>9.3%</td>
+                <td>10.7%</td>
+                <td>12.4%</td>
+                <td>23.3%</td>
+                <td>26.7%</td>
+                <td>28.3%</td>
+              </tr>
+              <!-- 3.00-3.25 -->
+              <tr>
+                <td class="rate-col">3.00–3.25%</td>
+                <td>0.0%</td>
+                <td>0.0%</td>
+                <td>0.2%</td>
+                <td>0.4%</td>
+                <td>0.6%</td>
+                <td>2.4%</td>
+                <td>3.8%</td>
+                <td>4.7%</td>
+              </tr>
+              <!-- 2.75-3.00 -->
+              <tr>
+                <td class="rate-col">2.75–3.00%</td>
+                <td>0.0%</td>
+                <td>0.0%</td>
+                <td>0.0%</td>
+                <td>0.0%</td>
+                <td>0.0%</td>
+                <td>0.1%</td>
+                <td>0.3%</td>
+                <td>0.4%</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- DOT PLOT & TERMINAL RATE -->
+      <div class="fomc-dotplot-section">
+        <div class="fomc-grid-title">SEP MEDIAN FED FUNDS RATE PATH <span class="fomc-grid-note">Dot Plot — Table Extraction (not visual scatter)</span></div>
+        <div class="dotplot-container">
+          <!-- Y-Axis -->
+          <div class="dotplot-chart">
+            <div class="dotplot-yaxis">
+              <span>4.00%</span>
+              <span>3.75%</span>
+              <span>3.50%</span>
+              <span>3.25%</span>
+              <span>3.00%</span>
+              <span>2.75%</span>
+            </div>
+            <div class="dotplot-area">
+              <!-- Grid lines -->
+              <div class="dotplot-gridline" style="bottom: 100%;"></div>
+              <div class="dotplot-gridline" style="bottom: 80%;"></div>
+              <div class="dotplot-gridline" style="bottom: 60%;"></div>
+              <div class="dotplot-gridline" style="bottom: 40%;"></div>
+              <div class="dotplot-gridline" style="bottom: 20%;"></div>
+              <div class="dotplot-gridline" style="bottom: 0%;"></div>
+
+              <!-- Current Rate marker -->
+              <div class="dotplot-current-line" style="bottom: 60%;"></div>
+              <div class="dotplot-current-label" style="bottom: 60%;">Current: 3.50–3.75%</div>
+
+              <!-- Mar 2026 SEP dots -->
+              <!-- 2026: 3.4% → (3.4-2.75)/(4.0-2.75) = 0.65/1.25 = 52% -->
+              <div class="dotplot-col" style="left: 12.5%;">
+                <div class="dotplot-dot dot-current" style="bottom: 52%;" title="Mar '26 SEP: 3.4%"></div>
+                <div class="dotplot-dot dot-previous" style="bottom: 52%;" title="Dec '25 SEP: 3.4%"></div>
+                <span class="dotplot-xlabel">2026</span>
+              </div>
+              <!-- 2027: 3.1% → (3.1-2.75)/1.25 = 28% -->
+              <div class="dotplot-col" style="left: 37.5%;">
+                <div class="dotplot-dot dot-current" style="bottom: 28%;" title="Mar '26 SEP: 3.1%"></div>
+                <div class="dotplot-dot dot-previous" style="bottom: 28%;" title="Dec '25 SEP: 3.1%"></div>
+                <span class="dotplot-xlabel">2027</span>
+              </div>
+              <!-- 2028: 3.1% → 28% -->
+              <div class="dotplot-col" style="left: 62.5%;">
+                <div class="dotplot-dot dot-current" style="bottom: 28%;" title="Mar '26 SEP: 3.1%"></div>
+                <div class="dotplot-dot dot-previous" style="bottom: 28%;" title="Dec '25 SEP: 3.1%"></div>
+                <span class="dotplot-xlabel">2028</span>
+              </div>
+              <!-- Longer Run: 3.1% (Mar '26) vs 3.0% (Dec '25) → 28% vs 20% -->
+              <div class="dotplot-col" style="left: 87.5%;">
+                <div class="dotplot-dot dot-current" style="bottom: 28%;" title="Mar '26 SEP: 3.1%"></div>
+                <div class="dotplot-dot dot-previous" style="bottom: 20%;" title="Dec '25 SEP: 3.0%"></div>
+                <span class="dotplot-xlabel">LONGER RUN</span>
+              </div>
+            </div>
+          </div>
+          <!-- Legend -->
+          <div class="dotplot-legend">
+            <span class="legend-item"><span class="legend-dot dot-current-sample"></span> Mar 2026 SEP Median</span>
+            <span class="legend-item"><span class="legend-dot dot-previous-sample"></span> Dec 2025 SEP Median</span>
+            <span class="legend-item"><span class="legend-line"></span> Current Rate (3.625% midpoint)</span>
+          </div>
+        </div>
+
+        <!-- Dot Plot Data Table -->
+        <div class="dotplot-table-wrap">
+          <table class="dotplot-data-table">
+            <thead>
+              <tr>
+                <th>PROJECTION</th>
+                <th>2026</th>
+                <th>2027</th>
+                <th>2028</th>
+                <th>LONGER RUN</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="row-current">
+                <td>Mar '26 SEP Median</td>
+                <td>3.4%</td>
+                <td>3.1%</td>
+                <td>3.1%</td>
+                <td>3.1%</td>
+              </tr>
+              <tr class="row-previous">
+                <td>Dec '25 SEP Median</td>
+                <td>3.4%</td>
+                <td>3.1%</td>
+                <td>3.1%</td>
+                <td>3.0%</td>
+              </tr>
+              <tr class="row-delta">
+                <td>Δ Change</td>
+                <td class="delta-neutral-text">0.0</td>
+                <td class="delta-neutral-text">0.0</td>
+                <td class="delta-neutral-text">0.0</td>
+                <td class="delta-hawk-text">+0.1</td>
+              </tr>
+              <tr class="row-implied">
+                <td>Implied Cuts from Current</td>
+                <td>1 cut</td>
+                <td>2 cuts</td>
+                <td>2 cuts</td>
+                <td>2 cuts</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- FULL SEP COMPARISON TABLE -->
+      <div class="sep-comparison">
+        <div class="fomc-grid-title">FULL SEP COMPARISON <span class="fomc-grid-note">March 2026 vs December 2025</span></div>
+        <table class="sep-table">
+          <thead>
+            <tr>
+              <th>VARIABLE</th>
+              <th colspan="2">2026</th>
+              <th colspan="2">2027</th>
+              <th colspan="2">2028</th>
+              <th colspan="2">LONGER RUN</th>
+            </tr>
+            <tr class="sep-subhead">
+              <th></th>
+              <th>Mar</th><th>Dec</th>
+              <th>Mar</th><th>Dec</th>
+              <th>Mar</th><th>Dec</th>
+              <th>Mar</th><th>Dec</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="sep-var">Real GDP</td>
+              <td class="sep-up">2.4</td><td>2.3</td>
+              <td class="sep-up">2.3</td><td>2.0</td>
+              <td class="sep-up">2.1</td><td>1.9</td>
+              <td class="sep-up">2.0</td><td>1.8</td>
+            </tr>
+            <tr>
+              <td class="sep-var">Unemployment</td>
+              <td>4.4</td><td>4.4</td>
+              <td class="sep-up">4.3</td><td>4.2</td>
+              <td>4.2</td><td>4.2</td>
+              <td>4.2</td><td>4.2</td>
+            </tr>
+            <tr>
+              <td class="sep-var">PCE Inflation</td>
+              <td class="sep-up">2.7</td><td>2.4</td>
+              <td class="sep-up">2.2</td><td>2.1</td>
+              <td>2.0</td><td>2.0</td>
+              <td>2.0</td><td>2.0</td>
+            </tr>
+            <tr>
+              <td class="sep-var">Core PCE</td>
+              <td class="sep-up">2.7</td><td>2.5</td>
+              <td class="sep-up">2.2</td><td>2.1</td>
+              <td>2.0</td><td>2.0</td>
+              <td>—</td><td>—</td>
+            </tr>
+            <tr>
+              <td class="sep-var">Fed Funds Rate</td>
+              <td>3.4</td><td>3.4</td>
+              <td>3.1</td><td>3.1</td>
+              <td>3.1</td><td>3.1</td>
+              <td class="sep-up">3.1</td><td>3.0</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- CITATION BLOCK -->
+      <div class="citation-block">
+        <span class="citation-label">Sources — FOMC Outlook:</span>
+        <a href="https://www.cmegroup.com/markets/interest-rates/cme-fedwatch-tool.html" target="_blank">CME FedWatch Tool</a> ·
+        <a href="https://www.federalreserve.gov/monetarypolicy/files/fomcprojtabl20260318.pdf" target="_blank">Federal Reserve SEP, March 18, 2026</a> ·
+        <a href="https://www.federalreserve.gov/monetarypolicy/fomcprojtabl20251210.htm" target="_blank">Federal Reserve SEP, December 10, 2025</a>
+      </div>
+    </section>
+
+
+    <!-- ═══════════════════════════════════════════════ -->
+    <!-- COMPONENT 4: LIQUIDITY TRACKER                  -->
+    <!-- ═══════════════════════════════════════════════ -->
+    <section id="liquidity-tracker" class="panel liquidity-panel">
+      <div class="panel-header">
+        <h2>LIQUIDITY TRACKER</h2>
+        <span class="panel-subtitle">US Plumbing & Global Base Money</span>
+      </div>
+
+      <!-- HERO SCORES -->
+      <div class="liq-hero-row">
+        <div class="liq-hero-card liq-score-positive">
+          <div class="liq-hero-label">US SCORE</div>
+          <div class="liq-hero-value">+0.13</div>
+          <div class="liq-hero-sub">Marginally Loose</div>
+        </div>
+        <div class="liq-hero-card liq-score-positive">
+          <div class="liq-hero-label">GLOBAL SCORE</div>
+          <div class="liq-hero-value">+0.01</div>
+          <div class="liq-hero-sub">Neutral</div>
+        </div>
+        <div class="liq-hero-card liq-score-positive">
+          <div class="liq-hero-label">COMPOSITE</div>
+          <div class="liq-hero-value">+0.07</div>
+          <div class="liq-hero-sub">53rd Percentile (10Y)</div>
+        </div>
+        <div class="liq-hero-card liq-net-liq">
+          <div class="liq-hero-label">NET US LIQUIDITY</div>
+          <div class="liq-hero-value liq-white">$5.781T</div>
+          <div class="liq-hero-sub">WALCL − TGA − RRP</div>
+        </div>
+      </div>
+
+      <!-- RISK-OVERLAY CHART -->
+      <div class="liq-chart-section">
+        <div class="liq-chart-header">
+          <span class="liq-chart-title">LIQUIDITY SCORE vs S&P 500</span>
+          <div class="liq-chart-toggles">
+            <button class="liq-toggle active" data-range="1Y">1Y</button>
+            <button class="liq-toggle" data-range="2Y">2Y</button>
+            <button class="liq-toggle" data-range="5Y">5Y</button>
+            <button class="liq-toggle" data-range="10Y">10Y</button>
+          </div>
+        </div>
+        <div class="liq-chart-wrapper">
+          <canvas id="liquidityChart" height="320"></canvas>
+        </div>
+        <div class="liq-chart-legend">
+          <span class="legend-item"><span class="legend-swatch" style="background:#4F98A3"></span>US Score</span>
+          <span class="legend-item"><span class="legend-swatch" style="background:#DA7101"></span>Global Score</span>
+          <span class="legend-item"><span class="legend-swatch" style="background:#fff"></span>Composite</span>
+          <span class="legend-item"><span class="legend-swatch" style="background:rgba(111,170,69,0.35)"></span>S&P 500 (right axis)</span>
+        </div>
+      </div>
+
+      <!-- DATA GRIDS -->
+      <div class="liq-grids-row">
+        <!-- US PLUMBING GRID -->
+        <div class="liq-grid-panel">
+          <div class="liq-grid-title">US PLUMBING</div>
+          <table class="liq-table">
+            <thead>
+              <tr>
+                <th>METRIC</th>
+                <th>CURRENT</th>
+                <th>MoM Δ</th>
+                <th>10Y PCTL</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="liq-metric-name">Fed Balance Sheet</td>
+                <td>$6.657T</td>
+                <td class="color-green">+0.66%</td>
+                <td>47.6th</td>
+              </tr>
+              <tr>
+                <td class="liq-metric-name">Treasury Gen. Account</td>
+                <td>$874.1B</td>
+                <td class="color-green">-4.23%</td>
+                <td>85.6th</td>
+              </tr>
+              <tr>
+                <td class="liq-metric-name">Reverse Repo (ON RRP)</td>
+                <td>$2.1B</td>
+                <td class="color-white">+236%</td>
+                <td>19.8th</td>
+              </tr>
+              <tr>
+                <td class="liq-metric-name">Excess Reserves</td>
+                <td>$2.994T</td>
+                <td class="color-green">+1.50%</td>
+                <td>48.8th</td>
+              </tr>
+              <tr>
+                <td class="liq-metric-name">NFCI</td>
+                <td>-0.434</td>
+                <td class="color-red">+0.10</td>
+                <td>62.3rd</td>
+              </tr>
+              <tr>
+                <td class="liq-metric-name">Adjusted NFCI</td>
+                <td>-0.429</td>
+                <td class="color-red">+0.11</td>
+                <td>63.2nd</td>
+              </tr>
+              <tr>
+                <td class="liq-metric-name">HY OAS</td>
+                <td>3.28%</td>
+                <td class="color-red">+16 bps</td>
+                <td>24.9th</td>
+              </tr>
+              <tr>
+                <td class="liq-metric-name">IG BBB OAS</td>
+                <td>1.13%</td>
+                <td class="color-red">+5 bps</td>
+                <td>17.9th</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- GLOBAL LIQUIDITY GRID -->
+        <div class="liq-grid-panel">
+          <div class="liq-grid-title">GLOBAL BASE MONEY & CREDIT</div>
+          <table class="liq-table">
+            <thead>
+              <tr>
+                <th>METRIC</th>
+                <th>CURRENT</th>
+                <th>Δ</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="liq-section-header"><td colspan="3">G4 CENTRAL BANK ASSETS (USD)</td></tr>
+              <tr>
+                <td class="liq-metric-name">Fed (WALCL)</td>
+                <td>$6.657T</td>
+                <td class="color-green">+0.66% MoM</td>
+              </tr>
+              <tr>
+                <td class="liq-metric-name">ECB</td>
+                <td>$7.099T</td>
+                <td class="color-red">-1.16% MoM</td>
+              </tr>
+              <tr>
+                <td class="liq-metric-name">BOJ</td>
+                <td>$4.269T</td>
+                <td class="color-green">+0.13% MoM</td>
+              </tr>
+              <tr>
+                <td class="liq-metric-name">PBOC</td>
+                <td>$7.232T</td>
+                <td class="color-green">+1.35% MoM</td>
+              </tr>
+              <tr class="liq-total-row">
+                <td class="liq-metric-name">G4 Total</td>
+                <td>$25.257T</td>
+                <td class="color-green">+0.25% MoM</td>
+              </tr>
+              <tr class="liq-section-header"><td colspan="3">BIS GLOBAL CREDIT (Q3 2025 YoY)</td></tr>
+              <tr>
+                <td class="liq-metric-name">USD FX Credit</td>
+                <td>$14.0T</td>
+                <td class="color-green">+7.0%</td>
+              </tr>
+              <tr>
+                <td class="liq-metric-name">EUR FX Credit</td>
+                <td>—</td>
+                <td class="color-green">+11.0%</td>
+              </tr>
+              <tr>
+                <td class="liq-metric-name">JPY FX Credit</td>
+                <td>—</td>
+                <td class="color-red">-4.0%</td>
+              </tr>
+              <tr>
+                <td class="liq-metric-name">Cross-Border Bank</td>
+                <td>$45.0T</td>
+                <td class="color-green">+10.0%</td>
+              </tr>
+              <tr>
+                <td class="liq-metric-name">NBFI Credit</td>
+                <td>—</td>
+                <td class="color-green">+12.0%</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- ═══════════════════════════════════════════════ -->
+      <!-- COMPONENT 4A: HISTORICAL ANALOGUE ENGINE        -->
+      <!-- ═══════════════════════════════════════════════ -->
+      <div class="liq-analogue-section">
+        <div class="liq-grid-title" style="margin-bottom:16px">LIQUIDITY REGIME ANALYSIS</div>
+
+        <div class="liq-analogue-lists">
+          <!-- TIGHT -> BOTTOMS -->
+          <div class="liq-analogue-col">
+            <div class="liq-analogue-header liq-tight-header">TIGHT LIQUIDITY → MARKET BOTTOMS</div>
+            <div class="liq-analogue-events">
+              <div class="liq-event"><span class="liq-event-label">Q3 1974</span><span class="liq-pctl-box liq-pctl-red">0.07</span><span class="liq-event-desc">Post-Oil Shock Recession</span></div>
+              <div class="liq-event"><span class="liq-event-label">Q2 1980</span><span class="liq-pctl-box liq-pctl-red">0.07</span><span class="liq-event-desc">Volcker Rate Shock Peak</span></div>
+              <div class="liq-event"><span class="liq-event-label">Q3 1982</span><span class="liq-pctl-box liq-pctl-red">0.07</span><span class="liq-event-desc">Volcker Easing / Bull Start</span></div>
+              <div class="liq-event"><span class="liq-event-label">Q4 1987</span><span class="liq-pctl-box liq-pctl-red">0.19</span><span class="liq-event-desc">Black Monday Crash</span></div>
+              <div class="liq-event"><span class="liq-event-label">Q4 1998</span><span class="liq-pctl-box liq-pctl-red">0.53</span><span class="liq-event-desc">LTCM Crisis / Fed Cuts</span></div>
+              <div class="liq-event"><span class="liq-event-label">Q4 2008</span><span class="liq-pctl-box liq-pctl-red">0.07</span><span class="liq-event-desc">Global Financial Crisis</span></div>
+              <div class="liq-event"><span class="liq-event-label">Q1 2020</span><span class="liq-pctl-box liq-pctl-red">0.11</span><span class="liq-event-desc">Covid-19 Crash</span></div>
+              <div class="liq-event"><span class="liq-event-label">Q4 2022</span><span class="liq-pctl-box liq-pctl-red">0.31</span><span class="liq-event-desc">Post-Covid Inflation Shock</span></div>
+            </div>
+          </div>
+          <!-- LOOSE -> TOPS -->
+          <div class="liq-analogue-col">
+            <div class="liq-analogue-header liq-loose-header">LOOSE LIQUIDITY → MARKET TOPS</div>
+            <div class="liq-analogue-events">
+              <div class="liq-event"><span class="liq-event-label">Q1 1977</span><span class="liq-pctl-box liq-pctl-green">0.70</span><span class="liq-event-desc">Pre-Volcker Inflation Surge</span></div>
+              <div class="liq-event"><span class="liq-event-label">Q3 1993</span><span class="liq-pctl-box liq-pctl-green">0.83</span><span class="liq-event-desc">Pre-Tech Bubble Easing</span></div>
+              <div class="liq-event"><span class="liq-event-label">Q1 2007</span><span class="liq-pctl-box liq-pctl-green">0.73</span><span class="liq-event-desc">Pre-GFC Credit Bubble</span></div>
+              <div class="liq-event"><span class="liq-event-label">Q2 2021</span><span class="liq-pctl-box liq-pctl-green">0.84</span><span class="liq-event-desc">Covid Stimulus Peak</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CLOSEST ANALOGUES -->
+        <div class="liq-closest-section">
+          <div class="liq-closest-title">CLOSEST ANALOGUES <span class="liq-closest-sub">to current 53rd percentile</span></div>
+          <div class="liq-closest-row">
+            <!-- Analogue 1: Q4 1998 -->
+            <div class="liq-closest-card">
+              <div class="liq-closest-header">
+                <span class="liq-closest-label">Q4 1998</span>
+                <span class="liq-pctl-box liq-pctl-red">0.53</span>
+                <span class="liq-closest-zone liq-zone-tight">TIGHT → BOTTOM</span>
+              </div>
+              <div class="liq-closest-context">LTCM Crisis / Fed Cuts</div>
+              <div class="liq-fwd-returns">
+                <div class="liq-fwd-item"><span class="liq-fwd-period">3M</span><span class="color-green">+5.25%</span></div>
+                <div class="liq-fwd-item"><span class="liq-fwd-period">6M</span><span class="color-green">+13.18%</span></div>
+                <div class="liq-fwd-item"><span class="liq-fwd-period">12M</span><span class="color-green">+17.27%</span></div>
+              </div>
+            </div>
+            <!-- Analogue 2: Q1 1977 -->
+            <div class="liq-closest-card">
+              <div class="liq-closest-header">
+                <span class="liq-closest-label">Q1 1977</span>
+                <span class="liq-pctl-box liq-pctl-green">0.70</span>
+                <span class="liq-closest-zone liq-zone-loose">LOOSE → TOP</span>
+              </div>
+              <div class="liq-closest-context">Pre-Volcker Inflation Surge</div>
+              <div class="liq-fwd-returns">
+                <div class="liq-fwd-item"><span class="liq-fwd-period">3M</span><span class="color-green">+0.90%</span></div>
+                <div class="liq-fwd-item"><span class="liq-fwd-period">6M</span><span class="color-red">-3.27%</span></div>
+                <div class="liq-fwd-item"><span class="liq-fwd-period">12M</span><span class="color-red">-9.11%</span></div>
+              </div>
+            </div>
+            <!-- Analogue 3: Q1 2007 -->
+            <div class="liq-closest-card">
+              <div class="liq-closest-header">
+                <span class="liq-closest-label">Q1 2007</span>
+                <span class="liq-pctl-box liq-pctl-green">0.73</span>
+                <span class="liq-closest-zone liq-zone-loose">LOOSE → TOP</span>
+              </div>
+              <div class="liq-closest-context">Pre-GFC Credit Bubble</div>
+              <div class="liq-fwd-returns">
+                <div class="liq-fwd-item"><span class="liq-fwd-period">3M</span><span class="color-green">+6.00%</span></div>
+                <div class="liq-fwd-item"><span class="liq-fwd-period">6M</span><span class="color-green">+7.88%</span></div>
+                <div class="liq-fwd-item"><span class="liq-fwd-period">12M</span><span class="color-red">-5.08%</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ASSESSMENT -->
+        <div class="liq-assessment">
+          <div class="liq-assessment-title">ASSESSMENT</div>
+          <p class="liq-assessment-text">
+            Liquidity is in <span class="color-green">neutral-to-loose</span> territory. At <strong>+0.07</strong>, the <strong>53rd percentile</strong> reading means financial conditions have been tighter than this <strong>47%</strong> of the time since 1971. The closest historical analogue is <strong>Q4 1998</strong>, which saw S&P 500 returns of <span class="color-green">+17.27%</span> over the following year. <strong>Macro Context Check:</strong> In Q4 1998, the Fed cut 75bp in emergency fashion with CPI at 1.5% and growth accelerating — today the Fed is on hold at 3.50–3.75% with Core PCE at 3.1% and growth decelerating, making the reflationary tailwind materially weaker and disputing the bullish analogue signal.
+          </p>
+        </div>
+      </div>
+
+      <!-- CITATIONS -->
+      <div class="citation-row">
+        <span class="citation-label">Sources — Liquidity Tracker:</span>
+        <a href="https://fred.stlouisfed.org/series/WALCL" target="_blank">FRED WALCL</a> ·
+        <a href="https://fred.stlouisfed.org/series/WTREGEN" target="_blank">FRED WTREGEN</a> ·
+        <a href="https://fred.stlouisfed.org/series/RRPONTSYD" target="_blank">FRED RRPONTSYD</a> ·
+        <a href="https://fred.stlouisfed.org/series/WRESBAL" target="_blank">FRED WRESBAL</a> ·
+        <a href="https://fred.stlouisfed.org/series/NFCI" target="_blank">FRED NFCI</a> ·
+        <a href="https://fred.stlouisfed.org/series/ANFCI" target="_blank">FRED ANFCI</a> ·
+        <a href="https://fred.stlouisfed.org/series/BAMLH0A0HYM2" target="_blank">FRED HY OAS</a> ·
+        <a href="https://fred.stlouisfed.org/series/BAMLC0A4CBBB" target="_blank">FRED IG OAS</a> ·
+        <a href="https://fred.stlouisfed.org/series/ECBASSETSW" target="_blank">FRED ECB Assets</a> ·
+        <a href="https://fred.stlouisfed.org/series/JPNASSETS" target="_blank">FRED BOJ Assets</a> ·
+        <a href="https://tradingeconomics.com/china/central-bank-balance-sheet" target="_blank">TradingEcon PBOC</a> ·
+        <a href="https://www.bis.org/statistics/gli2601.htm" target="_blank">BIS GLI Q3 2025</a> ·
+        <a href="https://fred.stlouisfed.org/series/SP500" target="_blank">FRED S&P 500</a> ·
+        <a href="https://finance.yahoo.com/quote/%5EGSPC/history/" target="_blank">Yahoo Finance S&P 500 Historical</a>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════ -->
+    <!-- COMPONENT 5: INFLATION ANALYSIS                -->
+    <!-- ═══════════════════════════════════════════════ -->
+    <section class="panel inflation-panel">
+      <div class="panel-header">
+        <h2>INFLATION ANALYSIS</h2>
+        <span class="panel-subtitle">Expectations Curve &amp; Realized Reality Check</span>
+      </div>
+
+      <!-- UI ELEMENT 1: Horizon Cards (Expectations Curve) -->
+      <div class="group-label">EXPECTATIONS CURVE <span class="group-rule">Market-Implied Horizon</span></div>
+      <div class="inf-horizon-grid">
+        <div class="inf-horizon-card">
+          <div class="inf-horizon-label">1-YEAR</div>
+          <div class="inf-horizon-val color-green">2.29%</div>
+          <div class="inf-horizon-src">Cleveland Fed Model &middot; Mar 2026</div>
+        </div>
+        <div class="inf-horizon-card">
+          <div class="inf-horizon-label">2-YEAR</div>
+          <div class="inf-horizon-val color-green">2.27%</div>
+          <div class="inf-horizon-src">Cleveland Fed Model &middot; Mar 2026</div>
+        </div>
+        <div class="inf-horizon-card">
+          <div class="inf-horizon-label">5-YEAR</div>
+          <div class="inf-horizon-val color-red">2.54%</div>
+          <div class="inf-horizon-src">FRED T5YIE &middot; Mar 31, 2026</div>
+        </div>
+        <div class="inf-horizon-card">
+          <div class="inf-horizon-label">10-YEAR</div>
+          <div class="inf-horizon-val color-green">2.30%</div>
+          <div class="inf-horizon-src">FRED T10YIE &middot; Mar 31, 2026</div>
+        </div>
+      </div>
+
+      <!-- UI ELEMENT 2: Realized Reality Check -->
+      <div class="group-label">REALIZED REALITY CHECK <span class="group-rule">Latest Official Prints</span></div>
+      <div class="inf-realized-grid">
+        <div class="inf-realized-card">
+          <div class="inf-realized-header">
+            <span class="inf-realized-label">CORE PCE</span>
+            <span class="inf-realized-freq">Jan 2026 &middot; BEA</span>
+          </div>
+          <div class="inf-realized-row">
+            <div class="inf-realized-metric">
+              <span class="inf-metric-sub">YoY</span>
+              <span class="inf-metric-val color-red">3.1%</span>
+            </div>
+            <div class="inf-realized-metric">
+              <span class="inf-metric-sub">MoM</span>
+              <span class="inf-metric-val color-white">0.36%</span>
+            </div>
+          </div>
+        </div>
+        <div class="inf-realized-card">
+          <div class="inf-realized-header">
+            <span class="inf-realized-label">STICKY CPI</span>
+            <span class="inf-realized-freq">Feb 2026 &middot; Atlanta Fed</span>
+          </div>
+          <div class="inf-realized-row">
+            <div class="inf-realized-metric">
+              <span class="inf-metric-sub">YoY</span>
+              <span class="inf-metric-val color-red">2.90%</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- UI ELEMENT 3: T5YIE Chart with Fed Target Overlay -->
+      <div class="group-label">5-YEAR BREAKEVEN RATE <span class="group-rule">T5YIE Historical</span></div>
+      <div class="inf-chart-wrap">
+        <div class="inf-chart-placeholder" id="t5yieChartArea">
+          <canvas id="t5yieChart"></canvas>
+          <div class="inf-chart-pending">
+            <span class="inf-pending-code">[INSERT HISTORICAL T5YIE ARRAY HERE]</span>
+            <span class="inf-pending-note">Chart renders when historical data array is provided</span>
+            <span class="inf-pending-overlay">Fed 2% Target dashed overlay pre-configured</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- UI ELEMENT 4: Curve Assessment -->
+      <div class="inf-assessment">
+        <div class="inf-assess-label">CURVE ASSESSMENT</div>
+        <p>Markets are mispricing the inflation endgame. The 10-year breakeven at 2.30% signals confidence the Fed will contain inflation, yet realized Core PCE at 3.1% YoY and Sticky CPI at 2.90% expose a 60&ndash;80bp disconnect between expectations and reality. Near-term Cleveland Fed projections (2.29% 1Y, 2.27% 2Y) embed aggressive disinflation assumptions that PPI acceleration to 3.4% and WTI above $100 directly contradict &mdash; suggesting the market is underpricing persistent supply-side inflation risk through 2027.</p>
+      </div>
+
+      <!-- CITATION BLOCK -->
+      <div class="citation-block">
+        <span class="citation-label">Sources &mdash; Inflation Analysis:</span>
+        <a href="https://www.clevelandfed.org/indicators-and-data/inflation-expectations" target="_blank">Cleveland Fed Inflation Expectations Model</a> &middot;
+        <a href="https://fred.stlouisfed.org/series/EXPINF1YR" target="_blank">FRED EXPINF1YR</a> &middot;
+        <a href="https://fred.stlouisfed.org/series/EXPINF2YR" target="_blank">FRED EXPINF2YR</a> &middot;
+        <a href="https://fred.stlouisfed.org/series/T5YIE" target="_blank">FRED T5YIE</a> &middot;
+        <a href="https://fred.stlouisfed.org/series/T10YIE" target="_blank">FRED T10YIE</a> &middot;
+        <a href="https://fred.stlouisfed.org/series/PCEPILFE" target="_blank">FRED Core PCE Index</a> &middot;
+        <a href="https://www.bea.gov/news/2026/personal-income-and-outlays-january-2026" target="_blank">BEA PCE Jan 2026</a> &middot;
+        <a href="https://fred.stlouisfed.org/series/CORESTICKM159SFRBATL" target="_blank">FRED Sticky CPI (Atlanta Fed)</a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="dash-footer">
+    <p>Data as of April 1, 2026 10:26 AM PDT. Macro indicators reflect latest official releases. Market prices delayed ~15 min. Dashboard for informational purposes only — not investment advice.</p>
+  </footer>
+
+<script>
+(function(){
+  let chartInstance = null;
+  let fullData = [];
+
+  fetch('chart_data.json')
+    .then(r => r.json())
+    .then(data => {
+      fullData = data;
+      renderChart('1Y');
+      setupToggles();
+    })
+    .catch(e => console.error('Chart data load failed:', e));
+
+  function filterByRange(data, range) {
+    if (!data.length) return data;
+    const latest = new Date(data[data.length - 1].date);
+    let cutoff;
+    switch(range) {
+      case '1Y': cutoff = new Date(latest); cutoff.setFullYear(cutoff.getFullYear() - 1); break;
+      case '2Y': cutoff = new Date(latest); cutoff.setFullYear(cutoff.getFullYear() - 2); break;
+      case '5Y': cutoff = new Date(latest); cutoff.setFullYear(cutoff.getFullYear() - 5); break;
+      case '10Y': default: cutoff = new Date(data[0].date); break;
+    }
+    return data.filter(d => new Date(d.date) >= cutoff);
+  }
+
+  function renderChart(range) {
+    const filtered = filterByRange(fullData, range);
+    const labels = filtered.map(d => d.date);
+    const usScores = filtered.map(d => d.us_score);
+    const globalScores = filtered.map(d => d.global_score);
+    const composites = filtered.map(d => d.composite);
+    const spxPrices = filtered.map(d => d.spx);
+
+    const ctx = document.getElementById('liquidityChart');
+    if (!ctx) return;
+
+    if (chartInstance) chartInstance.destroy();
+
+    chartInstance = new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: labels,
+        datasets: [
+          {
+            label: 'US Score',
+            data: usScores,
+            borderColor: '#4F98A3',
+            backgroundColor: 'transparent',
+            borderWidth: 1.5,
+            pointRadius: 0,
+            tension: 0.3,
+            yAxisID: 'y'
+          },
+          {
+            label: 'Global Score',
+            data: globalScores,
+            borderColor: '#DA7101',
+            backgroundColor: 'transparent',
+            borderWidth: 1.5,
+            pointRadius: 0,
+            tension: 0.3,
+            yAxisID: 'y'
+          },
+          {
+            label: 'Composite',
+            data: composites,
+            borderColor: '#CDCCCA',
+            backgroundColor: 'transparent',
+            borderWidth: 2,
+            pointRadius: 0,
+            tension: 0.3,
+            yAxisID: 'y'
+          },
+          {
+            label: 'S&P 500',
+            data: spxPrices,
+            borderColor: 'rgba(111,170,69,0.35)',
+            backgroundColor: 'rgba(111,170,69,0.06)',
+            borderWidth: 1.5,
+            pointRadius: 0,
+            tension: 0.3,
+            fill: true,
+            yAxisID: 'y1'
+          }
+        ]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        interaction: {
+          mode: 'index',
+          intersect: false
+        },
+        plugins: {
+          legend: { display: false },
+          tooltip: {
+            backgroundColor: '#1C1B19',
+            borderColor: '#393836',
+            borderWidth: 1,
+            titleFont: { family: "'JetBrains Mono', monospace", size: 11 },
+            bodyFont: { family: "'JetBrains Mono', monospace", size: 11 },
+            titleColor: '#CDCCCA',
+            bodyColor: '#CDCCCA',
+            padding: 10,
+            callbacks: {
+              label: function(ctx) {
+                if (ctx.datasetIndex === 3) {
+                  return 'S&P 500: ' + (ctx.raw ? ctx.raw.toLocaleString(undefined, {maximumFractionDigits:0}) : 'N/A');
+                }
+                return ctx.dataset.label + ': ' + (ctx.raw !== null ? ctx.raw.toFixed(3) : 'N/A');
+              }
+            }
+          }
+        },
+        scales: {
+          x: {
+            type: 'category',
+            ticks: {
+              color: '#797876',
+              font: { family: "'JetBrains Mono', monospace", size: 10 },
+              maxTicksLimit: 12,
+              maxRotation: 0,
+              callback: function(val, i) {
+                const label = this.getLabelForValue(val);
+                return label ? label.substring(0, 7) : '';
+              }
+            },
+            grid: { color: 'rgba(57,56,54,0.3)', drawBorder: false }
+          },
+          y: {
+            position: 'left',
+            min: -1.0,
+            max: 1.0,
+            ticks: {
+              color: '#797876',
+              font: { family: "'JetBrains Mono', monospace", size: 10 },
+              stepSize: 0.25,
+              callback: function(v) { return v.toFixed(2); }
+            },
+            grid: { color: 'rgba(57,56,54,0.3)', drawBorder: false },
+            title: {
+              display: true,
+              text: 'Liquidity Score',
+              color: '#797876',
+              font: { family: "'JetBrains Mono', monospace", size: 10 }
+            }
+          },
+          y1: {
+            position: 'right',
+            ticks: {
+              color: 'rgba(111,170,69,0.5)',
+              font: { family: "'JetBrains Mono', monospace", size: 10 },
+              callback: function(v) { return v >= 1000 ? (v/1000).toFixed(1)+'K' : v; }
+            },
+            grid: { display: false },
+            title: {
+              display: true,
+              text: 'S&P 500',
+              color: 'rgba(111,170,69,0.5)',
+              font: { family: "'JetBrains Mono', monospace", size: 10 }
+            }
+          }
+        }
+      }
+    });
+
+    // Draw zero line
+    const zeroPlugin = {
+      id: 'zeroLine',
+      afterDraw(chart) {
+        const yScale = chart.scales.y;
+        const ctx = chart.ctx;
+        const y = yScale.getPixelForValue(0);
+        ctx.save();
+        ctx.strokeStyle = 'rgba(205,204,202,0.2)';
+        ctx.lineWidth = 1;
+        ctx.setLineDash([4, 4]);
+        ctx.beginPath();
+        ctx.moveTo(chart.chartArea.left, y);
+        ctx.lineTo(chart.chartArea.right, y);
+        ctx.stroke();
+        ctx.restore();
+      }
+    };
+    Chart.register(zeroPlugin);
+  }
+
+  function setupToggles() {
+    document.querySelectorAll('.liq-toggle').forEach(btn => {
+      btn.addEventListener('click', function() {
+        document.querySelectorAll('.liq-toggle').forEach(b => b.classList.remove('active'));
+        this.classList.add('active');
+        renderChart(this.dataset.range);
+      });
+    });
+  }
+})();
+</script>
+
+<script>
+// COMPONENT 5: T5YIE Chart with Fed 2% Target Overlay
+(function(){
+  const t5yieData = '[INSERT HISTORICAL T5YIE ARRAY HERE]';
+
+  // Fed 2% Target Plugin
+  const fedTargetPlugin = {
+    id: 'fedTarget',
+    afterDraw(chart) {
+      const yScale = chart.scales.y;
+      const ctx = chart.ctx;
+      const y = yScale.getPixelForValue(2.0);
+      ctx.save();
+      ctx.strokeStyle = '#DA7101';
+      ctx.lineWidth = 1.5;
+      ctx.setLineDash([6, 4]);
+      ctx.beginPath();
+      ctx.moveTo(chart.chartArea.left, y);
+      ctx.lineTo(chart.chartArea.right, y);
+      ctx.stroke();
+      // Label
+      ctx.fillStyle = '#DA7101';
+      ctx.font = "600 10px 'JetBrains Mono', monospace";
+      ctx.textAlign = 'right';
+      ctx.fillText('Fed 2% Target', chart.chartArea.right - 4, y - 6);
+      ctx.restore();
+    }
+  };
+  Chart.register(fedTargetPlugin);
+
+  const t5yieCtx = document.getElementById('t5yieChart');
+  if (t5yieCtx && t5yieData !== '[INSERT HISTORICAL T5YIE ARRAY HERE]') {
+    try {
+      const parsed = JSON.parse(t5yieData);
+      // Show canvas, hide placeholder
+      const chartArea = document.getElementById('t5yieChartArea');
+      if (chartArea) chartArea.classList.add('has-data');
+      new Chart(t5yieCtx, {
+        type: 'line',
+        data: {
+          labels: parsed.map(d => d.date),
+          datasets: [{
+            label: '5Y Breakeven (T5YIE)',
+            data: parsed.map(d => d.value),
+            borderColor: '#4F98A3',
+            backgroundColor: 'rgba(79,152,163,0.08)',
+            borderWidth: 1.5,
+            pointRadius: 0,
+            tension: 0.3,
+            fill: true
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: { display: false },
+            tooltip: {
+              backgroundColor: '#1C1B19',
+              borderColor: '#393836',
+              borderWidth: 1,
+              titleFont: { family: "'JetBrains Mono', monospace", size: 11 },
+              bodyFont: { family: "'JetBrains Mono', monospace", size: 11 },
+              titleColor: '#CDCCCA',
+              bodyColor: '#CDCCCA',
+              callbacks: {
+                label: function(ctx) { return 'T5YIE: ' + ctx.raw.toFixed(2) + '%'; }
+              }
+            }
+          },
+          scales: {
+            x: {
+              ticks: {
+                color: '#797876',
+                font: { family: "'JetBrains Mono', monospace", size: 10 },
+                maxTicksLimit: 12,
+                maxRotation: 0
+              },
+              grid: { color: 'rgba(57,56,54,0.3)', drawBorder: false }
+            },
+            y: {
+              ticks: {
+                color: '#797876',
+                font: { family: "'JetBrains Mono', monospace", size: 10 },
+                callback: function(v) { return v.toFixed(1) + '%'; }
+              },
+              grid: { color: 'rgba(57,56,54,0.3)', drawBorder: false }
+            }
+          }
+        }
+      });
+    } catch(e) { console.warn('T5YIE chart data not available:', e); }
+  } else {
+    // Placeholder is shown via CSS .inf-chart-pending
+    console.log('T5YIE: Awaiting historical data array injection');
+  }
+})();
+</script>
+
+<script data-pplx-inline-edit>
+(function(){
+  if(window===window.top)return;
+  function inlineAll(orig,clone){
+    if(orig.nodeType!==1)return;
+    try{
+      var cs=getComputedStyle(orig);
+      var t='';
+      for(var i=0;i<cs.length;i++){t+=cs[i]+':'+cs.getPropertyValue(cs[i])+';';}
+      clone.style.cssText=t;
+    }catch(e){}
+    var oc=orig.children,cc=clone.children;
+    for(var j=0;j<oc.length&&j<cc.length;j++){inlineAll(oc[j],cc[j]);}
+  }
+  function stripExternal(clone){
+    var imgs=clone.querySelectorAll('img');
+    for(var i=0;i<imgs.length;i++){
+      var s=imgs[i].getAttribute('src');
+      if(s&&!s.startsWith('data:'))imgs[i].removeAttribute('src');
+    }
+    var all=clone.querySelectorAll('*');
+    for(var i=0;i<all.length;i++){
+      var st=all[i].style.cssText;
+      if(st&&st.indexOf('url(')>=0){
+        all[i].style.cssText=st.replace(/url\(["']?(?!data:)[^)"']*["']?\)/gi,'none');
+      }
+    }
+  }
+  window.addEventListener('message',function(e){
+    if(!e.data||e.data.type!=='INLINE_EDIT_CAPTURE_REQUEST')return;
+    var scrollX=window.scrollX||window.pageXOffset||0;
+    var scrollY=window.scrollY||window.pageYOffset||0;
+    var w=window.innerWidth,h=window.innerHeight;
+    try{
+      var clone=document.documentElement.cloneNode(true);
+      var rm=clone.querySelectorAll('script,link[rel="stylesheet"],style');
+      for(var i=0;i<rm.length;i++){rm[i].remove();}
+      inlineAll(document.documentElement,clone);
+      stripExternal(clone);
+      var html=new XMLSerializer().serializeToString(clone);
+      var svg='<svg xmlns="http://www.w3.org/2000/svg" width="'+w+'" height="'+h+'">'
+        +'<foreignObject width="100%" height="100%">'
+        +'<div xmlns="http://www.w3.org/1999/xhtml" style="width:'+w+'px;height:'+h+'px;overflow:hidden">'
+        +'<div style="transform:translate(-'+scrollX+'px,-'+scrollY+'px);transform-origin:top left">'
+        +html+'</div></div></foreignObject></svg>';
+      var svgUrl='data:image/svg+xml;charset=utf-8,'+encodeURIComponent(svg);
+      var img=new Image();
+      img.onload=function(){
+        var c=document.createElement('canvas');c.width=w;c.height=h;
+        c.getContext('2d').drawImage(img,0,0);
+        window.parent.postMessage({type:'INLINE_EDIT_SCREENSHOT_RESULT',dataUrl:c.toDataURL('image/png'),scrollX:scrollX,scrollY:scrollY},'*');
+      };
+      img.onerror=function(){
+        window.parent.postMessage({type:'INLINE_EDIT_SCREENSHOT_RESULT',dataUrl:null,scrollX:scrollX,scrollY:scrollY},'*');
+      };
+      img.src=svgUrl;
+    }catch(err){
+      window.parent.postMessage({type:'INLINE_EDIT_SCREENSHOT_RESULT',dataUrl:null,scrollX:scrollX,scrollY:scrollY},'*');
+    }
+  });
+})();
+</script></body>
+</html>
