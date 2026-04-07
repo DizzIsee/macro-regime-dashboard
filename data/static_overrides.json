@@ -1,0 +1,65 @@
+{
+  "_comment": "Manual overrides for data sources with no free live API. Update these values when new releases are published. Fields with last_updated older than 45 days will show a STALE badge in the UI.",
+  "pboc": {
+    "label": "PBOC Balance Sheet",
+    "value_t": 7.232,
+    "unit": "USD trillion",
+    "source": "TradingEconomics",
+    "last_updated": "2026-03-01",
+    "update_frequency": "monthly"
+  },
+  "bis_global_credit": {
+    "label": "BIS Global Credit Gap",
+    "value": null,
+    "unit": "%",
+    "source": "BIS Quarterly Review",
+    "last_updated": "2025-12-01",
+    "update_frequency": "quarterly"
+  },
+  "ism_mfg": {
+    "label": "ISM Manufacturing PMI",
+    "value": 52.7,
+    "estimate": 52.0,
+    "tag": "beat",
+    "date": "Mar 2026",
+    "source": "ISM",
+    "last_updated": "2026-04-01",
+    "update_frequency": "monthly"
+  },
+  "sticky_cpi": {
+    "label": "Sticky CPI",
+    "value": 2.90,
+    "unit": "%",
+    "source": "Atlanta Fed",
+    "last_updated": "2026-03-01",
+    "update_frequency": "monthly"
+  },
+  "sep_dot_plot": {
+    "label": "SEP Dot Plot — Median Fed Funds Projections",
+    "source": "Federal Reserve SEP",
+    "last_updated": "2026-03-19",
+    "update_frequency": "quarterly (Mar, Jun, Sep, Dec)",
+    "projections": {
+      "2026_median": 3.875,
+      "2027_median": 3.375,
+      "2028_median": 3.125,
+      "longer_run":  3.000
+    }
+  },
+  "fomc_meeting_dates": {
+    "label": "FOMC Meeting Dates 2026",
+    "source": "Federal Reserve",
+    "last_updated": "2026-01-01",
+    "update_frequency": "annually (released prior year)",
+    "meetings": [
+      { "date": "2026-01-28", "label": "JAN 28" },
+      { "date": "2026-03-18", "label": "MAR 18" },
+      { "date": "2026-04-29", "label": "APR 29" },
+      { "date": "2026-06-17", "label": "JUN 17" },
+      { "date": "2026-07-29", "label": "JUL 29" },
+      { "date": "2026-09-16", "label": "SEP 16" },
+      { "date": "2026-10-28", "label": "OCT 28" },
+      { "date": "2026-12-09", "label": "DEC 9" }
+    ]
+  }
+}

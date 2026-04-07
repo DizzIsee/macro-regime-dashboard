@@ -1,0 +1,181 @@
+{
+  "meta": {
+    "last_updated": "2026-04-07T02:37:08Z",
+    "next_update": "2026-04-08T13:00:00Z"
+  },
+  "inflation_labor": {
+    "cpi_yoy": {
+      "value": 2.66,
+      "estimate": 2.4,
+      "tag": "hot",
+      "date": "Feb 2026"
+    },
+    "core_cpi_yoy": {
+      "value": 2.73,
+      "estimate": 2.5,
+      "tag": "hot",
+      "date": "Feb 2026"
+    },
+    "ppi_yoy": {
+      "value": 3.22,
+      "estimate": 2.6,
+      "tag": "hot",
+      "date": "Feb 2026"
+    },
+    "pce_yoy": {
+      "value": 2.83,
+      "estimate": 2.8,
+      "tag": "inline",
+      "date": "Jan 2026"
+    },
+    "core_pce_yoy": {
+      "value": 3.06,
+      "estimate": 2.8,
+      "tag": "hot",
+      "date": "Jan 2026"
+    },
+    "unemployment": {
+      "value": 4.3,
+      "estimate": 4.3,
+      "tag": "inline",
+      "date": "Mar 2026"
+    },
+    "initial_claims": {
+      "value": 202.0,
+      "estimate": 210,
+      "tag": "inline",
+      "date": "Wkly"
+    }
+  },
+  "growth_sentiment": {
+    "nfp_mom": {
+      "value": 178.0,
+      "estimate": 100,
+      "tag": "beat",
+      "date": "Mar 2026"
+    },
+    "umich_sent": {
+      "value": 56.6,
+      "estimate": 55.5,
+      "tag": "beat",
+      "date": "Feb 2026"
+    },
+    "ism_mfg": {
+      "value": 52.7,
+      "estimate": 52.0,
+      "tag": "beat",
+      "date": "Mar 2026",
+      "static": true
+    }
+  },
+  "market_anchors": {
+    "spx": {
+      "value": 6612,
+      "delta_pct": 0.44,
+      "delta_dir": "up"
+    },
+    "yield_10y": {
+      "value": 4.35,
+      "delta_bps": null,
+      "delta_dir": "down"
+    },
+    "dxy": {
+      "value": 100.126,
+      "delta_pct": 0.1,
+      "delta_dir": "up"
+    },
+    "wti": {
+      "value": 114.74,
+      "delta_pct": 3.1,
+      "delta_dir": "up"
+    },
+    "vix": {
+      "value": 24.17,
+      "delta_pct": 1.13,
+      "delta_dir": "up"
+    },
+    "fed_funds": {
+      "value": "3.50\u20133.75%",
+      "action": "HOLD",
+      "meeting_count": 2
+    }
+  },
+  "signal_distribution": {
+    "hawk": {
+      "score": 3,
+      "items": [
+        "PPI 3.2% > Est 2.6%",
+        "Core PCE 3.1% > Est 2.8%",
+        "Fed on hold"
+      ]
+    },
+    "dove": {
+      "score": 0,
+      "items": []
+    },
+    "tight": {
+      "score": 3,
+      "items": [
+        "10Y 4.35% > 4.0%",
+        "WTI $114.74 > $80",
+        "VIX 24.17 > 20"
+      ]
+    },
+    "neutral": {
+      "score": 9,
+      "items": []
+    }
+  },
+  "liquidity": {
+    "us_score": 0.6203,
+    "global_score": 0.0746,
+    "composite": 0.3474,
+    "composite_pctile": 35,
+    "net_us_liq_t": 5.827,
+    "walcl_t": 6.675,
+    "tga_b": 847.7,
+    "rrp_b": 0.2,
+    "reserves_b": 3026.7,
+    "nfci": -0.43366,
+    "anfci": -0.42922,
+    "hy_oas": 3.13,
+    "ig_oas": 1.09,
+    "ecb_t": 7.107,
+    "boj_t": 4.277,
+    "pboc_t": 7.232,
+    "g4_total_t": 25.292
+  },
+  "inflation_expectations": {
+    "exp_1y": {
+      "value": 2.28910782,
+      "source": "Cleveland Fed",
+      "date": "Mar 2026"
+    },
+    "exp_2y": {
+      "value": 2.2724649,
+      "source": "Cleveland Fed",
+      "date": "Mar 2026"
+    },
+    "t5yie": {
+      "value": 2.6,
+      "source": "FRED T5YIE",
+      "date": "2026-04-06"
+    },
+    "t10yie": {
+      "value": 2.36,
+      "source": "FRED T10YIE",
+      "date": "Apr 2026"
+    },
+    "core_pce_yoy": {
+      "value": 3.06,
+      "source": "BEA",
+      "date": "Jan 2026"
+    },
+    "sticky_cpi": {
+      "value": 2.9,
+      "source": "Atlanta Fed",
+      "date": "2026-03-01",
+      "static": true
+    }
+  }
+}

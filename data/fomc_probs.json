@@ -1,0 +1,51 @@
+{
+  "meta": {
+    "last_updated": "2026-04-07T02:37:08Z",
+    "current_rate_low": 3.5,
+    "current_rate_high": 3.75
+  },
+  "meetings": [
+    {
+      "date": "Apr 29",
+      "label": "APR 29",
+      "hold_prob": 100.0,
+      "cut25_prob": 0.0,
+      "cut50_prob": 0.0
+    },
+    {
+      "date": "Jun 17",
+      "label": "JUN 17",
+      "hold_prob": 100.0,
+      "cut25_prob": 0.0,
+      "cut50_prob": 0.0
+    },
+    {
+      "date": "Jul 29",
+      "label": "JUL 29",
+      "hold_prob": 100.0,
+      "cut25_prob": 0.0,
+      "cut50_prob": 0.0
+    },
+    {
+      "date": "Sep 16",
+      "label": "SEP 16",
+      "hold_prob": 100.0,
+      "cut25_prob": 0.0,
+      "cut50_prob": 0.0
+    },
+    {
+      "date": "Oct 28",
+      "label": "OCT 28",
+      "hold_prob": 100.0,
+      "cut25_prob": 0.0,
+      "cut50_prob": 0.0
+    },
+    {
+      "date": "Dec 9",
+      "label": "DEC 9",
+      "hold_prob": 100.0,
+      "cut25_prob": 0.0,
+      "cut50_prob": 0.0
+    }
+  ]
+}

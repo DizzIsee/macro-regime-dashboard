@@ -23,7 +23,7 @@
     </div>
     <div class="header-right">
       <span class="live-badge"><span class="live-dot"></span>LIVE</span>
-      <time datetime="2026-04-01">APR 01, 2026 — 10:26 AM PDT</time>
+      <time id="header-time"></time>
     </div>
   </header>
 
@@ -317,8 +317,8 @@
         </div>
         <div class="fomc-card">
           <div class="fomc-card-label">MARKET CONSENSUS</div>
-          <div class="fomc-card-value">HOLD</div>
-          <div class="fomc-card-sub">97.4% probability — no change at 3.50–3.75%</div>
+          <div class="fomc-card-value" id="fomc-consensus-value">HOLD</div>
+          <div class="fomc-card-sub" id="fomc-consensus-sub">97.4% probability — no change at 3.50–3.75%</div>
         </div>
         <div class="fomc-card">
           <div class="fomc-card-label">SEP REAL GDP (2026)</div>
@@ -335,7 +335,7 @@
       <!-- DISCONNECT ENGINE -->
       <div class="disconnect-alert disconnect-green">
         <span class="disconnect-icon">⚠</span>
-        <span class="disconnect-text"><strong>DISCONNECT ALERT:</strong> The market prices 0 cuts in 2026 (72.3% probability of year-end hold at 3.50–3.75%), while the Fed SEP median projects 1 cut to 3.375% — <em>market expects tighter policy than the Fed.</em></span>
+        <span class="disconnect-text" id="fomc-disconnect-text"><strong>DISCONNECT ALERT:</strong> The market prices 0 cuts in 2026 (72.3% probability of year-end hold at 3.50–3.75%), while the Fed SEP median projects 1 cut to 3.375% — <em>market expects tighter policy than the Fed.</em></span>
       </div>
 
       <!-- RATE PROBABILITIES GRID -->
@@ -370,7 +370,7 @@
                 <td>1.7%</td>
               </tr>
               <!-- 3.50-3.75 (CURRENT) -->
-              <tr class="current-rate-row">
+              <tr class="current-rate-row" id="fomc-hold-row">
                 <td class="rate-col">3.50–3.75% <span class="current-tag">CURRENT</span></td>
                 <td class="highlight-cell">97.4%</td>
                 <td class="highlight-cell">92.0%</td>
@@ -382,7 +382,7 @@
                 <td class="highlight-cell">64.9%</td>
               </tr>
               <!-- 3.25-3.50 -->
-              <tr>
+              <tr id="fomc-cut25-row">
                 <td class="rate-col">3.25–3.50%</td>
                 <td>0.0%</td>
                 <td>5.6%</td>
@@ -826,7 +826,7 @@
 
         <!-- CLOSEST ANALOGUES -->
         <div class="liq-closest-section">
-          <div class="liq-closest-title">CLOSEST ANALOGUES <span class="liq-closest-sub">to current 53rd percentile</span></div>
+          <div class="liq-closest-title">CLOSEST ANALOGUES <span class="liq-closest-sub" id="liq-pctile-sub">to current 53rd percentile</span></div>
           <div class="liq-closest-row">
             <!-- Analogue 1: Q4 1998 -->
             <div class="liq-closest-card">
@@ -1005,7 +1005,7 @@
   </main>
 
   <footer class="dash-footer">
-    <p>Data as of April 1, 2026 10:26 AM PDT. Macro indicators reflect latest official releases. Market prices delayed ~15 min. Dashboard for informational purposes only — not investment advice.</p>
+    <p id="footer-timestamp">Data as of April 1, 2026 10:26 AM PDT. Macro indicators reflect latest official releases. Market prices delayed ~15 min. Dashboard for informational purposes only — not investment advice.</p>
   </footer>
 
 <script>
@@ -1013,7 +1013,7 @@
   let chartInstance = null;
   let fullData = [];
 
-  fetch('chart_data.json')
+  fetch('./data/chart_data.json')
     .then(r => r.json())
     .then(data => {
       fullData = data;
@@ -1212,7 +1212,11 @@
 <script>
 // COMPONENT 5: T5YIE Chart with Fed 2% Target Overlay
 (function(){
-  const t5yieData = '[INSERT HISTORICAL T5YIE ARRAY HERE]';
+  var t5yieData = null;
+  fetch('./data/t5yie_data.json')
+    .then(function(r) { return r.json(); })
+    .then(function(data) { t5yieData = data; renderT5YIE(); })
+    .catch(function(e) { console.warn('T5YIE data load failed:', e); });
 
   // Fed 2% Target Plugin
   const fedTargetPlugin = {
@@ -1239,20 +1243,21 @@
   };
   Chart.register(fedTargetPlugin);
 
-  const t5yieCtx = document.getElementById('t5yieChart');
-  if (t5yieCtx && t5yieData !== '[INSERT HISTORICAL T5YIE ARRAY HERE]') {
+  function renderT5YIE() {
+    if (!t5yieData) return;
+    var t5yieCtx = document.getElementById('t5yieChart');
+    if (!t5yieCtx) return;
     try {
-      const parsed = JSON.parse(t5yieData);
       // Show canvas, hide placeholder
-      const chartArea = document.getElementById('t5yieChartArea');
+      var chartArea = document.getElementById('t5yieChartArea');
       if (chartArea) chartArea.classList.add('has-data');
       new Chart(t5yieCtx, {
         type: 'line',
         data: {
-          labels: parsed.map(d => d.date),
+          labels: t5yieData.map(function(d) { return d.date; }),
           datasets: [{
             label: '5Y Breakeven (T5YIE)',
-            data: parsed.map(d => d.value),
+            data: t5yieData.map(function(d) { return d.value; }),
             borderColor: '#4F98A3',
             backgroundColor: 'rgba(79,152,163,0.08)',
             borderWidth: 1.5,
@@ -1300,74 +1305,421 @@
           }
         }
       });
-    } catch(e) { console.warn('T5YIE chart data not available:', e); }
-  } else {
-    // Placeholder is shown via CSS .inf-chart-pending
-    console.log('T5YIE: Awaiting historical data array injection');
+    } catch(e) { console.warn('T5YIE chart render failed:', e); }
   }
 })();
 </script>
 
-<script data-pplx-inline-edit>
-(function(){
-  if(window===window.top)return;
-  function inlineAll(orig,clone){
-    if(orig.nodeType!==1)return;
-    try{
-      var cs=getComputedStyle(orig);
-      var t='';
-      for(var i=0;i<cs.length;i++){t+=cs[i]+':'+cs.getPropertyValue(cs[i])+';';}
-      clone.style.cssText=t;
-    }catch(e){}
-    var oc=orig.children,cc=clone.children;
-    for(var j=0;j<oc.length&&j<cc.length;j++){inlineAll(oc[j],cc[j]);}
+<script>
+// ═══════════════════════════════════════════════════════════════════
+// LIVE DATA LOADER — reads macro_data.json + fomc_probs.json
+// ═══════════════════════════════════════════════════════════════════
+(function() {
+  'use strict';
+
+  // ── Formatting helpers ──────────────────────────────────────────
+  function v(x) { return (x === null || x === undefined) ? '—' : x; }
+  function fmt(x, d) { return (x == null) ? '—' : Number(x).toFixed(d != null ? d : 1); }
+  function fmtPct(x, d) { return (x == null) ? '—' : Number(x).toFixed(d != null ? d : 1) + '%'; }
+  function fmtT(x) { return (x == null) ? '—' : '$' + Number(x).toFixed(3) + 'T'; }
+  function fmtB(x) { return (x == null) ? '—' : '$' + Number(x).toFixed(1) + 'B'; }
+  function fmtComma(x) { return (x == null) ? '—' : Math.round(x).toLocaleString(); }
+  function ordinal(n) {
+    var s = ['th','st','nd','rd'], v = n % 100;
+    return n + (s[(v-20)%10] || s[v] || s[0]);
   }
-  function stripExternal(clone){
-    var imgs=clone.querySelectorAll('img');
-    for(var i=0;i<imgs.length;i++){
-      var s=imgs[i].getAttribute('src');
-      if(s&&!s.startsWith('data:'))imgs[i].removeAttribute('src');
+
+  // ── Tag → CSS helpers ───────────────────────────────────────────
+  var TAG_COLOR = { hot:'color-red', cool:'color-green', soft:'color-green', inline:'color-white', beat:'color-green', miss:'color-red' };
+  var TAG_CLASS = { hot:'tag-hot', cool:'tag-cool', soft:'tag-cool', inline:'tag-inline', beat:'tag-cool', miss:'tag-hot' };
+  var TAG_TEXT  = { hot:'HOT', cool:'COOL', soft:'SOFT', inline:'IN-LINE', beat:'BEAT', miss:'MISS' };
+
+  function setKlCard(card, valueText, estText, tag, stale) {
+    var valEl  = card.querySelector('.kl-value');
+    var estEl  = card.querySelector('.kl-est');
+    var tagEl  = card.querySelector('.kl-tag');
+    if (valEl) { valEl.textContent = valueText; valEl.className = 'kl-value ' + (TAG_COLOR[tag] || 'color-white'); }
+    if (estEl && estText) estEl.textContent = estText;
+    if (tagEl) {
+      tagEl.textContent = (stale ? '⚠ STALE ' : '') + (TAG_TEXT[tag] || tag.toUpperCase());
+      tagEl.className   = 'kl-tag ' + (TAG_CLASS[tag] || 'tag-inline');
     }
-    var all=clone.querySelectorAll('*');
-    for(var i=0;i<all.length;i++){
-      var st=all[i].style.cssText;
-      if(st&&st.indexOf('url(')>=0){
-        all[i].style.cssText=st.replace(/url\(["']?(?!data:)[^)"']*["']?\)/gi,'none');
+  }
+
+  function setDelta(el, pct, dir) {
+    if (!el) return;
+    el.className = 'kl-delta delta-' + (dir || 'neutral');
+    el.textContent = (dir === 'up' ? '+' : (dir === 'down' ? '-' : '')) + fmt(pct, 1) + '%';
+  }
+
+  function setText(id, text) { var el = document.getElementById(id); if (el) el.textContent = text; }
+  function setHTML(id, html) { var el = document.getElementById(id); if (el) el.innerHTML = html; }
+
+  // ── Stale badge logic ───────────────────────────────────────────
+  function isStale(dateStr) {
+    if (!dateStr) return false;
+    var d = new Date(dateStr);
+    return ((new Date()) - d) > (45 * 24 * 60 * 60 * 1000);
+  }
+
+  // ── Liquidity score display (percentile shifted to -0.5..+0.5) ─
+  function liqScoreDisplay(score) {
+    if (score == null) return { text: '—', cls: 'liq-score-neutral' };
+    var shifted = score - 0.5;
+    var text = (shifted >= 0 ? '+' : '') + shifted.toFixed(2);
+    var cls = shifted > 0.05 ? 'liq-score-positive' : shifted < -0.05 ? 'liq-score-negative' : 'liq-score-neutral';
+    return { text: text, cls: cls };
+  }
+  function liqScoreDesc(score) {
+    if (score == null) return 'Unavailable';
+    var s = score - 0.5;
+    if (s > 0.3)  return 'Loose';
+    if (s > 0.1)  return 'Marginally Loose';
+    if (s > -0.1) return 'Neutral';
+    if (s > -0.3) return 'Marginally Tight';
+    return 'Tight';
+  }
+
+  // ── Main macro_data.json handler ────────────────────────────────
+  function applyMacroData(d) {
+    var il  = d.inflation_labor || {};
+    var gs  = d.growth_sentiment || {};
+    var ma  = d.market_anchors || {};
+    var sd  = d.signal_distribution || {};
+    var liq = d.liquidity || {};
+    var ie  = d.inflation_expectations || {};
+
+    // ── KEY LEVELS: Inflation & Labor ──────────────────────────────
+    var ilCards = document.querySelectorAll('.kl-grid-7 .kl-card');
+    var ilFields = [
+      { f: il.cpi_yoy,       fmt: function(x) { return fmtPct(x.value, 2); }, est: function(x) { return 'Est: ' + fmtPct(x.estimate, 1); } },
+      { f: il.core_cpi_yoy,  fmt: function(x) { return fmtPct(x.value, 2); }, est: function(x) { return 'Est: ' + fmtPct(x.estimate, 1); } },
+      { f: il.ppi_yoy,       fmt: function(x) { return fmtPct(x.value, 2); }, est: function(x) { return 'Est: ' + fmtPct(x.estimate, 1); } },
+      { f: il.pce_yoy,       fmt: function(x) { return fmtPct(x.value, 2); }, est: function(x) { return 'Est: ' + fmtPct(x.estimate, 1); } },
+      { f: il.core_pce_yoy,  fmt: function(x) { return fmtPct(x.value, 2); }, est: function(x) { return 'Est: ' + fmtPct(x.estimate, 1); } },
+      { f: il.unemployment,  fmt: function(x) { return fmtPct(x.value, 1); }, est: function(x) { return 'Est: ' + fmtPct(x.estimate, 1); } },
+      { f: il.initial_claims,fmt: function(x) { return fmt(x.value, 0) + 'K'; }, est: function(x) { return 'Est: ' + fmt(x.estimate, 0) + 'K'; } },
+    ];
+    ilFields.forEach(function(item, i) {
+      if (ilCards[i] && item.f && item.f.value != null) {
+        setKlCard(ilCards[i], item.fmt(item.f), item.est(item.f), item.f.tag, item.f.static && isStale(item.f.date));
+      }
+    });
+
+    // ── KEY LEVELS: Growth & Sentiment ─────────────────────────────
+    var gsCards = document.querySelectorAll('.kl-grid-3 .kl-card');
+    if (gsCards[0] && gs.nfp_mom && gs.nfp_mom.value != null) {
+      var nfpVal = Math.round(gs.nfp_mom.value);
+      setKlCard(gsCards[0], (nfpVal >= 0 ? '+' : '') + nfpVal + 'K', 'Est: +' + fmt(gs.nfp_mom.estimate, 0) + 'K', gs.nfp_mom.tag);
+    }
+    if (gsCards[1] && gs.umich_sent && gs.umich_sent.value != null) {
+      setKlCard(gsCards[1], fmt(gs.umich_sent.value, 1), 'Est: ' + fmt(gs.umich_sent.estimate, 1), gs.umich_sent.tag);
+    }
+    if (gsCards[2] && gs.ism_mfg && gs.ism_mfg.value != null) {
+      var stale = gs.ism_mfg.static && isStale(gs.ism_mfg.date);
+      setKlCard(gsCards[2], fmt(gs.ism_mfg.value, 1), 'Est: ' + fmt(gs.ism_mfg.estimate, 1), gs.ism_mfg.tag, stale);
+    }
+
+    // ── KEY LEVELS: Market Anchors ──────────────────────────────────
+    var maCards = document.querySelectorAll('.kl-grid-6 .kl-card');
+    // SPX
+    if (maCards[0] && ma.spx && ma.spx.value != null) {
+      var spxVal = maCards[0].querySelector('.kl-value');
+      var spxDelta = maCards[0].querySelector('.kl-delta');
+      if (spxVal) { spxVal.textContent = fmtComma(ma.spx.value); spxVal.className = 'kl-value color-white'; }
+      if (spxDelta) {
+        spxDelta.textContent = (ma.spx.delta_dir === 'up' ? '+' : '-') + fmt(ma.spx.delta_pct, 1) + '% prev close';
+        spxDelta.className = 'kl-delta delta-' + (ma.spx.delta_dir || 'neutral');
+      }
+    }
+    // 10Y Yield
+    if (maCards[1] && ma.yield_10y && ma.yield_10y.value != null) {
+      var y10Val = maCards[1].querySelector('.kl-value');
+      var y10Delta = maCards[1].querySelector('.kl-delta');
+      if (y10Val) { y10Val.textContent = fmtPct(ma.yield_10y.value, 2); y10Val.className = 'kl-value color-white'; }
+      if (y10Delta) { y10Delta.textContent = 'FRED daily'; y10Delta.className = 'kl-delta delta-neutral'; }
+    }
+    // DXY
+    if (maCards[2] && ma.dxy && ma.dxy.value != null) {
+      var dxyVal = maCards[2].querySelector('.kl-value');
+      var dxyDelta = maCards[2].querySelector('.kl-delta');
+      if (dxyVal) { dxyVal.textContent = fmt(ma.dxy.value, 2); dxyVal.className = 'kl-value color-white'; }
+      if (dxyDelta) {
+        dxyDelta.textContent = (ma.dxy.delta_dir === 'up' ? '+' : '-') + fmt(ma.dxy.delta_pct, 1) + '%';
+        dxyDelta.className = 'kl-delta delta-' + (ma.dxy.delta_dir || 'neutral');
+      }
+    }
+    // WTI
+    if (maCards[3] && ma.wti && ma.wti.value != null) {
+      var wtiVal = maCards[3].querySelector('.kl-value');
+      var wtiDelta = maCards[3].querySelector('.kl-delta');
+      if (wtiVal) { wtiVal.textContent = '$' + fmt(ma.wti.value, 2); wtiVal.className = 'kl-value color-white'; }
+      if (wtiDelta) {
+        wtiDelta.textContent = (ma.wti.delta_dir === 'up' ? '+' : '-') + fmt(ma.wti.delta_pct, 1) + '%';
+        wtiDelta.className = 'kl-delta delta-' + (ma.wti.delta_dir || 'neutral');
+      }
+    }
+    // VIX
+    if (maCards[4] && ma.vix && ma.vix.value != null) {
+      var vixVal = maCards[4].querySelector('.kl-value');
+      var vixDelta = maCards[4].querySelector('.kl-delta');
+      if (vixVal) { vixVal.textContent = fmt(ma.vix.value, 2); vixVal.className = 'kl-value color-white'; }
+      if (vixDelta) {
+        vixDelta.textContent = (ma.vix.delta_dir === 'up' ? '+' : '-') + fmt(ma.vix.delta_pct, 1) + '%';
+        vixDelta.className = 'kl-delta delta-' + (ma.vix.delta_dir || 'neutral');
+      }
+    }
+    // Fed Funds
+    if (maCards[5] && ma.fed_funds) {
+      var ffVal = maCards[5].querySelector('.kl-value');
+      var ffDelta = maCards[5].querySelector('.kl-delta');
+      if (ffVal) ffVal.textContent = v(ma.fed_funds.value);
+      if (ffDelta) {
+        var mtgText = ma.fed_funds.meeting_count ? ma.fed_funds.action + ' (' + ma.fed_funds.meeting_count + ordinal(ma.fed_funds.meeting_count) + ' mtg)' : ma.fed_funds.action;
+        ffDelta.textContent = mtgText;
+        ffDelta.className = 'kl-delta delta-neutral';
+      }
+    }
+
+    // ── SIGNAL DISTRIBUTION GAUGE ──────────────────────────────────
+    var cats = ['hawk', 'dove', 'tight', 'neutral'];
+    cats.forEach(function(cat) {
+      var seg = document.querySelector('.' + cat + '-seg');
+      var col = document.querySelector('.' + cat + '-col');
+      var score = sd[cat] ? sd[cat].score : null;
+      if (score == null) return;
+
+      if (seg) {
+        seg.style.flex = score;
+        var cnt = seg.querySelector('.seg-count');
+        if (cnt) cnt.textContent = score;
+      }
+      if (col) {
+        var title = col.querySelector('.sb-title');
+        var ul = col.querySelector('ul');
+        var catLabel = cat.toUpperCase();
+        if (title) title.innerHTML = catLabel + ' <span>' + score + ' pts</span>';
+        if (ul && sd[cat].items && sd[cat].items.length) {
+          ul.innerHTML = sd[cat].items.map(function(item) {
+            return '<li><span class="sb-check">+1</span> ' + item + '</li>';
+          }).join('');
+        }
+      }
+    });
+    // Update momentum THIS WEEK card
+    var momentumCards = document.querySelectorAll('.momentum-card');
+    if (momentumCards[0]) {
+      var mVal = momentumCards[0].querySelector('.momentum-val');
+      if (mVal) mVal.textContent = 'H' + (sd.hawk ? sd.hawk.score : '?') + ' / D' + (sd.dove ? sd.dove.score : '?') + ' / T' + (sd.tight ? sd.tight.score : '?') + ' / N' + (sd.neutral ? sd.neutral.score : '?');
+    }
+
+    // ── LIQUIDITY TRACKER: Hero Scores ─────────────────────────────
+    var heroCards = document.querySelectorAll('.liq-hero-row .liq-hero-card');
+    // US Score
+    if (heroCards[0] && liq.us_score != null) {
+      var usDisp = liqScoreDisplay(liq.us_score);
+      heroCards[0].className = 'liq-hero-card ' + usDisp.cls;
+      var usVal = heroCards[0].querySelector('.liq-hero-value');
+      var usSub = heroCards[0].querySelector('.liq-hero-sub');
+      if (usVal) usVal.textContent = usDisp.text;
+      if (usSub) usSub.textContent = liqScoreDesc(liq.us_score);
+    }
+    // Global Score
+    if (heroCards[1] && liq.global_score != null) {
+      var glDisp = liqScoreDisplay(liq.global_score);
+      heroCards[1].className = 'liq-hero-card ' + glDisp.cls;
+      var glVal = heroCards[1].querySelector('.liq-hero-value');
+      var glSub = heroCards[1].querySelector('.liq-hero-sub');
+      if (glVal) glVal.textContent = glDisp.text;
+      if (glSub) glSub.textContent = liqScoreDesc(liq.global_score);
+    }
+    // Composite
+    if (heroCards[2] && liq.composite != null) {
+      var cDisp = liqScoreDisplay(liq.composite);
+      heroCards[2].className = 'liq-hero-card ' + cDisp.cls;
+      var cVal = heroCards[2].querySelector('.liq-hero-value');
+      var cSub = heroCards[2].querySelector('.liq-hero-sub');
+      if (cVal) cVal.textContent = cDisp.text;
+      if (cSub) cSub.textContent = ordinal(liq.composite_pctile || 50) + ' Percentile (10Y)';
+    }
+    // Net US Liquidity
+    if (heroCards[3] && liq.net_us_liq_t != null) {
+      var nlVal = heroCards[3].querySelector('.liq-hero-value');
+      if (nlVal) nlVal.textContent = fmtT(liq.net_us_liq_t);
+    }
+
+    // Update percentile in analogue section
+    if (liq.composite_pctile != null) {
+      setText('liq-pctile-sub', 'to current ' + ordinal(liq.composite_pctile) + ' percentile');
+    }
+
+    // ── LIQUIDITY TRACKER: US Plumbing Table ───────────────────────
+    var plumbPanels = document.querySelectorAll('.liq-grid-panel');
+    if (plumbPanels[0]) {
+      var rows = plumbPanels[0].querySelectorAll('tbody tr');
+      var plumbData = [
+        { val: liq.walcl_t != null   ? fmtT(liq.walcl_t)   : null },
+        { val: liq.tga_b != null     ? fmtB(liq.tga_b)     : null },
+        { val: liq.rrp_b != null     ? fmtB(liq.rrp_b)     : null },
+        { val: liq.reserves_b != null ? '$' + fmt(liq.reserves_b / 1000, 3) + 'T' : null },
+        { val: liq.nfci != null      ? fmt(liq.nfci, 3)    : null },
+        { val: liq.anfci != null     ? fmt(liq.anfci, 3)   : null },
+        { val: liq.hy_oas != null    ? fmtPct(liq.hy_oas, 2) : null },
+        { val: liq.ig_oas != null    ? fmtPct(liq.ig_oas, 2) : null },
+      ];
+      plumbData.forEach(function(item, i) {
+        if (rows[i] && item.val != null) {
+          var cells = rows[i].querySelectorAll('td');
+          if (cells[1]) cells[1].textContent = item.val;
+          if (cells[2]) cells[2].textContent = '—';
+          if (cells[3]) cells[3].textContent = '—';
+        }
+      });
+    }
+
+    // ── LIQUIDITY TRACKER: Global Table ───────────────────────────
+    if (plumbPanels[1]) {
+      var globalRows = plumbPanels[1].querySelectorAll('tbody tr');
+      // Row indices: 0=section header, 1=Fed, 2=ECB, 3=BOJ, 4=PBOC, 5=G4 total
+      var globalVals = [null, liq.walcl_t, liq.ecb_t, liq.boj_t, liq.pboc_t, liq.g4_total_t];
+      globalVals.forEach(function(val, i) {
+        if (val == null || !globalRows[i]) return;
+        var cells = globalRows[i].querySelectorAll('td');
+        if (cells[1]) cells[1].textContent = fmtT(val);
+        if (cells[2]) cells[2].textContent = '—';
+      });
+    }
+
+    // ── INFLATION ANALYSIS: Horizon Cards ─────────────────────────
+    var horizCards = document.querySelectorAll('.inf-horizon-card');
+    var horizData = [
+      { val: ie.exp_1y  && ie.exp_1y.value  != null ? fmtPct(ie.exp_1y.value, 2)  : null, src: ie.exp_1y  ? 'Cleveland Fed Model · ' + (ie.exp_1y.date || '') : null },
+      { val: ie.exp_2y  && ie.exp_2y.value  != null ? fmtPct(ie.exp_2y.value, 2)  : null, src: ie.exp_2y  ? 'Cleveland Fed Model · ' + (ie.exp_2y.date || '') : null },
+      { val: ie.t5yie   && ie.t5yie.value   != null ? fmtPct(ie.t5yie.value, 2)   : null, src: ie.t5yie   ? 'FRED T5YIE · ' + (ie.t5yie.date || '') : null },
+      { val: ie.t10yie  && ie.t10yie.value  != null ? fmtPct(ie.t10yie.value, 2)  : null, src: ie.t10yie  ? 'FRED T10YIE · ' + (ie.t10yie.date || '') : null },
+    ];
+    horizData.forEach(function(item, i) {
+      if (!horizCards[i] || !item.val) return;
+      var valEl = horizCards[i].querySelector('.inf-horizon-val');
+      var srcEl = horizCards[i].querySelector('.inf-horizon-src');
+      if (valEl) {
+        valEl.textContent = item.val;
+        // Green if ≤ 2.5%, red if > 2.5%
+        var numVal = parseFloat(item.val);
+        valEl.className = 'inf-horizon-val ' + (numVal > 2.5 ? 'color-red' : 'color-green');
+      }
+      if (srcEl && item.src) srcEl.textContent = item.src;
+    });
+
+    // ── INFLATION ANALYSIS: Realized Reality Check ─────────────────
+    var realCards = document.querySelectorAll('.inf-realized-card');
+    // Core PCE card
+    if (realCards[0] && ie.core_pce_yoy && ie.core_pce_yoy.value != null) {
+      var pceFq = realCards[0].querySelector('.inf-realized-freq');
+      var pceYoy = realCards[0].querySelector('.inf-metric-val');
+      if (pceFq) pceFq.textContent = (ie.core_pce_yoy.date || '') + ' · ' + (ie.core_pce_yoy.source || 'BEA');
+      if (pceYoy) {
+        pceYoy.textContent = fmtPct(ie.core_pce_yoy.value, 1);
+        pceYoy.className = 'inf-metric-val ' + (ie.core_pce_yoy.value > 2.5 ? 'color-red' : 'color-green');
+      }
+    }
+    // Sticky CPI card (static)
+    if (realCards[1] && ie.sticky_cpi && ie.sticky_cpi.value != null) {
+      var staleFlag = ie.sticky_cpi.static && isStale(ie.sticky_cpi.date);
+      var stickyFq = realCards[1].querySelector('.inf-realized-freq');
+      var stickyVal = realCards[1].querySelector('.inf-metric-val');
+      if (stickyFq) stickyFq.textContent = (ie.sticky_cpi.date || '') + ' · ' + (ie.sticky_cpi.source || 'Atlanta Fed') + (staleFlag ? ' ⚠ STALE' : '');
+      if (stickyVal) {
+        stickyVal.textContent = fmtPct(ie.sticky_cpi.value, 2);
+        stickyVal.className = 'inf-metric-val ' + (ie.sticky_cpi.value > 2.5 ? 'color-red' : 'color-green');
+      }
+    }
+
+    // ── FOOTER timestamp ──────────────────────────────────────────
+    if (d.meta && d.meta.last_updated) {
+      var updated = new Date(d.meta.last_updated);
+      var footerEl = document.getElementById('footer-timestamp');
+      if (footerEl) {
+        footerEl.textContent = 'Data as of ' + updated.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' }) + '. Macro indicators reflect latest official releases. Market prices delayed ~15 min. Dashboard for informational purposes only — not investment advice.';
       }
     }
   }
-  window.addEventListener('message',function(e){
-    if(!e.data||e.data.type!=='INLINE_EDIT_CAPTURE_REQUEST')return;
-    var scrollX=window.scrollX||window.pageXOffset||0;
-    var scrollY=window.scrollY||window.pageYOffset||0;
-    var w=window.innerWidth,h=window.innerHeight;
-    try{
-      var clone=document.documentElement.cloneNode(true);
-      var rm=clone.querySelectorAll('script,link[rel="stylesheet"],style');
-      for(var i=0;i<rm.length;i++){rm[i].remove();}
-      inlineAll(document.documentElement,clone);
-      stripExternal(clone);
-      var html=new XMLSerializer().serializeToString(clone);
-      var svg='<svg xmlns="http://www.w3.org/2000/svg" width="'+w+'" height="'+h+'">'
-        +'<foreignObject width="100%" height="100%">'
-        +'<div xmlns="http://www.w3.org/1999/xhtml" style="width:'+w+'px;height:'+h+'px;overflow:hidden">'
-        +'<div style="transform:translate(-'+scrollX+'px,-'+scrollY+'px);transform-origin:top left">'
-        +html+'</div></div></foreignObject></svg>';
-      var svgUrl='data:image/svg+xml;charset=utf-8,'+encodeURIComponent(svg);
-      var img=new Image();
-      img.onload=function(){
-        var c=document.createElement('canvas');c.width=w;c.height=h;
-        c.getContext('2d').drawImage(img,0,0);
-        window.parent.postMessage({type:'INLINE_EDIT_SCREENSHOT_RESULT',dataUrl:c.toDataURL('image/png'),scrollX:scrollX,scrollY:scrollY},'*');
-      };
-      img.onerror=function(){
-        window.parent.postMessage({type:'INLINE_EDIT_SCREENSHOT_RESULT',dataUrl:null,scrollX:scrollX,scrollY:scrollY},'*');
-      };
-      img.src=svgUrl;
-    }catch(err){
-      window.parent.postMessage({type:'INLINE_EDIT_SCREENSHOT_RESULT',dataUrl:null,scrollX:scrollX,scrollY:scrollY},'*');
+
+  // ── FOMC probs handler ─────────────────────────────────────────
+  function applyFomcData(f) {
+    if (!f || !f.meetings || !f.meetings.length) return;
+    var meetings = f.meetings;
+
+    // Market consensus card: first meeting
+    var m0 = meetings[0];
+    if (m0 && m0.hold_prob != null) {
+      setText('fomc-consensus-value', m0.hold_prob >= 50 ? 'HOLD' : 'CUT');
+      setText('fomc-consensus-sub', m0.hold_prob.toFixed(1) + '% probability — no change at ' + (f.meta ? f.meta.current_rate_low + '–' + f.meta.current_rate_high + '%' : '—'));
     }
-  });
+
+    // Probability table — hold row (first 6 cols after the rate label)
+    var holdCells = document.querySelectorAll('#fomc-hold-row .highlight-cell');
+    var cut25Cells = document.querySelectorAll('#fomc-cut25-row td');
+    meetings.forEach(function(mtg, i) {
+      if (holdCells[i] && mtg.hold_prob != null) {
+        holdCells[i].textContent = mtg.hold_prob.toFixed(1) + '%';
+      }
+      // cut25 row: skip first td (rate label), so offset by 1
+      if (cut25Cells[i + 1] && mtg.cut25_prob != null) {
+        cut25Cells[i + 1].textContent = mtg.cut25_prob.toFixed(1) + '%';
+      }
+    });
+
+    // Disconnect alert: update year-end hold prob (last meeting = DEC)
+    var lastMtg = meetings[meetings.length - 1];
+    if (lastMtg && lastMtg.hold_prob != null) {
+      var discEl = document.getElementById('fomc-disconnect-text');
+      if (discEl) {
+        var rate = f.meta ? f.meta.current_rate_low + '–' + f.meta.current_rate_high + '%' : '3.50–3.75%';
+        discEl.innerHTML = '<strong>DISCONNECT ALERT:</strong> The market prices 0 cuts in 2026 (' + lastMtg.hold_prob.toFixed(1) + '% probability of year-end hold at ' + rate + '), while the Fed SEP median projects 1 cut to 3.375% — <em>market expects tighter policy than the Fed.</em>';
+      }
+    }
+  }
+
+  // ── Fetch both files in parallel ──────────────────────────────
+  var macroPromise = fetch('./data/macro_data.json')
+    .then(function(r) {
+      if (!r.ok) throw new Error('HTTP ' + r.status);
+      return r.json();
+    });
+
+  var fomcPromise = fetch('./data/fomc_probs.json')
+    .then(function(r) {
+      if (!r.ok) throw new Error('HTTP ' + r.status);
+      return r.json();
+    });
+
+  macroPromise
+    .then(applyMacroData)
+    .catch(function(e) {
+      console.warn('macro_data.json load failed — showing last known values. Error:', e);
+    });
+
+  fomcPromise
+    .then(applyFomcData)
+    .catch(function(e) {
+      console.warn('fomc_probs.json load failed — showing last known values. Error:', e);
+    });
+
 })();
-</script></body>
+</script>
+
+<script>
+(function(){
+  var now = new Date();
+  var dateStr = now.toLocaleDateString('en-US', { month:'short', day:'2-digit', year:'numeric' }).toUpperCase();
+  var timeStr = now.toLocaleTimeString('en-US', { hour:'2-digit', minute:'2-digit', timeZoneName:'short' });
+  var el = document.getElementById('header-time');
+  if (el) {
+    el.textContent = dateStr + ' \u2014 ' + timeStr;
+    el.setAttribute('datetime', now.toISOString().slice(0, 10));
+  }
+})();
+</script>
+</body>
 </html>
