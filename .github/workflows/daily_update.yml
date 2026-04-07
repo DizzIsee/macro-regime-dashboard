@@ -33,6 +33,7 @@ jobs:
       - name: Fetch all data
         env:
           FRED_API_KEY: ${{ secrets.FRED_API_KEY }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: python scripts/fetch_data.py
 
       - name: Commit updated data files

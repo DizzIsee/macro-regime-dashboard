@@ -529,6 +529,16 @@ def main():
     update_chart_data(api_key, walcl_series_raw, tga_series_raw, rrp_daily_raw,
                       ecb_series_raw, boj_series_raw, eurusd, usdjpy, pboc_static_b)
 
+    print("\n=== Phase 9: Generating AI narrative ===")
+    try:
+        import sys
+        sys.path.insert(0, str(Path(__file__).parent))
+        from generate_narrative import generate_narrative
+        generate_narrative()
+    except Exception as e:
+        print(f"  WARNING: narrative generation failed — {e}")
+        print("  Continuing without synthesis.json update.")
+
     print("\n=== ALL DONE ===")
     print(f"  last_updated: {now_utc.strftime('%Y-%m-%dT%H:%M:%SZ')}")
 

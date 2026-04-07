@@ -276,27 +276,19 @@
         <span class="panel-subtitle">24-Hour Macro Synthesis</span>
       </div>
 
-      <div class="synthesis-body">
-        <p><strong>Fed &amp; Monetary:</strong> The Federal Reserve held the fed funds rate at 3.50–3.75% for a second consecutive meeting in March, with CME FedWatch pricing a 97.9% probability of another hold at the April 28-29 FOMC, while the median dot-plot projects just one 25bp cut for 2026 as Chair Powell acknowledged inflation remains above target amid oil-shock uncertainties.</p>
-        <p><strong>Labor &amp; Data:</strong> February nonfarm payrolls contracted 92,000 — the first negative print in over a year — driven by healthcare strike activity and continued federal workforce reductions (-330K since Oct 2024 peak), while JOLTS quits fell to 2.97 million (lowest since August 2020) and job openings dropped 358,000 to 6.88 million, confirming a "low-hire, low-fire" labor market regime.</p>
-        <p><strong>Fiscal &amp; Supply:</strong> WTI crude settled above $100/bbl for the first time since July 2022 as the US-Iran conflict disrupted Strait of Hormuz transit, pushing US gasoline to $4.02/gallon, with the IEA warning conditions will be "much worse" in April and contemplating emergency oil releases while ISM manufacturing prices surged to 78.3 — the highest since June 2022 — signaling acute upstream cost pass-through.</p>
-        <p><strong>Corporate:</strong> US equities staged a sharp 2.9% S&P 500 rally on March 31 after President Trump signaled a willingness to end the Iran conflict within weeks, though the index remains 5.5% below its February high; M&A activity hit a record $1.3 trillion in Q1 2026 per LSEG data, even as Nike warned of a 20% China sales decline and the VIX at 25.25 reflects persistent hedging demand.</p>
-        <p class="next-catalyst"><strong>Next Catalyst:</strong> March Employment Situation Report (NFP) — Friday, April 3, 2026 at 8:30 AM ET (<a href="https://www.bls.gov/schedule/news_release/empsit.htm" target="_blank">BLS</a>). February Retail Sales data also released today at 8:30 AM ET.</p>
+      <div class="synthesis-body" id="synthesis-body">
+        <p id="syn-fed-monetary"><strong>Fed &amp; Monetary:</strong> Loading…</p>
+        <p id="syn-labor-data"><strong>Labor &amp; Data:</strong> Loading…</p>
+        <p id="syn-fiscal-supply"><strong>Fiscal &amp; Supply:</strong> Loading…</p>
+        <p id="syn-corporate"><strong>Corporate:</strong> Loading…</p>
+        <p class="next-catalyst" id="syn-next-catalyst"><strong>Next Catalyst:</strong> Loading…</p>
       </div>
 
       <!-- CITATION BLOCK -->
-      <div class="citation-block">
+      <div class="citation-block" id="synthesis-citation">
         <span class="citation-label">Sources — Bottom Line:</span>
-        <a href="https://finance.yahoo.com/news/live/fed-meeting-live-updates-federal-reserve-holds-rates-steady-forecasts-1-rate-cut-in-2026-180216872.html" target="_blank">Yahoo Finance Fed Recap</a> ·
-        <a href="https://www.bls.gov/news.release/empsit.nr0.htm" target="_blank">BLS Employment Feb 2026</a> ·
-        <a href="https://www.home.saxo/content/articles/macro/market-quick-take---1-april-2026-01042026" target="_blank">Saxo Bank Apr 1 Recap</a> ·
-        <a href="https://www.wsj.com/finance" target="_blank">WSJ Finance</a> ·
-        <a href="https://www.bloomberg.com" target="_blank">Bloomberg</a> ·
-        <a href="https://www.reuters.com/business/us-consumer-sentiment-slips-three-month-low-march-2026-03-27/" target="_blank">Reuters UMich</a> ·
-        <a href="https://www.mexc.com/news/990424" target="_blank">CME FedWatch via MEXC</a> ·
-        <a href="https://www.ismworld.org/supply-management-news-and-reports/reports/ism-pmi-reports/pmi/march/" target="_blank">ISM Mar 2026</a> ·
-        <a href="https://www.nuveen.com/en-us/insights/fixed-income/fixed-income-weekly-commentary" target="_blank">Nuveen Fixed Income</a> ·
-        <a href="https://www.thestreet.com/fed/looming-federal-reserve-meeting-shifts-bets-for-2026-interest-rate-cuts-due-to-oil-shock-from-iran-war" target="_blank">TheStreet Fed Outlook</a>
+        <span id="syn-sources">Loading…</span>
+        <span id="syn-generated-at" style="margin-left:1rem;opacity:0.55;font-size:0.78em;"></span>
       </div>
     </section>
     <!-- ═══════════════════════════════════════════════ -->
@@ -1704,6 +1696,70 @@
     .then(applyFomcData)
     .catch(function(e) {
       console.warn('fomc_probs.json load failed — showing last known values. Error:', e);
+    });
+
+  // ── synthesis.json — AI Bottom Line narrative ──────────────────────────
+  fetch('./data/synthesis.json')
+    .then(function(r) {
+      if (!r.ok) throw new Error('HTTP ' + r.status);
+      return r.json();
+    })
+    .then(function(d) {
+      function setSyn(id, label, text) {
+        var el = document.getElementById(id);
+        if (el && text) el.innerHTML = '<strong>' + label + '</strong> ' + text;
+      }
+      setSyn('syn-fed-monetary',  'Fed &amp; Monetary:', d.fed_monetary);
+      setSyn('syn-labor-data',    'Labor &amp; Data:',   d.labor_data);
+      setSyn('syn-fiscal-supply', 'Fiscal &amp; Supply:', d.fiscal_supply);
+      setSyn('syn-corporate',     'Corporate:',           d.corporate);
+      setSyn('syn-next-catalyst', 'Next Catalyst:',       d.next_catalyst);
+      // Sources list
+      var srcEl = document.getElementById('syn-sources');
+      if (srcEl && d.sources && d.sources.length) {
+        srcEl.textContent = d.sources.join(' · ');
+      }
+      // Generated timestamp
+      var genEl = document.getElementById('syn-generated-at');
+      if (genEl && d.generated_at) {
+        var dt = new Date(d.generated_at);
+        genEl.textContent = 'Generated ' + dt.toLocaleDateString('en-US', {
+          month: 'short', day: 'numeric', year: 'numeric'
+        }) + ' ' + dt.toLocaleTimeString('en-US', {
+          hour: '2-digit', minute: '2-digit', timeZoneName: 'short'
+        });
+      }
+    })
+    .catch(function(e) {
+      console.warn('synthesis.json load failed — showing fallback text. Error:', e);
+      // Templated fallback generated from macro_data.json
+      macroPromise.then(function(m) {
+        var ff = m.market_anchors && m.market_anchors.fed_funds;
+        var rate = ff ? ff.value : '—';
+        var il = m.inflation_labor || {};
+        var cpv = il.cpi_yoy ? il.cpi_yoy.value : '—';
+        var pce = il.core_pce_yoy ? il.core_pce_yoy.value : '—';
+        var nfp = m.growth_sentiment && m.growth_sentiment.nfp_mom ? m.growth_sentiment.nfp_mom.value : '—';
+        var unemp = il.unemployment ? il.unemployment.value : '—';
+        var y10 = m.market_anchors && m.market_anchors.yield_10y ? m.market_anchors.yield_10y.value : '—';
+
+        function setSyn(id, label, text) {
+          var el = document.getElementById(id);
+          if (el) el.innerHTML = '<strong>' + label + '</strong> ' + text;
+        }
+        setSyn('syn-fed-monetary',  'Fed &amp; Monetary:',
+          'The Federal Reserve holds the fed funds rate at ' + rate + '. Core PCE at ' + pce + '% keeps the bar for easing elevated with the 10Y yield at ' + y10 + '%.');
+        setSyn('syn-labor-data',    'Labor &amp; Data:',
+          'NFP came in at ' + nfp + 'K with unemployment at ' + unemp + '%. Initial claims track near recent levels.');
+        setSyn('syn-fiscal-supply', 'Fiscal &amp; Supply:',
+          'Treasury issuance remains elevated. CPI YoY at ' + cpv + '% shapes the inflation backdrop for rate expectations.');
+        setSyn('syn-corporate',     'Corporate:',
+          'Credit spreads reflect current risk appetite. Monitor upcoming earnings for margin guidance.');
+        setSyn('syn-next-catalyst', 'Next Catalyst:',
+          'Watch upcoming Fed communications and key data releases for guidance on the rate path.');
+        var genEl = document.getElementById('syn-generated-at');
+        if (genEl) genEl.textContent = '⚠ AI narrative unavailable — templated fallback';
+      }).catch(function() {});
     });
 
 })();
