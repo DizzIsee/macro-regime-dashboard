@@ -1,6 +1,6 @@
 {
   "meta": {
-    "last_updated": "2026-04-07T14:35:49Z",
+    "last_updated": "2026-04-07T21:06:06Z",
     "next_update": "2026-04-08T13:00:00Z"
   },
   "inflation_labor": {
@@ -70,28 +70,28 @@
   },
   "market_anchors": {
     "spx": {
-      "value": 6568,
-      "delta_pct": 0.66,
-      "delta_dir": "down"
+      "value": 6617,
+      "delta_pct": 0.08,
+      "delta_dir": "up"
     },
     "yield_10y": {
-      "value": 4.35,
+      "value": 4.34,
       "delta_bps": null,
       "delta_dir": "down"
     },
     "dxy": {
-      "value": 99.901,
-      "delta_pct": 0.17,
+      "value": 99.664,
+      "delta_pct": 0.41,
       "delta_dir": "down"
     },
     "wti": {
-      "value": 116.09,
-      "delta_pct": 0.42,
-      "delta_dir": "up"
+      "value": 110.85,
+      "delta_pct": 4.11,
+      "delta_dir": "down"
     },
     "vix": {
-      "value": 26.51,
-      "delta_pct": 9.77,
+      "value": 25.78,
+      "delta_pct": 6.75,
       "delta_dir": "up"
     },
     "fed_funds": {
@@ -116,9 +116,9 @@
     "tight": {
       "score": 3,
       "items": [
-        "10Y 4.35% > 4.0%",
-        "WTI $116.09 > $80",
-        "VIX 26.51 > 20"
+        "10Y 4.34% > 4.0%",
+        "WTI $110.85 > $80",
+        "VIX 25.78 > 20"
       ]
     },
     "neutral": {
@@ -127,23 +127,23 @@
     }
   },
   "liquidity": {
-    "us_score": 0.6203,
+    "us_score": 0.6085,
     "global_score": 0.0746,
-    "composite": 0.3474,
-    "composite_pctile": 35,
-    "net_us_liq_t": 5.827,
+    "composite": 0.3416,
+    "composite_pctile": 34,
+    "net_us_liq_t": 5.812,
     "walcl_t": 6.675,
     "tga_b": 847.7,
-    "rrp_b": 0.2,
+    "rrp_b": 15.3,
     "reserves_b": 3026.7,
     "nfci": -0.43366,
     "anfci": -0.42922,
     "hy_oas": 3.05,
     "ig_oas": 1.07,
-    "ecb_t": 7.136,
-    "boj_t": 4.278,
+    "ecb_t": 7.148,
+    "boj_t": 4.285,
     "pboc_t": 7.232,
-    "g4_total_t": 25.322
+    "g4_total_t": 25.34
   },
   "inflation_expectations": {
     "exp_1y": {
@@ -157,12 +157,12 @@
       "date": "Mar 2026"
     },
     "t5yie": {
-      "value": 2.6,
+      "value": 2.61,
       "source": "FRED T5YIE",
-      "date": "2026-04-06"
+      "date": "2026-04-07"
     },
     "t10yie": {
-      "value": 2.36,
+      "value": 2.37,
       "source": "FRED T10YIE",
       "date": "Apr 2026"
     },
