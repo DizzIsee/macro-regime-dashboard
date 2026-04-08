@@ -1,6 +1,6 @@
 {
   "meta": {
-    "last_updated": "2026-04-08T16:44:42Z",
+    "last_updated": "2026-04-08T17:46:03Z",
     "next_update": "2026-04-09T13:00:00Z"
   },
   "inflation_labor": {
@@ -70,8 +70,8 @@
   },
   "market_anchors": {
     "spx": {
-      "value": 6783,
-      "delta_pct": 2.5,
+      "value": 6780,
+      "delta_pct": 2.45,
       "delta_dir": "up"
     },
     "yield_10y": {
@@ -80,18 +80,18 @@
       "delta_dir": "down"
     },
     "dxy": {
-      "value": 98.903,
-      "delta_pct": 0.07,
-      "delta_dir": "down"
+      "value": 98.967,
+      "delta_pct": 0.0,
+      "delta_dir": "up"
     },
     "wti": {
-      "value": 94.87,
-      "delta_pct": 1.67,
+      "value": 95.48,
+      "delta_pct": 1.04,
       "delta_dir": "down"
     },
     "vix": {
-      "value": 20.95,
-      "delta_pct": 18.61,
+      "value": 21.26,
+      "delta_pct": 17.4,
       "delta_dir": "down"
     },
     "fed_funds": {
@@ -117,8 +117,8 @@
       "score": 3,
       "items": [
         "10Y 4.34% > 4.0%",
-        "WTI $94.87 > $80",
-        "VIX 20.95 > 20"
+        "WTI $95.48 > $80",
+        "VIX 21.26 > 20"
       ]
     },
     "neutral": {
@@ -129,7 +129,7 @@
         "CPI 2.7% (hot)",
         "Core CPI 2.7% (hot)",
         "PCE 2.8% (in-line)",
-        "DXY 98.9 < 103 (not elevated)"
+        "DXY 99.0 < 103 (not elevated)"
       ]
     }
   },
@@ -147,10 +147,10 @@
     "anfci": -0.433,
     "hy_oas": 3.12,
     "ig_oas": 1.08,
-    "ecb_t": 7.2,
+    "ecb_t": 7.196,
     "boj_t": 4.178,
     "pboc_t": 7.232,
-    "g4_total_t": 25.285
+    "g4_total_t": 25.282
   },
   "inflation_expectations": {
     "exp_1y": {
