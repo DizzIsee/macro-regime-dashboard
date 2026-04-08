@@ -317,18 +317,29 @@ def main():
     # These will be updated when macro_data.json is wired to UI; here we hardcode
     # recent consensus estimates as fallback (they change monthly).
     signal_inputs = {
-        "ppi_yoy":      ppi["value"] if ppi else None,
-        "ppi_est":      2.6,
-        "core_pce_yoy": core_pce["value"] if core_pce else None,
-        "core_pce_est": 2.8,
-        "fed_action":   "hold",  # TODO: derive from fed_funds delta when FOMC action is known
-        "unemp_rate":   unemp["value"] if unemp else None,
-        "unemp_est":    4.3,
-        "nfp":          nfp["value"] if nfp else None,
-        "nfp_est":      100,
-        "yield_10y":    y10["value"] if y10 else None,
-        "wti":          wti["price"] if wti else None,
-        "vix":          vix["price"] if vix else None,
+        # Hawk rubric
+        "ppi_yoy":       ppi["value"] if ppi else None,
+        "ppi_est":       2.6,
+        "core_pce_yoy":  core_pce["value"] if core_pce else None,
+        "core_pce_est":  2.8,
+        "fed_action":    "hold",  # TODO: derive from fed_funds delta when FOMC action is known
+        # Dove rubric
+        "unemp_rate":    unemp["value"] if unemp else None,
+        "unemp_est":     4.3,
+        "nfp":           nfp["value"] if nfp else None,
+        "nfp_est":       100,
+        # Tight rubric
+        "yield_10y":     y10["value"] if y10 else None,
+        "wti":           wti["price"] if wti else None,
+        "vix":           vix["price"] if vix else None,
+        # Neutral informational (not in hawk/dove/tight rubric)
+        "cpi_yoy":       cpi["value"] if cpi else None,
+        "cpi_est":       2.4,
+        "core_cpi_yoy":  core_cpi["value"] if core_cpi else None,
+        "core_cpi_est":  2.5,
+        "pce_yoy":       pce["value"] if pce else None,
+        "pce_est":       2.8,
+        "dxy":           dxy["price"] if dxy else None,
     }
     signals = compute_signals(signal_inputs)
     print(f"  Signals: hawk={signals['hawk']['score']}, dove={signals['dove']['score']}, "

@@ -1540,7 +1540,11 @@
         var ul = col.querySelector('ul');
         var catLabel = cat.toUpperCase();
         if (title) title.innerHTML = catLabel + ' <span>' + score + ' pts</span>';
-        if (ul && sd[cat].items && sd[cat].items.length) {
+        // Always update ul — even when items is empty, clear stale hardcoded HTML.
+        // The old guard `&& sd[cat].items.length` caused the bug:
+        // dove.score=0 correctly set flex=0 on the bar but the ul was never
+        // cleared, leaving April 1 hardcoded items visible in the breakdown card.
+        if (ul && sd[cat].items) {
           ul.innerHTML = sd[cat].items.map(function(item) {
             return '<li><span class="sb-check">+1</span> ' + item + '</li>';
           }).join('');
