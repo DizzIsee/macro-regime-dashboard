@@ -157,6 +157,7 @@
           <div class="kl-delta delta-neutral">HOLD (2nd mtg)</div>
         </div>
       </div>
+      <div id="market-anchors-ts" class="panel-subtitle" style="margin-top:6px;"></div>
 
       <!-- CITATION BLOCK -->
       <div class="citation-block">
@@ -333,6 +334,7 @@
       <!-- RATE PROBABILITIES GRID -->
       <div class="fomc-grid-wrapper">
         <div class="fomc-grid-title">RATE PROBABILITIES BY MEETING <span class="fomc-grid-note">Highest probability per column highlighted</span></div>
+        <div id="fomc-probs-ts" class="panel-subtitle" style="margin-bottom:6px;"></div>
         <div class="fomc-grid-scroll">
           <table class="fomc-prob-table">
             <thead>
@@ -1635,6 +1637,25 @@
         footerEl.textContent = 'Data as of ' + updated.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' }) + '. Macro indicators reflect latest official releases. Market prices delayed ~15 min. Dashboard for informational purposes only — not investment advice.';
       }
     }
+    // ── Market Anchors timestamp ──────────────────────────────────
+    if (d.meta && d.meta.last_updated) {
+      var maTs = document.getElementById('market-anchors-ts');
+      if (maTs) maTs.textContent = 'Prices as of ' + fmtPacific(d.meta.last_updated);
+    }
+  }
+
+  // ── Pacific Time formatter (shared) ───────────────────────────
+  function fmtPacific(isoStr) {
+    var d = new Date(isoStr);
+    var datePart = d.toLocaleDateString('en-US', {
+      month: 'short', day: 'numeric', year: 'numeric',
+      timeZone: 'America/Los_Angeles'
+    });
+    var timePart = d.toLocaleTimeString('en-US', {
+      hour: 'numeric', minute: '2-digit', timeZoneName: 'short',
+      timeZone: 'America/Los_Angeles'
+    });
+    return datePart + ' \u2014 ' + timePart;
   }
 
   // ── FOMC probs handler ─────────────────────────────────────────
@@ -1661,6 +1682,12 @@
         cut25Cells[i + 1].textContent = mtg.cut25_prob.toFixed(1) + '%';
       }
     });
+
+    // ── FedWatch timestamp ─────────────────────────────────────────
+    if (f.meta && f.meta.last_updated) {
+      var fomcTs = document.getElementById('fomc-probs-ts');
+      if (fomcTs) fomcTs.textContent = 'FedWatch data as of ' + fmtPacific(f.meta.last_updated);
+    }
 
     // Disconnect alert: update year-end hold prob (last meeting = DEC)
     var lastMtg = meetings[meetings.length - 1];

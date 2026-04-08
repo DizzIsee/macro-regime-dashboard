@@ -2,13 +2,16 @@ name: Daily Data Update
 
 on:
   schedule:
-    - cron: '0 13 * * 1-5'   # 6:00 AM PDT (13:00 UTC) Mon–Fri
+    - cron: '0 13 * * 1-5'   # 6:00 AM PDT (13:00 UTC) Mon–Fri  — full FRED + Yahoo + AI narrative
     - cron: '0 14 * * 1-5'   # 7:00 AM PDT (14:00 UTC) backup run
+    - cron: '0 21 * * 1-5'   # 2:00 PM PDT (21:00 UTC) Mon–Fri  — intraday market prices only
   workflow_dispatch:           # Allow manual trigger from GitHub UI
 
 jobs:
+  # ── Full daily refresh (6 AM PDT) ────────────────────────────────────────
   update-data:
     runs-on: ubuntu-latest
+    if: github.event_name == 'workflow_dispatch' || (github.event_name == 'schedule' && (contains(github.event.schedule, '0 13') || contains(github.event.schedule, '0 14')))
 
     steps:
       - name: Checkout repo
@@ -40,8 +43,46 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data/macro_data.json data/chart_data.json data/t5yie_data.json data/fomc_probs.json
+          git add data/macro_data.json data/chart_data.json data/t5yie_data.json data/fomc_probs.json data/synthesis.json
           git diff --staged --quiet || git commit -m "chore: daily data update $(date -u +%Y-%m-%d)"
+
+      - name: Push changes
+        run: git push
+
+  # ── Intraday market price refresh (2 PM PDT) ─────────────────────────────
+  intraday-market-update:
+    runs-on: ubuntu-latest
+    if: github.event_name == 'schedule' && contains(github.event.schedule, '0 21')
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v5
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.11'
+
+      - name: Cache pip dependencies
+        uses: actions/cache@v5
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('requirements.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-pip-
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Fetch market prices and FOMC probabilities
+        run: python scripts/update_market_prices.py
+
+      - name: Commit updated market data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/macro_data.json data/fomc_probs.json
+          git diff --staged --quiet || git commit -m "chore: intraday market update $(date -u +%Y-%m-%dT%H:%M:%SZ)"
 
       - name: Push changes
         run: git push
