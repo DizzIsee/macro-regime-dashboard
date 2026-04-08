@@ -1,7 +1,7 @@
 {
   "meta": {
-    "last_updated": "2026-04-07T21:06:06Z",
-    "next_update": "2026-04-08T13:00:00Z"
+    "last_updated": "2026-04-08T16:44:42Z",
+    "next_update": "2026-04-09T13:00:00Z"
   },
   "inflation_labor": {
     "cpi_yoy": {
@@ -70,8 +70,8 @@
   },
   "market_anchors": {
     "spx": {
-      "value": 6617,
-      "delta_pct": 0.08,
+      "value": 6783,
+      "delta_pct": 2.5,
       "delta_dir": "up"
     },
     "yield_10y": {
@@ -80,19 +80,19 @@
       "delta_dir": "down"
     },
     "dxy": {
-      "value": 99.664,
-      "delta_pct": 0.41,
+      "value": 98.903,
+      "delta_pct": 0.07,
       "delta_dir": "down"
     },
     "wti": {
-      "value": 110.85,
-      "delta_pct": 4.11,
+      "value": 94.87,
+      "delta_pct": 1.67,
       "delta_dir": "down"
     },
     "vix": {
-      "value": 25.78,
-      "delta_pct": 6.75,
-      "delta_dir": "up"
+      "value": 20.95,
+      "delta_pct": 18.61,
+      "delta_dir": "down"
     },
     "fed_funds": {
       "value": "3.50\u20133.75%",
@@ -117,33 +117,40 @@
       "score": 3,
       "items": [
         "10Y 4.34% > 4.0%",
-        "WTI $110.85 > $80",
-        "VIX 25.78 > 20"
+        "WTI $94.87 > $80",
+        "VIX 20.95 > 20"
       ]
     },
     "neutral": {
       "score": 9,
-      "items": []
+      "items": [
+        "Unemployment 4.3% \u2264 Est 4.3% (in-line)",
+        "NFP +178K beat Est +100K",
+        "CPI 2.7% (hot)",
+        "Core CPI 2.7% (hot)",
+        "PCE 2.8% (in-line)",
+        "DXY 98.9 < 103 (not elevated)"
+      ]
     }
   },
   "liquidity": {
     "us_score": 0.6085,
-    "global_score": 0.0746,
-    "composite": 0.3416,
-    "composite_pctile": 34,
+    "global_score": 0.0074,
+    "composite": 0.308,
+    "composite_pctile": 31,
     "net_us_liq_t": 5.812,
     "walcl_t": 6.675,
     "tga_b": 847.7,
     "rrp_b": 15.3,
     "reserves_b": 3026.7,
-    "nfci": -0.43366,
-    "anfci": -0.42922,
-    "hy_oas": 3.05,
-    "ig_oas": 1.07,
-    "ecb_t": 7.148,
-    "boj_t": 4.285,
+    "nfci": -0.433,
+    "anfci": -0.433,
+    "hy_oas": 3.12,
+    "ig_oas": 1.08,
+    "ecb_t": 7.2,
+    "boj_t": 4.178,
     "pboc_t": 7.232,
-    "g4_total_t": 25.34
+    "g4_total_t": 25.285
   },
   "inflation_expectations": {
     "exp_1y": {
