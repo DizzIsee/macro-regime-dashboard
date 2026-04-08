@@ -1737,3 +1737,183 @@ body {
   .inf-horizon-val { font-size: 22px; }
   .inf-metric-val { font-size: 20px; }
 }
+
+/* ═══════════════════════════════════════════════════════════ */
+/* MARKET TREND GAUGE                                         */
+/* ═══════════════════════════════════════════════════════════ */
+
+/* Portfolio bias bar card */
+.gauge-bias-card {
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px 20px;
+  margin-bottom: 16px;
+}
+
+.gauge-bias-header {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.gauge-bias-label {
+  font-family: var(--font-mono);
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
+.gauge-bias-score {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.gauge-bar-track {
+  height: 10px;
+  background: var(--surface-3);
+  border-radius: 5px;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+.gauge-bar-fill {
+  height: 100%;
+  border-radius: 5px;
+  transition: width 0.5s ease, background-color 0.3s ease;
+}
+
+.gauge-interpretation {
+  font-size: 12px;
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+/* Asset table */
+.gauge-table-scroll {
+  overflow-x: auto;
+  margin-bottom: 8px;
+}
+
+.gauge-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.gauge-table thead th {
+  text-align: left;
+  padding: 6px 10px;
+  font-size: 9px;
+  letter-spacing: 0.08em;
+  color: var(--text-faint);
+  text-transform: uppercase;
+  border-bottom: 1px solid var(--border);
+}
+
+.gauge-table tbody td {
+  padding: 9px 10px;
+  color: var(--text);
+  border-bottom: 1px solid rgba(42, 46, 53, 0.5);
+  vertical-align: middle;
+}
+
+.gauge-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* Asset name cell */
+.gauge-asset-name {
+  font-weight: 600;
+  font-size: 13px;
+  color: var(--teal);
+}
+
+/* Score cell — number over mini bar */
+.gauge-score-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 52px;
+}
+
+.gauge-score-num {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.gauge-score-bar-bg {
+  width: 52px;
+  height: 3px;
+  background: var(--surface-3);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.gauge-score-bar-fill {
+  height: 100%;
+  border-radius: 2px;
+}
+
+/* SMA pill boxes */
+.sma-cell {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  align-items: flex-start;
+}
+
+.sma-pill {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  padding: 2px 6px;
+  border-radius: 3px;
+  line-height: 1.4;
+  letter-spacing: 0.03em;
+}
+
+.sma-pill-above {
+  background: rgba(79, 152, 163, 0.20);
+  border: 1px solid #4F98A3;
+  color: #4F98A3;
+}
+
+.sma-pill-below {
+  background: rgba(205, 80, 80, 0.15);
+  border: 1px solid #CD5050;
+  color: #CD5050;
+}
+
+.sma-days {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  padding-left: 1px;
+}
+
+.sma-days-above { color: #4F98A3; }
+.sma-days-below { color: #CD5050; }
+
+/* Dist 200 cell */
+.gauge-dist-above { color: #4F98A3; font-family: var(--font-mono); font-size: 12px; }
+.gauge-dist-below { color: #CD5050; font-family: var(--font-mono); font-size: 12px; }
+
+/* AS OF cell */
+.gauge-as-of {
+  font-size: 11px;
+  color: #797876;
+  font-style: italic;
+  white-space: nowrap;
+}
+
+/* Unavailable state */
+.gauge-unavailable {
+  color: var(--text-faint);
+  font-size: 12px;
+  padding: 16px 0 8px;
+}

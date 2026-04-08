@@ -5,6 +5,7 @@ on:
     - cron: '0 13 * * 1-5'   # 6:00 AM PDT (13:00 UTC) Mon–Fri  — full FRED + Yahoo + AI narrative
     - cron: '0 14 * * 1-5'   # 7:00 AM PDT (14:00 UTC) backup run
     - cron: '0 21 * * 1-5'   # 2:00 PM PDT (21:00 UTC) Mon–Fri  — intraday market prices only
+    - cron: '0 14 * * 0,6'   # 2:00 PM UTC Sat–Sun              — BTC-only gauge update
   workflow_dispatch:           # Allow manual trigger from GitHub UI
 
 jobs:
@@ -43,7 +44,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data/macro_data.json data/chart_data.json data/t5yie_data.json data/fomc_probs.json data/synthesis.json
+          git add data/macro_data.json data/chart_data.json data/t5yie_data.json data/fomc_probs.json data/synthesis.json data/market_gauge.json
           git diff --staged --quiet || git commit -m "chore: daily data update $(date -u +%Y-%m-%d)"
 
       - name: Push changes
@@ -74,15 +75,55 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
 
-      - name: Fetch market prices and FOMC probabilities
-        run: python scripts/update_market_prices.py
+      - name: Fetch market prices, FOMC probabilities, and market gauge
+        run: |
+          python scripts/update_market_prices.py
+          python scripts/market_gauge.py
 
       - name: Commit updated market data
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data/macro_data.json data/fomc_probs.json
+          git add data/macro_data.json data/fomc_probs.json data/market_gauge.json
           git diff --staged --quiet || git commit -m "chore: intraday market update $(date -u +%Y-%m-%dT%H:%M:%SZ)"
+
+      - name: Push changes
+        run: git push
+
+  # ── Weekend BTC-only gauge update (2 PM UTC Sat–Sun) ─────────────────────
+  weekend-btc-update:
+    runs-on: ubuntu-latest
+    if: github.event_name == 'schedule' && contains(github.event.schedule, '0 14 * * 0,6')
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v5
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.11'
+
+      - name: Cache pip dependencies
+        uses: actions/cache@v5
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('requirements.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-pip-
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Refresh BTC gauge data
+        run: python scripts/market_gauge.py --btc-only
+
+      - name: Commit BTC gauge update
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/market_gauge.json
+          git diff --staged --quiet || git commit -m "chore: weekend BTC gauge update $(date -u +%Y-%m-%d)"
 
       - name: Push changes
         run: git push

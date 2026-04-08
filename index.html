@@ -180,6 +180,53 @@
     </section>
 
     <!-- ═══════════════════════════════════════════════ -->
+    <!-- COMPONENT 1B: MARKET TREND GAUGE               -->
+    <!-- ═══════════════════════════════════════════════ -->
+    <section class="panel gauge-panel">
+      <div class="panel-header">
+        <h2>MARKET TREND GAUGE</h2>
+        <span class="panel-subtitle">SMA Positioning &amp; Risk Bias</span>
+      </div>
+
+      <!-- Section A: Portfolio Bias Bar -->
+      <div class="gauge-bias-card">
+        <div class="gauge-bias-header">
+          <span class="gauge-bias-label" id="gauge-bias-label">—</span>
+          <span class="gauge-bias-score" id="gauge-bias-score"></span>
+        </div>
+        <div class="gauge-bar-track">
+          <div class="gauge-bar-fill" id="gauge-bar-fill" style="width:0%;background:#555a63;"></div>
+        </div>
+        <div class="gauge-interpretation" id="gauge-interpretation">Loading gauge data…</div>
+      </div>
+
+      <!-- Section B: Asset Grid -->
+      <div class="gauge-table-scroll">
+        <table class="gauge-table">
+          <thead>
+            <tr>
+              <th>ASSET</th>
+              <th>SCORE</th>
+              <th>BIAS</th>
+              <th>10D SMA</th>
+              <th>20D SMA</th>
+              <th>50D SMA</th>
+              <th>200D SMA</th>
+              <th>ALIGNMENT</th>
+              <th>DIST 200</th>
+              <th>AS OF</th>
+            </tr>
+          </thead>
+          <tbody id="gauge-tbody">
+            <tr><td colspan="10" class="gauge-unavailable">Loading…</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div id="gauge-last-updated" class="panel-subtitle" style="margin-top:8px;"></div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════ -->
     <!-- COMPONENT 2: SIGNAL DISTRIBUTION GAUGE         -->
     <!-- ═══════════════════════════════════════════════ -->
     <section class="panel signal-panel">
@@ -1789,6 +1836,128 @@
       }).catch(function() {});
     });
 
+})();
+</script>
+
+<script>
+// ── Market Trend Gauge ───────────────────────────────────────────────────────
+(function(){
+  function gaugeColor(score) {
+    if (score >= 85) return '#1a6b2a';
+    if (score >= 70) return '#6FAA45';
+    if (score >= 50) return '#DA7101';
+    if (score >= 30) return '#CD5050';
+    return '#8B0000';
+  }
+
+  function alignText(n) {
+    if (n >= 4) return {text: 'FULL BULL', color: '#1a6b2a'};
+    if (n >= 3) return {text: 'PARTIAL',   color: '#6FAA45'};
+    if (n >= 2) return {text: 'MIXED',     color: '#DA7101'};
+    return              {text: 'BEARISH',  color: '#8B0000'};
+  }
+
+  function smaCell(sma) {
+    var pill  = sma.above ? '<span class="sma-pill sma-pill-above">ABOVE</span>'
+                           : '<span class="sma-pill sma-pill-below">BELOW</span>';
+    var sign  = sma.above ? '+' : '';
+    var dCls  = sma.above ? 'sma-days sma-days-above' : 'sma-days sma-days-below';
+    var days  = '<span class="' + dCls + '">' + sign + sma.days_count + 'd</span>';
+    return '<div class="sma-cell">' + pill + days + '</div>';
+  }
+
+  function scoreCell(score) {
+    var color = gaugeColor(score);
+    return '<div class="gauge-score-wrap">' +
+      '<span class="gauge-score-num" style="color:' + color + ';">' + score + '</span>' +
+      '<div class="gauge-score-bar-bg">' +
+        '<div class="gauge-score-bar-fill" style="width:' + score + '%;background:' + color + ';"></div>' +
+      '</div>' +
+    '</div>';
+  }
+
+  function biasCell(bias) {
+    var colorMap = {
+      'FULL BULL':   '#1a6b2a',
+      'RISK ON':     '#6FAA45',
+      'MIXED':       '#DA7101',
+      'RISK OFF':    '#CD5050',
+      'BEAR MARKET': '#8B0000'
+    };
+    var c = colorMap[bias] || '#8a8f98';
+    return '<span style="font-family:var(--font-mono);font-size:11px;color:' + c + ';">' + bias + '</span>';
+  }
+
+  fetch('./data/market_gauge.json')
+    .then(function(r) {
+      if (!r.ok) throw new Error('HTTP ' + r.status);
+      return r.json();
+    })
+    .then(function(d) {
+      var meta = d.meta || {};
+      var assets = d.assets || [];
+
+      // Section A — portfolio bias bar
+      var score = meta.portfolio_score || 0;
+      var color = gaugeColor(score);
+      var labelEl = document.getElementById('gauge-bias-label');
+      var scoreEl = document.getElementById('gauge-bias-score');
+      var fillEl  = document.getElementById('gauge-bar-fill');
+      var interpEl = document.getElementById('gauge-interpretation');
+      if (labelEl) { labelEl.textContent = meta.portfolio_bias || '—'; labelEl.style.color = color; }
+      if (scoreEl) scoreEl.textContent = score + ' / 100';
+      if (fillEl)  { fillEl.style.width = score + '%'; fillEl.style.background = color; }
+      if (interpEl && meta.interpretation) interpEl.textContent = meta.interpretation;
+
+      // Section B — asset rows
+      var tbody = document.getElementById('gauge-tbody');
+      if (!tbody || !assets.length) return;
+      tbody.innerHTML = '';
+      var equityDates = [], btcDate = '';
+      assets.forEach(function(a) {
+        var s = a.sma || {};
+        var al = alignText(a.alignment || 0);
+        var dist200 = s.sma200 ? s.sma200.distance_pct : null;
+        var distCell = dist200 != null
+          ? '<span class="' + (dist200 >= 0 ? 'gauge-dist-above' : 'gauge-dist-below') + '">'
+            + (dist200 >= 0 ? '+' : '') + dist200.toFixed(1) + '%</span>'
+          : '—';
+
+        var tr = document.createElement('tr');
+        tr.innerHTML =
+          '<td><span class="gauge-asset-name">' + a.ticker + '</span></td>' +
+          '<td>' + scoreCell(a.composite_score) + '</td>' +
+          '<td>' + biasCell(a.bias) + '</td>' +
+          '<td>' + (s.sma10  ? smaCell(s.sma10)  : '—') + '</td>' +
+          '<td>' + (s.sma20  ? smaCell(s.sma20)  : '—') + '</td>' +
+          '<td>' + (s.sma50  ? smaCell(s.sma50)  : '—') + '</td>' +
+          '<td>' + (s.sma200 ? smaCell(s.sma200) : '—') + '</td>' +
+          '<td><span style="font-family:var(--font-mono);font-size:11px;color:' + al.color + ';">' + al.text + '</span></td>' +
+          '<td>' + distCell + '</td>' +
+          '<td><span class="gauge-as-of">' + (a.as_of || '—') + '</span></td>';
+        tbody.appendChild(tr);
+
+        if (a.ticker === 'BTC') btcDate = a.as_of || '';
+        else if (a.as_of) equityDates.push(a.as_of);
+      });
+
+      // Last updated line
+      var luEl = document.getElementById('gauge-last-updated');
+      if (luEl) {
+        var eqDate = equityDates.length ? equityDates[0] : '—';
+        var parts = [];
+        if (eqDate) parts.push('Equities as of ' + eqDate);
+        if (btcDate) parts.push('BTC as of ' + btcDate);
+        luEl.textContent = parts.join(' \u00b7 ');
+      }
+    })
+    .catch(function(e) {
+      console.warn('market_gauge.json load failed:', e);
+      var tbody = document.getElementById('gauge-tbody');
+      if (tbody) tbody.innerHTML = '<tr><td colspan="10" class="gauge-unavailable">Gauge data unavailable</td></tr>';
+      var interpEl = document.getElementById('gauge-interpretation');
+      if (interpEl) interpEl.textContent = '';
+    });
 })();
 </script>
 

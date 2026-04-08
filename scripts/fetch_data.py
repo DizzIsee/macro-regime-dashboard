@@ -539,6 +539,13 @@ def main():
         print(f"  WARNING: narrative generation failed — {e}")
         print("  Continuing without synthesis.json update.")
 
+    print("\n=== Phase 10: Market Trend Gauge ===")
+    try:
+        from market_gauge import run_market_gauge
+        run_market_gauge()
+    except Exception as e:
+        print(f"  WARNING: market gauge failed — {e}")
+
     print("\n=== ALL DONE ===")
     print(f"  last_updated: {now_utc.strftime('%Y-%m-%dT%H:%M:%SZ')}")
 
