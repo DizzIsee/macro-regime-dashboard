@@ -1,6 +1,6 @@
 {
   "meta": {
-    "last_updated": "2026-04-10T23:00:15Z",
+    "last_updated": "2026-04-13T17:40:55Z",
     "current_rate_low": 3.5,
     "current_rate_high": 3.75
   },
@@ -29,23 +29,23 @@
     {
       "date": "Sep 16",
       "label": "SEP 16",
-      "hold_prob": 100.0,
-      "cut25_prob": 0.0,
+      "hold_prob": 96.0,
+      "cut25_prob": 4.0,
       "cut50_prob": 0.0
     },
     {
       "date": "Oct 28",
       "label": "OCT 28",
-      "hold_prob": 84.5,
-      "cut25_prob": 15.5,
-      "cut50_prob": 0.0
+      "hold_prob": 81.1,
+      "cut25_prob": 18.3,
+      "cut50_prob": 0.6
     },
     {
       "date": "Dec 9",
       "label": "DEC 9",
-      "hold_prob": 83.9,
-      "cut25_prob": 16.0,
-      "cut50_prob": 0.1
+      "hold_prob": 78.4,
+      "cut25_prob": 20.4,
+      "cut50_prob": 1.2
     }
   ]
 }
