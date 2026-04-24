@@ -1,7 +1,7 @@
 {
   "meta": {
-    "last_updated": "2026-04-23T23:32:20Z",
-    "next_update": "2026-04-24T13:00:00Z"
+    "last_updated": "2026-04-24T16:14:05Z",
+    "next_update": "2026-04-25T13:00:00Z"
   },
   "inflation_labor": {
     "cpi_yoy": {
@@ -55,10 +55,10 @@
       "date": "Mar 2026"
     },
     "umich_sent": {
-      "value": 56.6,
+      "value": 53.3,
       "estimate": 55.5,
-      "tag": "beat",
-      "date": "Feb 2026"
+      "tag": "miss",
+      "date": "Mar 2026"
     },
     "ism_mfg": {
       "value": 52.7,
@@ -70,29 +70,29 @@
   },
   "market_anchors": {
     "spx": {
-      "value": 7108,
-      "delta_pct": 0.41,
-      "delta_dir": "down"
+      "value": 7160,
+      "delta_pct": 0.73,
+      "delta_dir": "up"
     },
     "yield_10y": {
-      "value": 4.32,
-      "delta_bps": 3,
-      "delta_dir": "up"
+      "value": 4.3,
+      "delta_bps": null,
+      "delta_dir": "down"
     },
     "dxy": {
-      "value": 98.799,
-      "delta_pct": 0.09,
-      "delta_dir": "up"
+      "value": 98.547,
+      "delta_pct": 0.33,
+      "delta_dir": "down"
     },
     "wti": {
-      "value": 97.04,
-      "delta_pct": 2.63,
-      "delta_dir": "up"
+      "value": 93.52,
+      "delta_pct": 3.21,
+      "delta_dir": "down"
     },
     "vix": {
-      "value": 19.31,
-      "delta_pct": 2.12,
-      "delta_dir": "up"
+      "value": 18.6,
+      "delta_pct": 3.68,
+      "delta_dir": "down"
     },
     "fed_funds": {
       "value": "3.50\u20133.75%",
@@ -114,43 +114,43 @@
       "items": []
     },
     "tight": {
-      "score": 3,
+      "score": 2,
       "items": [
         "10Y 4.30% > 4.0%",
-        "WTI $98.24 > $80",
-        "VIX 20.70 > 20"
+        "WTI $93.52 > $80"
       ]
     },
     "neutral": {
-      "score": 9,
+      "score": 10,
       "items": [
         "Unemployment 4.3% \u2264 Est 4.3% (in-line)",
         "NFP +178K beat Est +100K",
+        "VIX 18.60 \u2264 20",
         "CPI 3.3% (hot)",
         "Core CPI 2.7% (hot)",
         "PCE 2.8% (in-line)",
-        "DXY 98.9 < 103 (not elevated)"
+        "DXY 98.5 < 103 (not elevated)"
       ]
     }
   },
   "liquidity": {
-    "us_score": 0.6862,
-    "global_score": 0.0444,
-    "composite": 0.3653,
-    "composite_pctile": 37,
-    "net_us_liq_t": 5.954,
-    "walcl_t": 6.706,
-    "tga_b": 751.4,
-    "rrp_b": 0.5,
-    "reserves_b": 3129.6,
+    "us_score": 0.5443,
+    "global_score": 0.0593,
+    "composite": 0.3018,
+    "composite_pctile": 30,
+    "net_us_liq_t": 5.701,
+    "walcl_t": 6.707,
+    "tga_b": 1006.0,
+    "rrp_b": 0.1,
+    "reserves_b": 2901.8,
     "nfci": -0.497,
     "anfci": -0.474,
-    "hy_oas": 2.84,
-    "ig_oas": 0.99,
-    "ecb_t": 7.268,
-    "boj_t": 4.147,
+    "hy_oas": 2.86,
+    "ig_oas": 1.0,
+    "ecb_t": 7.288,
+    "boj_t": 4.155,
     "pboc_t": 7.232,
-    "g4_total_t": 25.353
+    "g4_total_t": 25.382
   },
   "inflation_expectations": {
     "exp_1y": {
@@ -164,12 +164,12 @@
       "date": "Apr 2026"
     },
     "t5yie": {
-      "value": 2.61,
+      "value": 2.58,
       "source": "FRED T5YIE",
-      "date": "2026-04-22"
+      "date": "2026-04-23"
     },
     "t10yie": {
-      "value": 2.38,
+      "value": 2.42,
       "source": "FRED T10YIE",
       "date": "Apr 2026"
     },
