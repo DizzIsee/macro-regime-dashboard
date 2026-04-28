@@ -1,6 +1,6 @@
 {
   "meta": {
-    "last_updated": "2026-04-28T15:26:14Z",
+    "last_updated": "2026-04-28T21:53:53Z",
     "current_rate_low": 3.5,
     "current_rate_high": 3.75
   },
@@ -43,9 +43,9 @@
     {
       "date": "Dec 9",
       "label": "DEC 9",
-      "hold_prob": 85.6,
-      "cut25_prob": 14.0,
-      "cut50_prob": 0.3
+      "hold_prob": 80.9,
+      "cut25_prob": 18.1,
+      "cut50_prob": 1.0
     }
   ]
 }
