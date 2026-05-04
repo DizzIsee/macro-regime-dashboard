@@ -1,6 +1,6 @@
 {
   "meta": {
-    "last_updated": "2026-05-04T15:56:12Z",
+    "last_updated": "2026-05-04T21:57:00Z",
     "portfolio_bias": "FULL BULL",
     "portfolio_score": 90,
     "interpretation": "All major assets in full bull alignment \u2014 size up aggressively on A+ setups"
@@ -9,35 +9,35 @@
     {
       "ticker": "SPX",
       "yf_ticker": "^GSPC",
-      "close": 7203.29,
+      "close": 7200.75,
       "as_of": "May 4, 2026 close",
       "composite_score": 95,
       "bias": "FULL BULL",
       "alignment": 4,
-      "vix": 18.56,
+      "vix": 18.29,
       "sma": {
         "sma10": {
-          "value": 7156.65,
+          "value": 7156.39,
           "above": true,
-          "distance_pct": 0.65,
+          "distance_pct": 0.62,
           "days_count": 24
         },
         "sma20": {
-          "value": 7038.04,
+          "value": 7037.91,
           "above": true,
-          "distance_pct": 2.35,
+          "distance_pct": 2.31,
           "days_count": 21
         },
         "sma50": {
-          "value": 6827.79,
+          "value": 6827.74,
           "above": true,
-          "distance_pct": 5.5,
+          "distance_pct": 5.46,
           "days_count": 19
         },
         "sma200": {
-          "value": 6732.97,
+          "value": 6732.96,
           "above": true,
-          "distance_pct": 6.99,
+          "distance_pct": 6.95,
           "days_count": 19
         }
       }
@@ -45,35 +45,35 @@
     {
       "ticker": "QQQ",
       "yf_ticker": "QQQ",
-      "close": 672.21,
+      "close": 672.88,
       "as_of": "May 4, 2026 close",
       "composite_score": 95,
       "bias": "FULL BULL",
       "alignment": 4,
-      "vix": 18.56,
+      "vix": 18.29,
       "sma": {
         "sma10": {
-          "value": 661.22,
+          "value": 661.29,
           "above": true,
-          "distance_pct": 1.66,
+          "distance_pct": 1.75,
           "days_count": 23
         },
         "sma20": {
-          "value": 642.38,
+          "value": 642.41,
           "above": true,
-          "distance_pct": 4.64,
+          "distance_pct": 4.74,
           "days_count": 21
         },
         "sma50": {
-          "value": 613.63,
+          "value": 613.64,
           "above": true,
-          "distance_pct": 9.55,
+          "distance_pct": 9.65,
           "days_count": 19
         },
         "sma200": {
           "value": 603.43,
           "above": true,
-          "distance_pct": 11.4,
+          "distance_pct": 11.51,
           "days_count": 19
         }
       }
@@ -81,35 +81,35 @@
     {
       "ticker": "IWM",
       "yf_ticker": "IWM",
-      "close": 277.85,
+      "close": 277.88,
       "as_of": "May 4, 2026 close",
       "composite_score": 95,
       "bias": "FULL BULL",
       "alignment": 4,
-      "vix": 18.56,
+      "vix": 18.29,
       "sma": {
         "sma10": {
           "value": 276.14,
           "above": true,
-          "distance_pct": 0.62,
+          "distance_pct": 0.63,
           "days_count": 3
         },
         "sma20": {
-          "value": 271.21,
+          "value": 271.22,
           "above": true,
-          "distance_pct": 2.45,
+          "distance_pct": 2.46,
           "days_count": 23
         },
         "sma50": {
           "value": 259.87,
           "above": true,
-          "distance_pct": 6.92,
+          "distance_pct": 6.93,
           "days_count": 19
         },
         "sma200": {
           "value": 247.45,
           "above": true,
-          "distance_pct": 12.29,
+          "distance_pct": 12.3,
           "days_count": 24
         }
       }
@@ -117,7 +117,7 @@
     {
       "ticker": "BTC",
       "yf_ticker": "BTC-USD",
-      "close": 79988.0,
+      "close": 80269.23,
       "as_of": "May 4, 2026",
       "composite_score": 68,
       "bias": "MIXED",
@@ -125,27 +125,27 @@
       "vix": null,
       "sma": {
         "sma10": {
-          "value": 77742.98,
+          "value": 77771.1,
           "above": true,
-          "distance_pct": 2.89,
+          "distance_pct": 3.21,
           "days_count": 4
         },
         "sma20": {
-          "value": 77012.45,
+          "value": 77026.52,
           "above": true,
-          "distance_pct": 3.86,
+          "distance_pct": 4.21,
           "days_count": 30
         },
         "sma50": {
-          "value": 72793.15,
+          "value": 72798.78,
           "above": true,
-          "distance_pct": 9.88,
+          "distance_pct": 10.26,
           "days_count": 30
         },
         "sma200": {
-          "value": 83544.94,
+          "value": 83546.35,
           "above": false,
-          "distance_pct": -4.26,
+          "distance_pct": -3.92,
           "days_count": 183
         }
       }
