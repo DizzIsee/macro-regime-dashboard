@@ -1,6 +1,6 @@
 {
   "meta": {
-    "last_updated": "2026-05-25T16:17:20Z",
+    "last_updated": "2026-05-25T22:04:14Z",
     "next_update": "2026-05-26T13:00:00Z"
   },
   "inflation_labor": {
@@ -75,13 +75,13 @@
       "delta_dir": "up"
     },
     "yield_10y": {
-      "value": 4.57,
-      "delta_bps": null,
+      "value": 4.56,
+      "delta_bps": -3,
       "delta_dir": "down"
     },
     "dxy": {
-      "value": 98.989,
-      "delta_pct": 0.33,
+      "value": 99.239,
+      "delta_pct": 0.08,
       "delta_dir": "down"
     },
     "wti": {
