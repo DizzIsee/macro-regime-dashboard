@@ -1,7 +1,7 @@
 {
   "meta": {
-    "last_updated": "2026-05-25T22:04:14Z",
-    "next_update": "2026-05-26T13:00:00Z"
+    "last_updated": "2026-05-26T16:41:40Z",
+    "next_update": "2026-05-27T13:00:00Z"
   },
   "inflation_labor": {
     "cpi_yoy": {
@@ -70,29 +70,29 @@
   },
   "market_anchors": {
     "spx": {
-      "value": 7473,
-      "delta_pct": 0.37,
+      "value": 7511,
+      "delta_pct": 0.5,
       "delta_dir": "up"
     },
     "yield_10y": {
-      "value": 4.56,
-      "delta_bps": -3,
+      "value": 4.57,
+      "delta_bps": null,
       "delta_dir": "down"
     },
     "dxy": {
-      "value": 99.239,
-      "delta_pct": 0.08,
-      "delta_dir": "down"
+      "value": 99.168,
+      "delta_pct": 0.13,
+      "delta_dir": "up"
     },
     "wti": {
-      "value": 96.6,
-      "delta_pct": 0.88,
+      "value": 93.98,
+      "delta_pct": 2.71,
       "delta_dir": "down"
     },
     "vix": {
-      "value": 16.59,
-      "delta_pct": 0.66,
-      "delta_dir": "down"
+      "value": 17.03,
+      "delta_pct": 2.65,
+      "delta_dir": "up"
     },
     "fed_funds": {
       "value": "3.50\u20133.75%",
@@ -117,7 +117,7 @@
       "score": 2,
       "items": [
         "10Y 4.57% > 4.0%",
-        "WTI $96.60 > $80"
+        "WTI $93.98 > $80"
       ]
     },
     "neutral": {
@@ -125,18 +125,18 @@
       "items": [
         "Unemployment 4.3% \u2264 Est 4.3% (in-line)",
         "NFP +115K beat Est +100K",
-        "VIX 16.59 \u2264 20",
+        "VIX 17.03 \u2264 20",
         "CPI 4.0% (hot)",
         "Core CPI 3.0% (hot)",
         "PCE 3.5% (hot)",
-        "DXY 99.0 < 103 (not elevated)"
+        "DXY 99.2 < 103 (not elevated)"
       ]
     }
   },
   "liquidity": {
     "us_score": 0.6708,
-    "global_score": 0.1029,
-    "composite": 0.3868,
+    "global_score": 0.1176,
+    "composite": 0.3942,
     "composite_pctile": 39,
     "net_us_liq_t": 5.919,
     "walcl_t": 6.714,
@@ -145,12 +145,12 @@
     "reserves_b": 3129.6,
     "nfci": -0.523,
     "anfci": -0.478,
-    "hy_oas": 2.78,
-    "ig_oas": 0.94,
+    "hy_oas": 2.74,
+    "ig_oas": 0.93,
     "ecb_t": 7.194,
-    "boj_t": 4.174,
+    "boj_t": 4.163,
     "pboc_t": 7.232,
-    "g4_total_t": 25.314
+    "g4_total_t": 25.302
   },
   "inflation_expectations": {
     "exp_1y": {
