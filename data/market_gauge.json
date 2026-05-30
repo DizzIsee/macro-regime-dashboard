@@ -1,8 +1,8 @@
 {
   "meta": {
-    "last_updated": "2026-05-29T22:26:20Z",
+    "last_updated": "2026-05-30T15:04:36Z",
     "portfolio_bias": "RISK ON",
-    "portfolio_score": 78,
+    "portfolio_score": 77,
     "interpretation": "Risk-on environment \u2014 run full playbook with normal sizing"
   },
   "assets": [
@@ -117,35 +117,35 @@
     {
       "ticker": "BTC",
       "yf_ticker": "BTC-USD",
-      "close": 73423.66,
-      "as_of": "May 29, 2026",
-      "composite_score": 12,
+      "close": 73792.77,
+      "as_of": "May 30, 2026",
+      "composite_score": 6,
       "bias": "BEAR MARKET",
-      "alignment": 1,
+      "alignment": 0,
       "vix": null,
       "sma": {
         "sma10": {
-          "value": 75855.03,
+          "value": 75483.41,
           "above": false,
-          "distance_pct": -3.21,
-          "days_count": 4
+          "distance_pct": -2.24,
+          "days_count": 5
         },
         "sma20": {
-          "value": 77577.74,
+          "value": 77157.88,
           "above": false,
-          "distance_pct": -5.35,
-          "days_count": 15
+          "distance_pct": -4.36,
+          "days_count": 16
         },
         "sma50": {
-          "value": 77206.25,
+          "value": 77221.5,
           "above": false,
-          "distance_pct": -4.9,
-          "days_count": 4
+          "distance_pct": -4.44,
+          "days_count": 5
         },
         "sma200": {
-          "value": 79809.48,
+          "value": 79663.2,
           "above": false,
-          "distance_pct": -8.0,
+          "distance_pct": -7.37,
           "days_count": 201
         }
       }
