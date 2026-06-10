@@ -1,6 +1,6 @@
 {
   "meta": {
-    "last_updated": "2026-06-10T16:35:11Z",
+    "last_updated": "2026-06-10T16:55:30Z",
     "next_update": "2026-06-11T13:00:00Z"
   },
   "inflation_labor": {
@@ -70,8 +70,8 @@
   },
   "market_anchors": {
     "spx": {
-      "value": 7326,
-      "delta_pct": 0.81,
+      "value": 7308,
+      "delta_pct": 1.06,
       "delta_dir": "down"
     },
     "yield_10y": {
@@ -80,18 +80,18 @@
       "delta_dir": "down"
     },
     "dxy": {
-      "value": 99.88,
+      "value": 99.882,
       "delta_pct": 0.03,
       "delta_dir": "down"
     },
     "wti": {
-      "value": 91.02,
-      "delta_pct": 2.72,
+      "value": 91.05,
+      "delta_pct": 2.75,
       "delta_dir": "up"
     },
     "vix": {
-      "value": 22.06,
-      "delta_pct": 11.02,
+      "value": 21.44,
+      "delta_pct": 7.9,
       "delta_dir": "up"
     },
     "fed_funds": {
@@ -117,8 +117,8 @@
       "score": 3,
       "items": [
         "10Y 4.56% > 4.0%",
-        "WTI $91.02 > $80",
-        "VIX 22.06 > 20"
+        "WTI $91.05 > $80",
+        "VIX 21.44 > 20"
       ]
     },
     "neutral": {
@@ -147,10 +147,10 @@
     "anfci": -0.463,
     "hy_oas": 2.78,
     "ig_oas": 0.93,
-    "ecb_t": 7.094,
+    "ecb_t": 7.092,
     "boj_t": 4.14,
     "pboc_t": 7.232,
-    "g4_total_t": 25.178
+    "g4_total_t": 25.175
   },
   "inflation_expectations": {
     "exp_1y": {
