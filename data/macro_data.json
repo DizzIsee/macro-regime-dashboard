@@ -1,7 +1,7 @@
 {
   "meta": {
-    "last_updated": "2026-06-10T22:49:57Z",
-    "next_update": "2026-06-11T13:00:00Z"
+    "last_updated": "2026-06-11T16:53:56Z",
+    "next_update": "2026-06-12T13:00:00Z"
   },
   "inflation_labor": {
     "cpi_yoy": {
@@ -17,10 +17,10 @@
       "date": "May 2026"
     },
     "ppi_yoy": {
-      "value": 9.82,
+      "value": 13.08,
       "estimate": 2.6,
       "tag": "hot",
-      "date": "Apr 2026"
+      "date": "May 2026"
     },
     "pce_yoy": {
       "value": 3.77,
@@ -41,7 +41,7 @@
       "date": "May 2026"
     },
     "initial_claims": {
-      "value": 225.0,
+      "value": 229.0,
       "estimate": 210,
       "tag": "inline",
       "date": "Wkly"
@@ -70,29 +70,29 @@
   },
   "market_anchors": {
     "spx": {
-      "value": 7267,
-      "delta_pct": 1.62,
-      "delta_dir": "down"
-    },
-    "yield_10y": {
-      "value": 4.54,
-      "delta_bps": 1,
+      "value": 7286,
+      "delta_pct": 0.26,
       "delta_dir": "up"
     },
+    "yield_10y": {
+      "value": 4.53,
+      "delta_bps": null,
+      "delta_dir": "down"
+    },
     "dxy": {
-      "value": 100.082,
-      "delta_pct": 0.17,
+      "value": 100.266,
+      "delta_pct": 0.3,
       "delta_dir": "up"
     },
     "wti": {
-      "value": 92.14,
-      "delta_pct": 3.98,
-      "delta_dir": "up"
+      "value": 91.1,
+      "delta_pct": 0.77,
+      "delta_dir": "down"
     },
     "vix": {
-      "value": 22.22,
-      "delta_pct": 11.83,
-      "delta_dir": "up"
+      "value": 21.27,
+      "delta_pct": 4.28,
+      "delta_dir": "down"
     },
     "fed_funds": {
       "value": "3.50\u20133.75%",
@@ -104,7 +104,7 @@
     "hawk": {
       "score": 3,
       "items": [
-        "PPI 9.8% > Est 2.6%",
+        "PPI 13.1% > Est 2.6%",
         "Core PCE 3.3% > Est 2.8%",
         "Fed on hold"
       ]
@@ -116,9 +116,9 @@
     "tight": {
       "score": 3,
       "items": [
-        "10Y 4.56% > 4.0%",
-        "WTI $91.05 > $80",
-        "VIX 21.44 > 20"
+        "10Y 4.53% > 4.0%",
+        "WTI $91.10 > $80",
+        "VIX 21.27 > 20"
       ]
     },
     "neutral": {
@@ -129,47 +129,47 @@
         "CPI 4.3% (hot)",
         "Core CPI 3.0% (hot)",
         "PCE 3.8% (hot)",
-        "DXY 99.9 < 103 (not elevated)"
+        "DXY 100.3 < 103 (not elevated)"
       ]
     }
   },
   "liquidity": {
-    "us_score": 0.6263,
+    "us_score": 0.6147,
     "global_score": 0.073,
-    "composite": 0.3496,
-    "composite_pctile": 35,
-    "net_us_liq_t": 5.834,
+    "composite": 0.3438,
+    "composite_pctile": 34,
+    "net_us_liq_t": 5.835,
     "walcl_t": 6.711,
     "tga_b": 875.7,
-    "rrp_b": 0.6,
+    "rrp_b": 0.4,
     "reserves_b": 3013.9,
     "nfci": -0.506,
     "anfci": -0.463,
-    "hy_oas": 2.78,
-    "ig_oas": 0.93,
-    "ecb_t": 7.092,
-    "boj_t": 4.14,
+    "hy_oas": 2.8,
+    "ig_oas": 0.94,
+    "ecb_t": 7.065,
+    "boj_t": 4.139,
     "pboc_t": 7.232,
-    "g4_total_t": 25.175
+    "g4_total_t": 25.147
   },
   "inflation_expectations": {
     "exp_1y": {
-      "value": 3.53651546,
+      "value": 3.01917236,
       "source": "Cleveland Fed",
-      "date": "May 2026"
+      "date": "Jun 2026"
     },
     "exp_2y": {
-      "value": 2.98196274,
+      "value": 2.74976502,
       "source": "Cleveland Fed",
-      "date": "May 2026"
+      "date": "Jun 2026"
     },
     "t5yie": {
       "value": 2.44,
       "source": "FRED T5YIE",
-      "date": "2026-06-09"
+      "date": "2026-06-10"
     },
     "t10yie": {
-      "value": 2.33,
+      "value": 2.34,
       "source": "FRED T10YIE",
       "date": "Jun 2026"
     },
