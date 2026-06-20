@@ -1,6 +1,6 @@
 {
   "meta": {
-    "last_updated": "2026-06-19T22:01:11Z",
+    "last_updated": "2026-06-20T15:45:00Z",
     "portfolio_bias": "MIXED",
     "portfolio_score": 60,
     "interpretation": "Mixed signals \u2014 reduce size, skip B setups, favor stronger assets"
@@ -117,35 +117,35 @@
     {
       "ticker": "BTC",
       "yf_ticker": "BTC-USD",
-      "close": 63042.28,
-      "as_of": "Jun 19, 2026",
-      "composite_score": 1,
+      "close": 64050.75,
+      "as_of": "Jun 20, 2026",
+      "composite_score": 2,
       "bias": "BEAR MARKET",
       "alignment": 0,
       "vix": null,
       "sma": {
         "sma10": {
-          "value": 63815.79,
+          "value": 64258.54,
           "above": false,
-          "distance_pct": -1.21,
+          "distance_pct": -0.32,
           "days_count": 2
         },
         "sma20": {
-          "value": 64972.6,
+          "value": 64588.42,
           "above": false,
-          "distance_pct": -2.97,
-          "days_count": 35
+          "distance_pct": -0.83,
+          "days_count": 36
         },
         "sma50": {
-          "value": 72913.56,
+          "value": 72708.9,
           "above": false,
-          "distance_pct": -13.54,
-          "days_count": 24
+          "distance_pct": -11.91,
+          "days_count": 25
         },
         "sma200": {
-          "value": 77117.74,
+          "value": 77016.49,
           "above": false,
-          "distance_pct": -18.25,
+          "distance_pct": -16.84,
           "days_count": 200
         }
       }
