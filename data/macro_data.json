@@ -1,6 +1,6 @@
 {
   "meta": {
-    "last_updated": "2026-07-01T15:40:03Z",
+    "last_updated": "2026-07-01T16:21:10Z",
     "next_update": "2026-07-02T13:00:00Z"
   },
   "inflation_labor": {
@@ -70,8 +70,8 @@
   },
   "market_anchors": {
     "spx": {
-      "value": 7513,
-      "delta_pct": 0.19,
+      "value": 7518,
+      "delta_pct": 0.25,
       "delta_dir": "up"
     },
     "yield_10y": {
@@ -80,18 +80,18 @@
       "delta_dir": "down"
     },
     "dxy": {
-      "value": 101.302,
+      "value": 101.303,
       "delta_pct": 0.03,
       "delta_dir": "down"
     },
     "wti": {
-      "value": 68.15,
-      "delta_pct": 2.38,
+      "value": 68.14,
+      "delta_pct": 2.39,
       "delta_dir": "down"
     },
     "vix": {
-      "value": 16.13,
-      "delta_pct": 1.95,
+      "value": 16.06,
+      "delta_pct": 2.37,
       "delta_dir": "down"
     },
     "fed_funds": {
@@ -124,8 +124,8 @@
       "items": [
         "Unemployment 4.3% \u2264 Est 4.3% (in-line)",
         "NFP +172K beat Est +100K",
-        "WTI $68.15 \u2264 $80",
-        "VIX 16.13 \u2264 20",
+        "WTI $68.14 \u2264 $80",
+        "VIX 16.06 \u2264 20",
         "CPI 4.3% (hot)",
         "Core CPI 3.0% (hot)",
         "PCE 4.1% (hot)",
@@ -135,9 +135,9 @@
   },
   "liquidity": {
     "us_score": 0.6073,
-    "global_score": 0.1825,
-    "composite": 0.3949,
-    "composite_pctile": 39,
+    "global_score": 0.2044,
+    "composite": 0.4058,
+    "composite_pctile": 41,
     "net_us_liq_t": 5.811,
     "walcl_t": 6.736,
     "tga_b": 918.7,
@@ -147,10 +147,10 @@
     "anfci": -0.486,
     "hy_oas": 2.75,
     "ig_oas": 0.95,
-    "ecb_t": 6.969,
-    "boj_t": 4.09,
+    "ecb_t": 6.968,
+    "boj_t": 4.091,
     "pboc_t": 7.232,
-    "g4_total_t": 25.027
+    "g4_total_t": 25.026
   },
   "inflation_expectations": {
     "exp_1y": {
