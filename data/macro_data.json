@@ -1,6 +1,6 @@
 {
   "meta": {
-    "last_updated": "2026-07-02T15:13:49Z",
+    "last_updated": "2026-07-02T16:00:52Z",
     "next_update": "2026-07-03T13:00:00Z"
   },
   "inflation_labor": {
@@ -70,9 +70,9 @@
   },
   "market_anchors": {
     "spx": {
-      "value": 7491,
-      "delta_pct": 0.1,
-      "delta_dir": "up"
+      "value": 7469,
+      "delta_pct": 0.19,
+      "delta_dir": "down"
     },
     "yield_10y": {
       "value": 4.44,
@@ -80,19 +80,19 @@
       "delta_dir": "down"
     },
     "dxy": {
-      "value": 100.743,
-      "delta_pct": 0.61,
+      "value": 100.775,
+      "delta_pct": 0.58,
       "delta_dir": "down"
     },
     "wti": {
-      "value": 67.79,
-      "delta_pct": 0.12,
-      "delta_dir": "up"
+      "value": 67.57,
+      "delta_pct": 0.21,
+      "delta_dir": "down"
     },
     "vix": {
-      "value": 16.25,
-      "delta_pct": 1.93,
-      "delta_dir": "down"
+      "value": 16.6,
+      "delta_pct": 0.18,
+      "delta_dir": "up"
     },
     "fed_funds": {
       "value": "3.50\u20133.75%",
@@ -125,12 +125,12 @@
       "score": 10,
       "items": [
         "Unemployment 4.2% \u2264 Est 4.3% (in-line)",
-        "WTI $67.79 \u2264 $80",
-        "VIX 16.25 \u2264 20",
+        "WTI $67.57 \u2264 $80",
+        "VIX 16.60 \u2264 20",
         "CPI 4.3% (hot)",
         "Core CPI 3.0% (hot)",
         "PCE 4.1% (hot)",
-        "DXY 100.7 < 103 (not elevated)"
+        "DXY 100.8 < 103 (not elevated)"
       ]
     }
   },
@@ -148,7 +148,7 @@
     "anfci": -0.486,
     "hy_oas": 2.74,
     "ig_oas": 0.94,
-    "ecb_t": 7.005,
+    "ecb_t": 7.004,
     "boj_t": 4.129,
     "pboc_t": 7.232,
     "g4_total_t": 25.101
