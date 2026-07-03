@@ -1,8 +1,8 @@
 {
   "meta": {
-    "last_updated": "2026-07-03T15:09:53Z",
+    "last_updated": "2026-07-03T15:50:23Z",
     "portfolio_bias": "MIXED",
-    "portfolio_score": 68,
+    "portfolio_score": 66,
     "interpretation": "Mixed signals \u2014 reduce size, skip B setups, favor stronger assets"
   },
   "assets": [
@@ -14,7 +14,7 @@
       "composite_score": 89,
       "bias": "FULL BULL",
       "alignment": 3,
-      "vix": 15.8,
+      "vix": 15.81,
       "sma": {
         "sma10": {
           "value": 7431.48,
@@ -50,7 +50,7 @@
       "composite_score": 61,
       "bias": "MIXED",
       "alignment": 3,
-      "vix": 15.8,
+      "vix": 15.81,
       "sma": {
         "sma10": {
           "value": 722.32,
@@ -86,7 +86,7 @@
       "composite_score": 75,
       "bias": "RISK ON",
       "alignment": 3,
-      "vix": 15.8,
+      "vix": 15.81,
       "sma": {
         "sma10": {
           "value": 298.08,
@@ -117,35 +117,35 @@
     {
       "ticker": "BTC",
       "yf_ticker": "BTC-USD",
-      "close": 62272.03,
+      "close": 61768.0,
       "as_of": "Jul 3, 2026",
-      "composite_score": 35,
-      "bias": "RISK OFF",
+      "composite_score": 21,
+      "bias": "BEAR MARKET",
       "alignment": 1,
       "vix": null,
       "sma": {
         "sma10": {
-          "value": 60266.4,
+          "value": 60216.0,
           "above": true,
-          "distance_pct": 3.33,
+          "distance_pct": 2.58,
           "days_count": 2
         },
         "sma20": {
-          "value": 62260.88,
-          "above": true,
-          "distance_pct": 0.02,
-          "days_count": 1
+          "value": 62235.68,
+          "above": false,
+          "distance_pct": -0.75,
+          "days_count": 11
         },
         "sma50": {
-          "value": 67359.22,
+          "value": 67349.14,
           "above": false,
-          "distance_pct": -7.55,
+          "distance_pct": -8.29,
           "days_count": 39
         },
         "sma200": {
-          "value": 74948.96,
+          "value": 74946.44,
           "above": false,
-          "distance_pct": -16.91,
+          "distance_pct": -17.58,
           "days_count": 201
         }
       }
