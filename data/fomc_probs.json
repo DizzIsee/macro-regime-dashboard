@@ -1,6 +1,6 @@
 {
   "meta": {
-    "last_updated": "2026-07-03T22:01:54Z",
+    "last_updated": "2026-07-06T16:19:49Z",
     "current_rate_low": 3.5,
     "current_rate_high": 3.75
   },
@@ -16,16 +16,17 @@
     {
       "date": "Jun 17",
       "label": "JUN 17",
-      "hold_prob": 100.0,
-      "cut25_prob": 0.0,
-      "cut50_prob": 0
+      "hold_prob": null,
+      "cut25_prob": null,
+      "cut50_prob": null,
+      "error": "data unavailable"
     },
     {
       "date": "Jul 29",
       "label": "JUL 29",
       "hold_prob": 100.0,
       "cut25_prob": 0.0,
-      "cut50_prob": 0.0
+      "cut50_prob": 0
     },
     {
       "date": "Sep 16",
