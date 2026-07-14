@@ -1,20 +1,20 @@
 {
   "meta": {
-    "last_updated": "2026-07-13T21:52:21Z",
-    "next_update": "2026-07-14T13:00:00Z"
+    "last_updated": "2026-07-14T14:48:29Z",
+    "next_update": "2026-07-15T13:00:00Z"
   },
   "inflation_labor": {
     "cpi_yoy": {
-      "value": 4.27,
+      "value": 3.73,
       "estimate": 2.4,
       "tag": "hot",
-      "date": "May 2026"
+      "date": "Jun 2026"
     },
     "core_cpi_yoy": {
-      "value": 2.96,
+      "value": 2.81,
       "estimate": 2.5,
       "tag": "hot",
-      "date": "May 2026"
+      "date": "Jun 2026"
     },
     "ppi_yoy": {
       "value": 13.08,
@@ -70,29 +70,29 @@
   },
   "market_anchors": {
     "spx": {
-      "value": 7515,
-      "delta_pct": 0.79,
-      "delta_dir": "down"
+      "value": 7536,
+      "delta_pct": 0.28,
+      "delta_dir": "up"
     },
     "yield_10y": {
-      "value": 4.61,
-      "delta_bps": 4,
-      "delta_dir": "up"
+      "value": 4.56,
+      "delta_bps": null,
+      "delta_dir": "down"
     },
     "dxy": {
-      "value": 101.274,
-      "delta_pct": 0.15,
-      "delta_dir": "up"
+      "value": 100.719,
+      "delta_pct": 0.45,
+      "delta_dir": "down"
     },
     "wti": {
-      "value": 78.0,
-      "delta_pct": 4.99,
-      "delta_dir": "up"
+      "value": 79.2,
+      "delta_pct": 0.54,
+      "delta_dir": "down"
     },
     "vix": {
-      "value": 17.16,
-      "delta_pct": 14.1,
-      "delta_dir": "up"
+      "value": 16.41,
+      "delta_pct": 4.31,
+      "delta_dir": "down"
     },
     "fed_funds": {
       "value": "3.50\u20133.75%",
@@ -118,19 +118,19 @@
     "tight": {
       "score": 1,
       "items": [
-        "10Y 4.54% > 4.0%"
+        "10Y 4.56% > 4.0%"
       ]
     },
     "neutral": {
       "score": 10,
       "items": [
         "Unemployment 4.2% \u2264 Est 4.3% (in-line)",
-        "WTI $75.00 \u2264 $80",
-        "VIX 16.24 \u2264 20",
-        "CPI 4.3% (hot)",
-        "Core CPI 3.0% (hot)",
+        "WTI $79.20 \u2264 $80",
+        "VIX 16.41 \u2264 20",
+        "CPI 3.7% (hot)",
+        "Core CPI 2.8% (hot)",
         "PCE 4.1% (hot)",
-        "DXY 101.1 < 103 (not elevated)"
+        "DXY 100.7 < 103 (not elevated)"
       ]
     }
   },
@@ -148,10 +148,10 @@
     "anfci": -0.506,
     "hy_oas": 2.69,
     "ig_oas": 0.96,
-    "ecb_t": 6.821,
-    "boj_t": 3.939,
+    "ecb_t": 6.851,
+    "boj_t": 3.949,
     "pboc_t": 7.232,
-    "g4_total_t": 24.728
+    "g4_total_t": 24.768
   },
   "inflation_expectations": {
     "exp_1y": {
@@ -165,12 +165,12 @@
       "date": "Jun 2026"
     },
     "t5yie": {
-      "value": 2.28,
+      "value": 2.31,
       "source": "FRED T5YIE",
-      "date": "2026-07-10"
+      "date": "2026-07-13"
     },
     "t10yie": {
-      "value": 2.24,
+      "value": 2.26,
       "source": "FRED T10YIE",
       "date": "Jul 2026"
     },
