@@ -1,7 +1,7 @@
 {
   "meta": {
-    "last_updated": "2026-07-14T21:54:14Z",
-    "next_update": "2026-07-15T13:00:00Z"
+    "last_updated": "2026-07-15T14:48:20Z",
+    "next_update": "2026-07-16T13:00:00Z"
   },
   "inflation_labor": {
     "cpi_yoy": {
@@ -70,28 +70,28 @@
   },
   "market_anchors": {
     "spx": {
-      "value": 7544,
-      "delta_pct": 0.38,
+      "value": 7559,
+      "delta_pct": 0.2,
       "delta_dir": "up"
     },
     "yield_10y": {
-      "value": 4.59,
-      "delta_bps": -2,
+      "value": 4.62,
+      "delta_bps": null,
       "delta_dir": "down"
     },
     "dxy": {
-      "value": 100.929,
-      "delta_pct": 0.25,
+      "value": 100.766,
+      "delta_pct": 0.03,
       "delta_dir": "down"
     },
     "wti": {
-      "value": 79.83,
-      "delta_pct": 0.25,
-      "delta_dir": "up"
+      "value": 79.18,
+      "delta_pct": 0.94,
+      "delta_dir": "down"
     },
     "vix": {
-      "value": 16.5,
-      "delta_pct": 3.79,
+      "value": 16.08,
+      "delta_pct": 2.55,
       "delta_dir": "down"
     },
     "fed_funds": {
@@ -118,19 +118,19 @@
     "tight": {
       "score": 1,
       "items": [
-        "10Y 4.56% > 4.0%"
+        "10Y 4.62% > 4.0%"
       ]
     },
     "neutral": {
       "score": 10,
       "items": [
         "Unemployment 4.2% \u2264 Est 4.3% (in-line)",
-        "WTI $78.00 \u2264 $80",
-        "VIX 16.43 \u2264 20",
+        "WTI $79.18 \u2264 $80",
+        "VIX 16.08 \u2264 20",
         "CPI 3.7% (hot)",
         "Core CPI 2.8% (hot)",
         "PCE 4.1% (hot)",
-        "DXY 100.7 < 103 (not elevated)"
+        "DXY 100.8 < 103 (not elevated)"
       ]
     }
   },
@@ -144,33 +144,33 @@
     "tga_b": 774.1,
     "rrp_b": 1.0,
     "reserves_b": 3098.9,
-    "nfci": -0.515,
-    "anfci": -0.506,
-    "hy_oas": 2.69,
-    "ig_oas": 0.96,
-    "ecb_t": 6.851,
-    "boj_t": 3.95,
+    "nfci": -0.538,
+    "anfci": -0.535,
+    "hy_oas": 2.72,
+    "ig_oas": 0.97,
+    "ecb_t": 6.832,
+    "boj_t": 3.944,
     "pboc_t": 7.232,
-    "g4_total_t": 24.768
+    "g4_total_t": 24.743
   },
   "inflation_expectations": {
     "exp_1y": {
-      "value": 3.01917236,
+      "value": 2.38666864,
       "source": "Cleveland Fed",
-      "date": "Jun 2026"
+      "date": "Jul 2026"
     },
     "exp_2y": {
-      "value": 2.74976502,
+      "value": 2.43542879,
       "source": "Cleveland Fed",
-      "date": "Jun 2026"
+      "date": "Jul 2026"
     },
     "t5yie": {
-      "value": 2.31,
+      "value": 2.28,
       "source": "FRED T5YIE",
-      "date": "2026-07-13"
+      "date": "2026-07-14"
     },
     "t10yie": {
-      "value": 2.26,
+      "value": 2.25,
       "source": "FRED T10YIE",
       "date": "Jul 2026"
     },
