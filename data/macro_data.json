@@ -1,7 +1,7 @@
 {
   "meta": {
-    "last_updated": "2026-07-15T21:55:12Z",
-    "next_update": "2026-07-16T13:00:00Z"
+    "last_updated": "2026-07-16T14:59:38Z",
+    "next_update": "2026-07-17T13:00:00Z"
   },
   "inflation_labor": {
     "cpi_yoy": {
@@ -17,10 +17,10 @@
       "date": "Jun 2026"
     },
     "ppi_yoy": {
-      "value": 13.08,
+      "value": 10.11,
       "estimate": 2.6,
       "tag": "hot",
-      "date": "May 2026"
+      "date": "Jun 2026"
     },
     "pce_yoy": {
       "value": 4.07,
@@ -41,7 +41,7 @@
       "date": "Jun 2026"
     },
     "initial_claims": {
-      "value": 215.0,
+      "value": 208.0,
       "estimate": 210,
       "tag": "inline",
       "date": "Wkly"
@@ -70,29 +70,29 @@
   },
   "market_anchors": {
     "spx": {
-      "value": 7572,
-      "delta_pct": 0.38,
-      "delta_dir": "up"
+      "value": 7566,
+      "delta_pct": 0.09,
+      "delta_dir": "down"
     },
     "yield_10y": {
-      "value": 4.55,
-      "delta_bps": -4,
+      "value": 4.58,
+      "delta_bps": null,
       "delta_dir": "down"
     },
     "dxy": {
-      "value": 100.501,
-      "delta_pct": 0.3,
-      "delta_dir": "down"
+      "value": 100.703,
+      "delta_pct": 0.19,
+      "delta_dir": "up"
     },
     "wti": {
-      "value": 80.24,
-      "delta_pct": 0.39,
+      "value": 79.7,
+      "delta_pct": 0.18,
       "delta_dir": "up"
     },
     "vix": {
-      "value": 15.67,
-      "delta_pct": 5.03,
-      "delta_dir": "down"
+      "value": 15.79,
+      "delta_pct": 0.77,
+      "delta_dir": "up"
     },
     "fed_funds": {
       "value": "3.50\u20133.75%",
@@ -104,7 +104,7 @@
     "hawk": {
       "score": 3,
       "items": [
-        "PPI 13.1% > Est 2.6%",
+        "PPI 10.1% > Est 2.6%",
         "Core PCE 3.4% > Est 2.8%",
         "Fed on hold"
       ]
@@ -118,19 +118,19 @@
     "tight": {
       "score": 1,
       "items": [
-        "10Y 4.62% > 4.0%"
+        "10Y 4.58% > 4.0%"
       ]
     },
     "neutral": {
       "score": 10,
       "items": [
         "Unemployment 4.2% \u2264 Est 4.3% (in-line)",
-        "WTI $79.18 \u2264 $80",
-        "VIX 16.08 \u2264 20",
+        "WTI $79.70 \u2264 $80",
+        "VIX 15.79 \u2264 20",
         "CPI 3.7% (hot)",
         "Core CPI 2.8% (hot)",
         "PCE 4.1% (hot)",
-        "DXY 100.8 < 103 (not elevated)"
+        "DXY 100.7 < 103 (not elevated)"
       ]
     }
   },
@@ -146,12 +146,12 @@
     "reserves_b": 3098.9,
     "nfci": -0.538,
     "anfci": -0.535,
-    "hy_oas": 2.72,
+    "hy_oas": 2.71,
     "ig_oas": 0.97,
-    "ecb_t": 6.832,
-    "boj_t": 3.944,
+    "ecb_t": 6.834,
+    "boj_t": 3.937,
     "pboc_t": 7.232,
-    "g4_total_t": 24.743
+    "g4_total_t": 24.739
   },
   "inflation_expectations": {
     "exp_1y": {
@@ -165,12 +165,12 @@
       "date": "Jul 2026"
     },
     "t5yie": {
-      "value": 2.28,
+      "value": 2.25,
       "source": "FRED T5YIE",
-      "date": "2026-07-14"
+      "date": "2026-07-15"
     },
     "t10yie": {
-      "value": 2.25,
+      "value": 2.23,
       "source": "FRED T10YIE",
       "date": "Jul 2026"
     },
