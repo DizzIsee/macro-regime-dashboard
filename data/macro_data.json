@@ -1,6 +1,6 @@
 {
   "meta": {
-    "last_updated": "2026-07-22T15:02:30Z",
+    "last_updated": "2026-07-22T15:26:40Z",
     "next_update": "2026-07-23T13:00:00Z"
   },
   "inflation_labor": {
@@ -70,9 +70,9 @@
   },
   "market_anchors": {
     "spx": {
-      "value": 7506,
-      "delta_pct": 0.02,
-      "delta_dir": "down"
+      "value": 7520,
+      "delta_pct": 0.17,
+      "delta_dir": "up"
     },
     "yield_10y": {
       "value": 4.6,
@@ -80,19 +80,19 @@
       "delta_dir": "down"
     },
     "dxy": {
-      "value": 101.093,
-      "delta_pct": 0.05,
+      "value": 101.117,
+      "delta_pct": 0.03,
       "delta_dir": "down"
     },
     "wti": {
-      "value": 86.87,
-      "delta_pct": 1.83,
+      "value": 87.04,
+      "delta_pct": 2.03,
       "delta_dir": "up"
     },
     "vix": {
-      "value": 17.2,
-      "delta_pct": 0.88,
-      "delta_dir": "up"
+      "value": 16.88,
+      "delta_pct": 1.0,
+      "delta_dir": "down"
     },
     "fed_funds": {
       "value": "3.50\u20133.75%",
@@ -119,14 +119,14 @@
       "score": 2,
       "items": [
         "10Y 4.60% > 4.0%",
-        "WTI $86.87 > $80"
+        "WTI $87.04 > $80"
       ]
     },
     "neutral": {
       "score": 9,
       "items": [
         "Unemployment 4.2% \u2264 Est 4.3% (in-line)",
-        "VIX 17.20 \u2264 20",
+        "VIX 16.88 \u2264 20",
         "CPI 3.7% (hot)",
         "Core CPI 2.8% (hot)",
         "PCE 4.1% (hot)",
@@ -148,10 +148,10 @@
     "anfci": -0.55,
     "hy_oas": 2.69,
     "ig_oas": 0.97,
-    "ecb_t": 6.79,
+    "ecb_t": 6.792,
     "boj_t": 3.921,
     "pboc_t": 7.232,
-    "g4_total_t": 24.686
+    "g4_total_t": 24.688
   },
   "inflation_expectations": {
     "exp_1y": {
