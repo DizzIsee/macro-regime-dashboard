@@ -1,7 +1,7 @@
 {
   "meta": {
-    "last_updated": "2026-07-21T22:00:45Z",
-    "next_update": "2026-07-22T13:00:00Z"
+    "last_updated": "2026-07-22T15:02:30Z",
+    "next_update": "2026-07-23T13:00:00Z"
   },
   "inflation_labor": {
     "cpi_yoy": {
@@ -70,29 +70,29 @@
   },
   "market_anchors": {
     "spx": {
-      "value": 7509,
-      "delta_pct": 0.89,
-      "delta_dir": "up"
+      "value": 7506,
+      "delta_pct": 0.02,
+      "delta_dir": "down"
     },
     "yield_10y": {
-      "value": 4.63,
-      "delta_bps": 3,
-      "delta_dir": "up"
+      "value": 4.6,
+      "delta_bps": null,
+      "delta_dir": "down"
     },
     "dxy": {
-      "value": 101.183,
-      "delta_pct": 0.21,
-      "delta_dir": "up"
+      "value": 101.093,
+      "delta_pct": 0.05,
+      "delta_dir": "down"
     },
     "wti": {
-      "value": 84.54,
-      "delta_pct": 2.86,
+      "value": 86.87,
+      "delta_pct": 1.83,
       "delta_dir": "up"
     },
     "vix": {
-      "value": 17.05,
-      "delta_pct": 8.58,
-      "delta_dir": "down"
+      "value": 17.2,
+      "delta_pct": 0.88,
+      "delta_dir": "up"
     },
     "fed_funds": {
       "value": "3.50\u20133.75%",
@@ -118,15 +118,15 @@
     "tight": {
       "score": 2,
       "items": [
-        "10Y 4.55% > 4.0%",
-        "WTI $84.11 > $80"
+        "10Y 4.60% > 4.0%",
+        "WTI $86.87 > $80"
       ]
     },
     "neutral": {
       "score": 9,
       "items": [
         "Unemployment 4.2% \u2264 Est 4.3% (in-line)",
-        "VIX 17.23 \u2264 20",
+        "VIX 17.20 \u2264 20",
         "CPI 3.7% (hot)",
         "Core CPI 2.8% (hot)",
         "PCE 4.1% (hot)",
@@ -144,14 +144,14 @@
     "tga_b": 756.2,
     "rrp_b": 1.0,
     "reserves_b": 3142.7,
-    "nfci": -0.538,
-    "anfci": -0.535,
+    "nfci": -0.552,
+    "anfci": -0.55,
     "hy_oas": 2.69,
     "ig_oas": 0.97,
-    "ecb_t": 6.815,
-    "boj_t": 3.925,
+    "ecb_t": 6.79,
+    "boj_t": 3.921,
     "pboc_t": 7.232,
-    "g4_total_t": 24.714
+    "g4_total_t": 24.686
   },
   "inflation_expectations": {
     "exp_1y": {
@@ -167,10 +167,10 @@
     "t5yie": {
       "value": 2.28,
       "source": "FRED T5YIE",
-      "date": "2026-07-20"
+      "date": "2026-07-21"
     },
     "t10yie": {
-      "value": 2.25,
+      "value": 2.26,
       "source": "FRED T10YIE",
       "date": "Jul 2026"
     },
