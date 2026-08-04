@@ -1,7 +1,7 @@
 {
   "meta": {
-    "last_updated": "2026-08-03T22:04:25Z",
-    "next_update": "2026-08-04T13:00:00Z"
+    "last_updated": "2026-08-04T15:23:16Z",
+    "next_update": "2026-08-05T13:00:00Z"
   },
   "inflation_labor": {
     "cpi_yoy": {
@@ -70,29 +70,29 @@
   },
   "market_anchors": {
     "spx": {
-      "value": 7600,
-      "delta_pct": 1.48,
+      "value": 7700,
+      "delta_pct": 1.31,
       "delta_dir": "up"
     },
     "yield_10y": {
-      "value": 4.69,
-      "delta_bps": -6,
+      "value": 4.75,
+      "delta_bps": null,
       "delta_dir": "down"
     },
     "dxy": {
-      "value": 99.959,
-      "delta_pct": 0.22,
-      "delta_dir": "up"
+      "value": 99.924,
+      "delta_pct": 0.09,
+      "delta_dir": "down"
     },
     "wti": {
-      "value": 80.06,
-      "delta_pct": 0.34,
-      "delta_dir": "up"
+      "value": 76.86,
+      "delta_pct": 5.33,
+      "delta_dir": "down"
     },
     "vix": {
-      "value": 15.86,
-      "delta_pct": 0.81,
-      "delta_dir": "down"
+      "value": 16.06,
+      "delta_pct": 1.26,
+      "delta_dir": "up"
     },
     "fed_funds": {
       "value": "3.50\u20133.75%",
@@ -118,15 +118,15 @@
     "tight": {
       "score": 1,
       "items": [
-        "10Y 4.68% > 4.0%"
+        "10Y 4.75% > 4.0%"
       ]
     },
     "neutral": {
       "score": 10,
       "items": [
         "Unemployment 4.2% \u2264 Est 4.3% (in-line)",
-        "WTI $79.66 \u2264 $80",
-        "VIX 15.62 \u2264 20",
+        "WTI $76.86 \u2264 $80",
+        "VIX 16.06 \u2264 20",
         "CPI 3.7% (hot)",
         "Core CPI 2.8% (hot)",
         "PCE 3.7% (hot)",
@@ -146,12 +146,12 @@
     "reserves_b": 2984.6,
     "nfci": -0.554,
     "anfci": -0.56,
-    "hy_oas": 2.84,
+    "hy_oas": 2.85,
     "ig_oas": 0.99,
-    "ecb_t": 6.842,
-    "boj_t": 4.077,
+    "ecb_t": 6.846,
+    "boj_t": 4.058,
     "pboc_t": 7.232,
-    "g4_total_t": 24.889
+    "g4_total_t": 24.875
   },
   "inflation_expectations": {
     "exp_1y": {
@@ -165,14 +165,14 @@
       "date": "Jul 2026"
     },
     "t5yie": {
-      "value": 2.26,
+      "value": 2.23,
       "source": "FRED T5YIE",
-      "date": "2026-07-31"
+      "date": "2026-08-03"
     },
     "t10yie": {
-      "value": 2.28,
+      "value": 2.27,
       "source": "FRED T10YIE",
-      "date": "Jul 2026"
+      "date": "Aug 2026"
     },
     "core_pce_yoy": {
       "value": 3.29,
