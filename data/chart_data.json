@@ -3771,5 +3771,12 @@
     "global_score": 0.0,
     "spx": 7316.15,
     "composite": 0.043
+  },
+  {
+    "date": "2026-08-05",
+    "us_score": 0.1,
+    "global_score": 0.0,
+    "spx": 7723.55,
+    "composite": 0.05
   }
 ]
