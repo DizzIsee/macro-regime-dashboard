@@ -1,152 +1,152 @@
 {
   "meta": {
-    "last_updated": "2026-08-19T21:20:41Z",
+    "last_updated": "2026-08-20T13:43:30Z",
     "portfolio_bias": "RISK ON",
-    "portfolio_score": 79,
+    "portfolio_score": 76,
     "interpretation": "Risk-on environment \u2014 run full playbook with normal sizing"
   },
   "assets": [
     {
       "ticker": "SPX",
       "yf_ticker": "^GSPC",
-      "close": 7707.98,
-      "as_of": "Aug 19, 2026 close",
-      "composite_score": 80,
+      "close": 7695.57,
+      "as_of": "Aug 20, 2026 close",
+      "composite_score": 75,
       "bias": "RISK ON",
       "alignment": 3,
-      "vix": 14.89,
+      "vix": 15.87,
       "sma": {
         "sma10": {
-          "value": 7742.7,
+          "value": 7741.26,
           "above": false,
-          "distance_pct": -0.45,
-          "days_count": 3
+          "distance_pct": -0.59,
+          "days_count": 4
         },
         "sma20": {
-          "value": 7619.66,
+          "value": 7629.96,
           "above": true,
-          "distance_pct": 1.16,
+          "distance_pct": 0.86,
           "days_count": 14
         },
         "sma50": {
-          "value": 7527.81,
+          "value": 7527.55,
           "above": true,
-          "distance_pct": 2.39,
+          "distance_pct": 2.23,
           "days_count": 14
         },
         "sma200": {
-          "value": 7087.61,
+          "value": 7082.16,
           "above": true,
-          "distance_pct": 8.75,
-          "days_count": 93
+          "distance_pct": 8.66,
+          "days_count": 91
         }
       }
     },
     {
       "ticker": "QQQ",
       "yf_ticker": "QQQ",
-      "close": 716.08,
-      "as_of": "Aug 19, 2026 close",
-      "composite_score": 74,
-      "bias": "RISK ON",
+      "close": 714.13,
+      "as_of": "Aug 20, 2026 close",
+      "composite_score": 69,
+      "bias": "MIXED",
       "alignment": 2,
-      "vix": 14.89,
+      "vix": 15.87,
       "sma": {
         "sma10": {
-          "value": 722.73,
+          "value": 722.68,
           "above": false,
-          "distance_pct": -0.92,
-          "days_count": 2
+          "distance_pct": -1.18,
+          "days_count": 3
         },
         "sma20": {
-          "value": 706.78,
+          "value": 707.89,
           "above": true,
-          "distance_pct": 1.32,
-          "days_count": 13
+          "distance_pct": 0.88,
+          "days_count": 14
         },
         "sma50": {
-          "value": 712.86,
+          "value": 713.0,
           "above": true,
-          "distance_pct": 0.45,
-          "days_count": 12
+          "distance_pct": 0.16,
+          "days_count": 13
         },
         "sma200": {
-          "value": 650.9,
+          "value": 651.34,
           "above": true,
-          "distance_pct": 10.01,
-          "days_count": 93
+          "distance_pct": 9.64,
+          "days_count": 94
         }
       }
     },
     {
       "ticker": "IWM",
       "yf_ticker": "IWM",
-      "close": 301.72,
-      "as_of": "Aug 19, 2026 close",
-      "composite_score": 80,
+      "close": 299.91,
+      "as_of": "Aug 20, 2026 close",
+      "composite_score": 75,
       "bias": "RISK ON",
       "alignment": 3,
-      "vix": 14.89,
+      "vix": 15.87,
       "sma": {
         "sma10": {
-          "value": 301.81,
+          "value": 301.98,
           "above": false,
-          "distance_pct": -0.03,
-          "days_count": 2
+          "distance_pct": -0.68,
+          "days_count": 3
         },
         "sma20": {
-          "value": 297.88,
+          "value": 298.28,
           "above": true,
-          "distance_pct": 1.29,
-          "days_count": 13
+          "distance_pct": 0.55,
+          "days_count": 14
         },
         "sma50": {
-          "value": 296.01,
+          "value": 296.32,
           "above": true,
-          "distance_pct": 1.93,
-          "days_count": 13
+          "distance_pct": 1.21,
+          "days_count": 14
         },
         "sma200": {
-          "value": 268.57,
+          "value": 268.85,
           "above": true,
-          "distance_pct": 12.34,
-          "days_count": 98
+          "distance_pct": 11.55,
+          "days_count": 99
         }
       }
     },
     {
       "ticker": "BTC",
       "yf_ticker": "BTC-USD",
-      "close": 69494.04,
-      "as_of": "Aug 19, 2026",
-      "composite_score": 84,
-      "bias": "RISK ON",
+      "close": 71590.03,
+      "as_of": "Aug 20, 2026",
+      "composite_score": 86,
+      "bias": "FULL BULL",
       "alignment": 3,
       "vix": null,
       "sma": {
         "sma10": {
-          "value": 64176.66,
+          "value": 64921.82,
           "above": true,
-          "distance_pct": 8.29,
-          "days_count": 3
+          "distance_pct": 10.27,
+          "days_count": 4
         },
         "sma20": {
-          "value": 64091.6,
+          "value": 64519.02,
           "above": true,
-          "distance_pct": 8.43,
-          "days_count": 3
+          "distance_pct": 10.96,
+          "days_count": 4
         },
         "sma50": {
-          "value": 63977.54,
+          "value": 64204.7,
           "above": true,
-          "distance_pct": 8.62,
-          "days_count": 3
+          "distance_pct": 11.5,
+          "days_count": 4
         },
         "sma200": {
-          "value": 68996.21,
+          "value": 68968.15,
           "above": true,
-          "distance_pct": 0.72,
-          "days_count": 1
+          "distance_pct": 3.8,
+          "days_count": 2
         }
       }
     }
