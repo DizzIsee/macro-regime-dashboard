@@ -1,7 +1,7 @@
 {
   "meta": {
-    "last_updated": "2026-08-24T21:23:38Z",
-    "next_update": "2026-08-25T13:00:00Z"
+    "last_updated": "2026-08-25T13:48:03Z",
+    "next_update": "2026-08-26T13:00:00Z"
   },
   "inflation_labor": {
     "cpi_yoy": {
@@ -70,29 +70,29 @@
   },
   "market_anchors": {
     "spx": {
-      "value": 7653,
-      "delta_pct": 0.28,
-      "delta_dir": "down"
+      "value": 7683,
+      "delta_pct": 0.39,
+      "delta_dir": "up"
     },
     "yield_10y": {
-      "value": 4.7,
-      "delta_bps": -3,
+      "value": 4.74,
+      "delta_bps": null,
       "delta_dir": "down"
     },
     "dxy": {
-      "value": 98.993,
-      "delta_pct": 0.16,
-      "delta_dir": "up"
+      "value": 98.953,
+      "delta_pct": 0.09,
+      "delta_dir": "down"
     },
     "wti": {
-      "value": 84.98,
-      "delta_pct": 0.76,
+      "value": 82.38,
+      "delta_pct": 3.57,
       "delta_dir": "down"
     },
     "vix": {
-      "value": 15.85,
-      "delta_pct": 4.76,
-      "delta_dir": "up"
+      "value": 15.13,
+      "delta_pct": 4.48,
+      "delta_dir": "down"
     },
     "fed_funds": {
       "value": "3.50\u20133.75%",
@@ -118,15 +118,15 @@
     "tight": {
       "score": 2,
       "items": [
-        "10Y 4.69% > 4.0%",
-        "WTI $85.13 > $80"
+        "10Y 4.74% > 4.0%",
+        "WTI $82.38 > $80"
       ]
     },
     "neutral": {
       "score": 9,
       "items": [
         "Unemployment 4.1% \u2264 Est 4.3% (in-line)",
-        "VIX 15.92 \u2264 20",
+        "VIX 15.13 \u2264 20",
         "CPI 3.5% (hot)",
         "Core CPI 2.8% (hot)",
         "PCE 3.7% (hot)",
@@ -148,10 +148,10 @@
     "anfci": -0.587,
     "hy_oas": 2.7,
     "ig_oas": 1.0,
-    "ecb_t": 6.92,
-    "boj_t": 4.049,
+    "ecb_t": 6.919,
+    "boj_t": 4.046,
     "pboc_t": 7.232,
-    "g4_total_t": 24.946
+    "g4_total_t": 24.943
   },
   "inflation_expectations": {
     "exp_1y": {
@@ -165,12 +165,12 @@
       "date": "Aug 2026"
     },
     "t5yie": {
-      "value": 2.34,
+      "value": 2.32,
       "source": "FRED T5YIE",
-      "date": "2026-08-21"
+      "date": "2026-08-24"
     },
     "t10yie": {
-      "value": 2.34,
+      "value": 2.32,
       "source": "FRED T10YIE",
       "date": "Aug 2026"
     },
