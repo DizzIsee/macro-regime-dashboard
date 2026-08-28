@@ -1,8 +1,8 @@
 {
   "meta": {
-    "last_updated": "2026-08-27T23:26:22Z",
+    "last_updated": "2026-08-28T05:04:00Z",
     "portfolio_bias": "FULL BULL",
-    "portfolio_score": 90,
+    "portfolio_score": 89,
     "interpretation": "All major assets in full bull alignment \u2014 size up aggressively on A+ setups"
   },
   "assets": [
@@ -117,35 +117,35 @@
     {
       "ticker": "BTC",
       "yf_ticker": "BTC-USD",
-      "close": 80344.67,
-      "as_of": "Aug 27, 2026",
-      "composite_score": 92,
+      "close": 79609.45,
+      "as_of": "Aug 28, 2026",
+      "composite_score": 91,
       "bias": "FULL BULL",
       "alignment": 3,
       "vix": null,
       "sma": {
         "sma10": {
-          "value": 75705.51,
+          "value": 75631.99,
           "above": true,
-          "distance_pct": 6.13,
+          "distance_pct": 5.26,
           "days_count": 11
         },
         "sma20": {
-          "value": 69719.83,
+          "value": 69683.07,
           "above": true,
-          "distance_pct": 15.24,
+          "distance_pct": 14.25,
           "days_count": 11
         },
         "sma50": {
-          "value": 66430.75,
+          "value": 66416.05,
           "above": true,
-          "distance_pct": 20.94,
+          "distance_pct": 19.86,
           "days_count": 11
         },
         "sma200": {
-          "value": 69225.01,
+          "value": 69221.33,
           "above": true,
-          "distance_pct": 16.06,
+          "distance_pct": 15.01,
           "days_count": 9
         }
       }
