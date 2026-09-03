@@ -1,6 +1,6 @@
 {
   "meta": {
-    "last_updated": "2026-09-03T16:56:01Z",
+    "last_updated": "2026-09-03T17:25:14Z",
     "next_update": "2026-09-04T13:00:00Z"
   },
   "inflation_labor": {
@@ -70,8 +70,8 @@
   },
   "market_anchors": {
     "spx": {
-      "value": 7745,
-      "delta_pct": 1.01,
+      "value": 7739,
+      "delta_pct": 0.94,
       "delta_dir": "up"
     },
     "yield_10y": {
@@ -80,13 +80,13 @@
       "delta_dir": "down"
     },
     "dxy": {
-      "value": 98.859,
-      "delta_pct": 0.56,
+      "value": 98.873,
+      "delta_pct": 0.55,
       "delta_dir": "down"
     },
     "wti": {
-      "value": 91.4,
-      "delta_pct": 0.37,
+      "value": 91.99,
+      "delta_pct": 1.02,
       "delta_dir": "up"
     },
     "vix": {
@@ -119,7 +119,7 @@
       "score": 2,
       "items": [
         "10Y 4.79% > 4.0%",
-        "WTI $91.40 > $80"
+        "WTI $91.99 > $80"
       ]
     },
     "neutral": {
@@ -148,10 +148,10 @@
     "anfci": -0.582,
     "hy_oas": 2.66,
     "ig_oas": 0.99,
-    "ecb_t": 6.887,
-    "boj_t": 4.15,
+    "ecb_t": 6.886,
+    "boj_t": 4.147,
     "pboc_t": 7.232,
-    "g4_total_t": 25.0
+    "g4_total_t": 24.996
   },
   "inflation_expectations": {
     "exp_1y": {
