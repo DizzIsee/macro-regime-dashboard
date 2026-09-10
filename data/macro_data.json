@@ -1,6 +1,6 @@
 {
   "meta": {
-    "last_updated": "2026-09-10T16:53:24Z",
+    "last_updated": "2026-09-10T17:25:21Z",
     "next_update": "2026-09-11T13:00:00Z"
   },
   "inflation_labor": {
@@ -17,10 +17,10 @@
       "date": "Jul 2026"
     },
     "ppi_yoy": {
-      "value": 8.27,
+      "value": 9.85,
       "estimate": 2.6,
       "tag": "hot",
-      "date": "Jul 2026"
+      "date": "Aug 2026"
     },
     "pce_yoy": {
       "value": 3.7,
@@ -70,8 +70,8 @@
   },
   "market_anchors": {
     "spx": {
-      "value": 7604,
-      "delta_pct": 0.44,
+      "value": 7599,
+      "delta_pct": 0.5,
       "delta_dir": "down"
     },
     "yield_10y": {
@@ -80,18 +80,18 @@
       "delta_dir": "down"
     },
     "dxy": {
-      "value": 98.99,
-      "delta_pct": 0.26,
+      "value": 98.975,
+      "delta_pct": 0.24,
       "delta_dir": "up"
     },
     "wti": {
-      "value": 101.63,
-      "delta_pct": 5.75,
+      "value": 101.84,
+      "delta_pct": 5.97,
       "delta_dir": "up"
     },
     "vix": {
-      "value": 17.64,
-      "delta_pct": 7.17,
+      "value": 17.24,
+      "delta_pct": 4.74,
       "delta_dir": "up"
     },
     "fed_funds": {
@@ -104,7 +104,7 @@
     "hawk": {
       "score": 3,
       "items": [
-        "PPI 8.3% > Est 2.6%",
+        "PPI 9.8% > Est 2.6%",
         "Core PCE 3.3% > Est 2.8%",
         "Fed on hold"
       ]
@@ -117,7 +117,7 @@
       "score": 2,
       "items": [
         "10Y 4.80% > 4.0%",
-        "WTI $101.63 > $80"
+        "WTI $101.84 > $80"
       ]
     },
     "neutral": {
@@ -125,7 +125,7 @@
       "items": [
         "Unemployment 4.1% \u2264 Est 4.3% (in-line)",
         "NFP +162K beat Est +100K",
-        "VIX 17.64 \u2264 20",
+        "VIX 17.24 \u2264 20",
         "CPI 3.5% (hot)",
         "Core CPI 2.8% (hot)",
         "PCE 3.7% (hot)",
@@ -148,9 +148,9 @@
     "hy_oas": 2.71,
     "ig_oas": 0.99,
     "ecb_t": 6.873,
-    "boj_t": 4.178,
+    "boj_t": 4.179,
     "pboc_t": 7.232,
-    "g4_total_t": 25.02
+    "g4_total_t": 25.022
   },
   "inflation_expectations": {
     "exp_1y": {
