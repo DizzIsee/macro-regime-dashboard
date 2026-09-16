@@ -1,6 +1,6 @@
 {
   "meta": {
-    "last_updated": "2026-09-16T17:53:32Z",
+    "last_updated": "2026-09-16T23:30:10Z",
     "next_update": "2026-09-17T13:00:00Z"
   },
   "inflation_labor": {
@@ -70,29 +70,29 @@
   },
   "market_anchors": {
     "spx": {
-      "value": 7608,
-      "delta_pct": 0.3,
-      "delta_dir": "up"
-    },
-    "yield_10y": {
-      "value": 4.97,
-      "delta_bps": null,
+      "value": 7552,
+      "delta_pct": 0.45,
       "delta_dir": "down"
     },
+    "yield_10y": {
+      "value": 5.01,
+      "delta_bps": 1,
+      "delta_dir": "up"
+    },
     "dxy": {
-      "value": 99.713,
-      "delta_pct": 0.05,
+      "value": 100.34,
+      "delta_pct": 0.68,
       "delta_dir": "up"
     },
     "wti": {
-      "value": 102.51,
-      "delta_pct": 2.17,
+      "value": 102.01,
+      "delta_pct": 2.64,
       "delta_dir": "down"
     },
     "vix": {
-      "value": 16.8,
-      "delta_pct": 2.38,
-      "delta_dir": "down"
+      "value": 17.71,
+      "delta_pct": 2.91,
+      "delta_dir": "up"
     },
     "fed_funds": {
       "value": "3.50\u20133.75%",
