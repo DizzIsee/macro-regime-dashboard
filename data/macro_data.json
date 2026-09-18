@@ -1,6 +1,6 @@
 {
   "meta": {
-    "last_updated": "2026-09-18T16:56:19Z",
+    "last_updated": "2026-09-18T17:24:07Z",
     "next_update": "2026-09-19T13:00:00Z"
   },
   "inflation_labor": {
@@ -80,19 +80,19 @@
       "delta_dir": "down"
     },
     "dxy": {
-      "value": 100.295,
-      "delta_pct": 0.06,
-      "delta_dir": "up"
+      "value": 100.218,
+      "delta_pct": 0.02,
+      "delta_dir": "down"
     },
     "wti": {
-      "value": 96.1,
-      "delta_pct": 5.01,
+      "value": 95.92,
+      "delta_pct": 5.19,
       "delta_dir": "down"
     },
     "vix": {
-      "value": 15.45,
-      "delta_pct": 0.06,
-      "delta_dir": "up"
+      "value": 15.38,
+      "delta_pct": 0.39,
+      "delta_dir": "down"
     },
     "fed_funds": {
       "value": "3.50\u20133.75%",
@@ -117,7 +117,7 @@
       "score": 2,
       "items": [
         "10Y 5.01% > 4.0%",
-        "WTI $96.10 > $80"
+        "WTI $95.92 > $80"
       ]
     },
     "neutral": {
@@ -125,11 +125,11 @@
       "items": [
         "Unemployment 4.1% \u2264 Est 4.3% (in-line)",
         "NFP +162K beat Est +100K",
-        "VIX 15.45 \u2264 20",
+        "VIX 15.38 \u2264 20",
         "CPI 3.7% (hot)",
         "Core CPI 2.8% (hot)",
         "PCE 3.7% (hot)",
-        "DXY 100.3 < 103 (not elevated)"
+        "DXY 100.2 < 103 (not elevated)"
       ]
     }
   },
@@ -147,10 +147,10 @@
     "anfci": -0.582,
     "hy_oas": 2.7,
     "ig_oas": 0.95,
-    "ecb_t": 6.785,
-    "boj_t": 4.113,
+    "ecb_t": 6.791,
+    "boj_t": 4.115,
     "pboc_t": 7.232,
-    "g4_total_t": 24.877
+    "g4_total_t": 24.884
   },
   "inflation_expectations": {
     "exp_1y": {
