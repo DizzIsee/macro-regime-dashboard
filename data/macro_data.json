@@ -1,6 +1,6 @@
 {
   "meta": {
-    "last_updated": "2026-09-21T18:28:30Z",
+    "last_updated": "2026-09-21T18:59:51Z",
     "next_update": "2026-09-22T13:00:00Z"
   },
   "inflation_labor": {
@@ -70,8 +70,8 @@
   },
   "market_anchors": {
     "spx": {
-      "value": 7769,
-      "delta_pct": 1.55,
+      "value": 7773,
+      "delta_pct": 1.6,
       "delta_dir": "up"
     },
     "yield_10y": {
@@ -80,18 +80,18 @@
       "delta_dir": "down"
     },
     "dxy": {
-      "value": 100.409,
-      "delta_pct": 0.1,
+      "value": 100.439,
+      "delta_pct": 0.13,
       "delta_dir": "up"
     },
     "wti": {
-      "value": 92.31,
-      "delta_pct": 1.77,
+      "value": 92.47,
+      "delta_pct": 1.6,
       "delta_dir": "down"
     },
     "vix": {
-      "value": 15.03,
-      "delta_pct": 1.49,
+      "value": 14.99,
+      "delta_pct": 1.22,
       "delta_dir": "up"
     },
     "fed_funds": {
@@ -117,7 +117,7 @@
       "score": 2,
       "items": [
         "10Y 4.94% > 4.0%",
-        "WTI $92.31 > $80"
+        "WTI $92.47 > $80"
       ]
     },
     "neutral": {
@@ -125,7 +125,7 @@
       "items": [
         "Unemployment 4.1% \u2264 Est 4.3% (in-line)",
         "NFP +162K beat Est +100K",
-        "VIX 15.03 \u2264 20",
+        "VIX 14.99 \u2264 20",
         "CPI 3.7% (hot)",
         "Core CPI 2.8% (hot)",
         "PCE 3.7% (hot)",
@@ -147,8 +147,8 @@
     "anfci": -0.582,
     "hy_oas": 2.68,
     "ig_oas": 0.94,
-    "ecb_t": 6.78,
-    "boj_t": 4.094,
+    "ecb_t": 6.779,
+    "boj_t": 4.095,
     "pboc_t": 7.232,
     "g4_total_t": 24.852
   },
