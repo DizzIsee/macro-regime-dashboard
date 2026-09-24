@@ -1,7 +1,7 @@
 {
   "meta": {
-    "last_updated": "2026-09-23T23:24:32Z",
-    "next_update": "2026-09-24T13:00:00Z"
+    "last_updated": "2026-09-24T17:44:18Z",
+    "next_update": "2026-09-25T13:00:00Z"
   },
   "inflation_labor": {
     "cpi_yoy": {
@@ -41,7 +41,7 @@
       "date": "Aug 2026"
     },
     "initial_claims": {
-      "value": 196.0,
+      "value": 197.0,
       "estimate": 210,
       "tag": "inline",
       "date": "Wkly"
@@ -70,28 +70,28 @@
   },
   "market_anchors": {
     "spx": {
-      "value": 7706,
-      "delta_pct": 0.75,
+      "value": 7693,
+      "delta_pct": 0.2,
       "delta_dir": "down"
     },
     "yield_10y": {
-      "value": 5.11,
-      "delta_bps": 15,
-      "delta_dir": "up"
+      "value": 4.96,
+      "delta_bps": null,
+      "delta_dir": "down"
     },
     "dxy": {
-      "value": 101.115,
-      "delta_pct": 0.39,
+      "value": 101.284,
+      "delta_pct": 0.14,
       "delta_dir": "up"
     },
     "wti": {
-      "value": 92.25,
-      "delta_pct": 3.25,
+      "value": 94.87,
+      "delta_pct": 3.91,
       "delta_dir": "up"
     },
     "vix": {
-      "value": 15.18,
-      "delta_pct": 6.83,
+      "value": 15.69,
+      "delta_pct": 3.43,
       "delta_dir": "up"
     },
     "fed_funds": {
@@ -117,7 +117,7 @@
       "score": 2,
       "items": [
         "10Y 4.96% > 4.0%",
-        "WTI $91.68 > $80"
+        "WTI $94.87 > $80"
       ]
     },
     "neutral": {
@@ -125,11 +125,11 @@
       "items": [
         "Unemployment 4.1% \u2264 Est 4.3% (in-line)",
         "NFP +162K beat Est +100K",
-        "VIX 15.11 \u2264 20",
+        "VIX 15.69 \u2264 20",
         "CPI 3.7% (hot)",
         "Core CPI 2.8% (hot)",
         "PCE 3.7% (hot)",
-        "DXY 101.1 < 103 (not elevated)"
+        "DXY 101.3 < 103 (not elevated)"
       ]
     }
   },
@@ -145,12 +145,12 @@
     "reserves_b": 3013.8,
     "nfci": -0.555,
     "anfci": -0.573,
-    "hy_oas": 2.68,
+    "hy_oas": 2.73,
     "ig_oas": 0.95,
-    "ecb_t": 6.72,
-    "boj_t": 4.075,
+    "ecb_t": 6.708,
+    "boj_t": 4.057,
     "pboc_t": 7.232,
-    "g4_total_t": 24.773
+    "g4_total_t": 24.744
   },
   "inflation_expectations": {
     "exp_1y": {
@@ -164,12 +164,12 @@
       "date": "Sep 2026"
     },
     "t5yie": {
-      "value": 2.32,
+      "value": 2.34,
       "source": "FRED T5YIE",
-      "date": "2026-09-22"
+      "date": "2026-09-23"
     },
     "t10yie": {
-      "value": 2.33,
+      "value": 2.35,
       "source": "FRED T10YIE",
       "date": "Sep 2026"
     },
