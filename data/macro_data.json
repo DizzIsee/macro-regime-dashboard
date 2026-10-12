@@ -1,6 +1,6 @@
 {
   "meta": {
-    "last_updated": "2026-10-12T21:33:08Z",
+    "last_updated": "2026-10-12T21:56:14Z",
     "next_update": "2026-10-13T13:00:00Z"
   },
   "inflation_labor": {
@@ -80,7 +80,7 @@
       "delta_dir": "down"
     },
     "dxy": {
-      "value": 102.578,
+      "value": 102.576,
       "delta_pct": 0.4,
       "delta_dir": "up"
     },
@@ -149,7 +149,7 @@
     "hy_oas": 3.15,
     "ig_oas": 1.02,
     "ecb_t": 6.58,
-    "boj_t": 3.941,
+    "boj_t": 3.942,
     "pboc_t": 7.232,
     "g4_total_t": 24.501
   },
