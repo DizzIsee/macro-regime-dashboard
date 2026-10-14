@@ -1,20 +1,20 @@
 {
   "meta": {
-    "last_updated": "2026-10-14T00:05:15Z",
-    "next_update": "2026-10-14T13:00:00Z"
+    "last_updated": "2026-10-14T17:46:45Z",
+    "next_update": "2026-10-15T13:00:00Z"
   },
   "inflation_labor": {
     "cpi_yoy": {
-      "value": 3.71,
+      "value": 4.02,
       "estimate": 2.4,
       "tag": "hot",
-      "date": "Aug 2026"
+      "date": "Sep 2026"
     },
     "core_cpi_yoy": {
-      "value": 2.76,
+      "value": 2.79,
       "estimate": 2.5,
       "tag": "hot",
-      "date": "Aug 2026"
+      "date": "Sep 2026"
     },
     "ppi_yoy": {
       "value": 9.85,
@@ -70,28 +70,28 @@
   },
   "market_anchors": {
     "spx": {
-      "value": 7805,
-      "delta_pct": 0.02,
+      "value": 7706,
+      "delta_pct": 1.27,
       "delta_dir": "down"
     },
     "yield_10y": {
-      "value": 5.22,
-      "delta_bps": -2,
+      "value": 5.24,
+      "delta_bps": null,
       "delta_dir": "down"
     },
     "dxy": {
-      "value": 102.189,
-      "delta_pct": 0.22,
-      "delta_dir": "down"
+      "value": 102.7,
+      "delta_pct": 0.57,
+      "delta_dir": "up"
     },
     "wti": {
-      "value": 94.86,
-      "delta_pct": 2.4,
+      "value": 95.74,
+      "delta_pct": 1.0,
       "delta_dir": "up"
     },
     "vix": {
-      "value": 15.27,
-      "delta_pct": 0.39,
+      "value": 16.88,
+      "delta_pct": 10.54,
       "delta_dir": "up"
     },
     "fed_funds": {
@@ -118,19 +118,19 @@
     "tight": {
       "score": 2,
       "items": [
-        "10Y 5.22% > 4.0%",
-        "WTI $94.54 > $80"
+        "10Y 5.24% > 4.0%",
+        "WTI $95.74 > $80"
       ]
     },
     "neutral": {
       "score": 9,
       "items": [
         "Unemployment 4.2% \u2264 Est 4.3% (in-line)",
-        "VIX 15.33 \u2264 20",
-        "CPI 3.7% (hot)",
+        "VIX 16.88 \u2264 20",
+        "CPI 4.0% (hot)",
         "Core CPI 2.8% (hot)",
         "PCE 3.4% (hot)",
-        "DXY 102.2 < 103 (not elevated)"
+        "DXY 102.7 < 103 (not elevated)"
       ]
     }
   },
@@ -146,12 +146,12 @@
     "reserves_b": 3029.7,
     "nfci": -0.494,
     "anfci": -0.504,
-    "hy_oas": 3.11,
-    "ig_oas": 1.02,
-    "ecb_t": 6.658,
-    "boj_t": 3.947,
+    "hy_oas": 3.16,
+    "ig_oas": 1.03,
+    "ecb_t": 6.623,
+    "boj_t": 3.941,
     "pboc_t": 7.232,
-    "g4_total_t": 24.585
+    "g4_total_t": 24.544
   },
   "inflation_expectations": {
     "exp_1y": {
@@ -165,9 +165,9 @@
       "date": "Sep 2026"
     },
     "t5yie": {
-      "value": 2.34,
+      "value": 2.33,
       "source": "FRED T5YIE",
-      "date": "2026-10-09"
+      "date": "2026-10-13"
     },
     "t10yie": {
       "value": 2.33,
