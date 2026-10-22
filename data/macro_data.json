@@ -1,6 +1,6 @@
 {
   "meta": {
-    "last_updated": "2026-10-22T17:51:02Z",
+    "last_updated": "2026-10-22T18:13:23Z",
     "next_update": "2026-10-23T13:00:00Z"
   },
   "inflation_labor": {
@@ -70,7 +70,7 @@
   },
   "market_anchors": {
     "spx": {
-      "value": 7653,
+      "value": 7654,
       "delta_pct": 1.34,
       "delta_dir": "down"
     },
@@ -80,18 +80,18 @@
       "delta_dir": "down"
     },
     "dxy": {
-      "value": 101.632,
-      "delta_pct": 0.03,
-      "delta_dir": "up"
+      "value": 101.577,
+      "delta_pct": 0.02,
+      "delta_dir": "down"
     },
     "wti": {
-      "value": 99.44,
-      "delta_pct": 0.93,
+      "value": 99.52,
+      "delta_pct": 1.02,
       "delta_dir": "up"
     },
     "vix": {
-      "value": 18.88,
-      "delta_pct": 13.19,
+      "value": 19.25,
+      "delta_pct": 15.41,
       "delta_dir": "up"
     },
     "fed_funds": {
@@ -119,14 +119,14 @@
       "score": 2,
       "items": [
         "10Y 5.12% > 4.0%",
-        "WTI $99.44 > $80"
+        "WTI $99.52 > $80"
       ]
     },
     "neutral": {
       "score": 9,
       "items": [
         "Unemployment 4.2% \u2264 Est 4.3% (in-line)",
-        "VIX 18.88 \u2264 20",
+        "VIX 19.25 \u2264 20",
         "CPI 4.0% (hot)",
         "Core CPI 2.8% (hot)",
         "PCE 3.4% (hot)",
@@ -148,10 +148,10 @@
     "anfci": -0.518,
     "hy_oas": 3.27,
     "ig_oas": 1.09,
-    "ecb_t": 6.662,
+    "ecb_t": 6.663,
     "boj_t": 3.982,
     "pboc_t": 7.232,
-    "g4_total_t": 24.632
+    "g4_total_t": 24.633
   },
   "inflation_expectations": {
     "exp_1y": {
