@@ -1,6 +1,6 @@
 {
   "meta": {
-    "last_updated": "2026-11-02T22:32:21Z",
+    "last_updated": "2026-11-03T02:44:31Z",
     "next_update": "2026-11-03T13:00:00Z"
   },
   "inflation_labor": {
@@ -75,18 +75,18 @@
       "delta_dir": "down"
     },
     "yield_10y": {
-      "value": 4.94,
-      "delta_bps": null,
+      "value": 4.89,
+      "delta_bps": -3,
       "delta_dir": "down"
     },
     "dxy": {
-      "value": 101.774,
-      "delta_pct": 0.12,
+      "value": 101.86,
+      "delta_pct": 0.04,
       "delta_dir": "down"
     },
     "wti": {
-      "value": 96.26,
-      "delta_pct": 4.49,
+      "value": 96.77,
+      "delta_pct": 3.98,
       "delta_dir": "down"
     },
     "vix": {
