@@ -1,6 +1,6 @@
 {
   "meta": {
-    "last_updated": "2026-11-07T18:27:43Z",
+    "last_updated": "2026-11-08T18:38:36Z",
     "portfolio_bias": "BEAR MARKET",
     "portfolio_score": 22,
     "interpretation": "Bear market conditions \u2014 no longs, bear rallies only"
@@ -117,36 +117,36 @@
     {
       "ticker": "BTC",
       "yf_ticker": "BTC-USD",
-      "close": 75699.01,
-      "as_of": "Nov 7, 2026",
+      "close": 75844.75,
+      "as_of": "Nov 8, 2026",
       "composite_score": 32,
       "bias": "RISK OFF",
       "alignment": 1,
       "vix": null,
       "sma": {
         "sma10": {
-          "value": 77247.22,
+          "value": 77059.04,
           "above": false,
-          "distance_pct": -2.0,
-          "days_count": 3
+          "distance_pct": -1.58,
+          "days_count": 4
         },
         "sma20": {
-          "value": 79327.95,
+          "value": 79029.94,
           "above": false,
-          "distance_pct": -4.57,
-          "days_count": 3
+          "distance_pct": -4.03,
+          "days_count": 4
         },
         "sma50": {
-          "value": 81870.83,
+          "value": 81764.03,
           "above": false,
-          "distance_pct": -7.54,
-          "days_count": 17
+          "distance_pct": -7.24,
+          "days_count": 18
         },
         "sma200": {
-          "value": 73187.54,
+          "value": 73175.99,
           "above": true,
-          "distance_pct": 3.43,
-          "days_count": 81
+          "distance_pct": 3.65,
+          "days_count": 82
         }
       }
     }
