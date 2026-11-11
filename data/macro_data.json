@@ -1,7 +1,7 @@
 {
   "meta": {
-    "last_updated": "2026-11-11T00:58:47Z",
-    "next_update": "2026-11-11T13:00:00Z"
+    "last_updated": "2026-11-11T19:59:41Z",
+    "next_update": "2026-11-12T13:00:00Z"
   },
   "inflation_labor": {
     "cpi_yoy": {
@@ -70,28 +70,28 @@
   },
   "market_anchors": {
     "spx": {
-      "value": 7521,
-      "delta_pct": 0.37,
-      "delta_dir": "down"
-    },
-    "yield_10y": {
-      "value": 4.98,
-      "delta_bps": 12,
+      "value": 7627,
+      "delta_pct": 1.39,
       "delta_dir": "up"
     },
+    "yield_10y": {
+      "value": 4.88,
+      "delta_bps": null,
+      "delta_dir": "down"
+    },
     "dxy": {
-      "value": 102.239,
-      "delta_pct": 0.59,
+      "value": 102.902,
+      "delta_pct": 0.64,
       "delta_dir": "up"
     },
     "wti": {
-      "value": 86.3,
-      "delta_pct": 0.74,
-      "delta_dir": "up"
+      "value": 86.28,
+      "delta_pct": 0.42,
+      "delta_dir": "down"
     },
     "vix": {
-      "value": 19.46,
-      "delta_pct": 2.31,
+      "value": 17.5,
+      "delta_pct": 10.07,
       "delta_dir": "down"
     },
     "fed_funds": {
@@ -116,8 +116,8 @@
     "tight": {
       "score": 2,
       "items": [
-        "10Y 4.86% > 4.0%",
-        "WTI $86.45 > $80"
+        "10Y 4.88% > 4.0%",
+        "WTI $86.28 > $80"
       ]
     },
     "neutral": {
@@ -125,11 +125,11 @@
       "items": [
         "Unemployment 4.1% \u2264 Est 4.3% (in-line)",
         "NFP +165K beat Est +100K",
-        "VIX 19.81 \u2264 20",
+        "VIX 17.50 \u2264 20",
         "CPI 4.1% (hot)",
         "Core CPI 2.9% (hot)",
         "PCE 3.6% (hot)",
-        "DXY 102.2 < 103 (not elevated)"
+        "DXY 102.9 < 103 (not elevated)"
       ]
     }
   },
@@ -147,29 +147,29 @@
     "anfci": -0.435,
     "hy_oas": 3.34,
     "ig_oas": 1.13,
-    "ecb_t": 6.603,
-    "boj_t": 3.943,
+    "ecb_t": 6.561,
+    "boj_t": 3.917,
     "pboc_t": 7.232,
-    "g4_total_t": 24.527
+    "g4_total_t": 24.458
   },
   "inflation_expectations": {
     "exp_1y": {
-      "value": 2.97544071,
+      "value": 3.04205808,
       "source": "Cleveland Fed",
-      "date": "Oct 2026"
+      "date": "Nov 2026"
     },
     "exp_2y": {
-      "value": 2.87116191,
+      "value": 2.86513592,
       "source": "Cleveland Fed",
-      "date": "Oct 2026"
+      "date": "Nov 2026"
     },
     "t5yie": {
       "value": 2.25,
       "source": "FRED T5YIE",
-      "date": "2026-11-09"
+      "date": "2026-11-10"
     },
     "t10yie": {
-      "value": 2.22,
+      "value": 2.2,
       "source": "FRED T10YIE",
       "date": "Nov 2026"
     },
