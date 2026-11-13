@@ -1,7 +1,7 @@
 {
   "meta": {
-    "last_updated": "2026-11-13T01:37:55Z",
-    "next_update": "2026-11-13T13:00:00Z"
+    "last_updated": "2026-11-13T20:18:59Z",
+    "next_update": "2026-11-14T13:00:00Z"
   },
   "inflation_labor": {
     "cpi_yoy": {
@@ -17,10 +17,10 @@
       "date": "Oct 2026"
     },
     "ppi_yoy": {
-      "value": 12.84,
+      "value": 12.79,
       "estimate": 2.6,
       "tag": "hot",
-      "date": "Sep 2026"
+      "date": "Oct 2026"
     },
     "pce_yoy": {
       "value": 3.65,
@@ -70,28 +70,28 @@
   },
   "market_anchors": {
     "spx": {
-      "value": 7592,
-      "delta_pct": 0.33,
+      "value": 7556,
+      "delta_pct": 0.47,
       "delta_dir": "down"
     },
     "yield_10y": {
-      "value": 5.1,
-      "delta_bps": 10,
-      "delta_dir": "up"
+      "value": 4.98,
+      "delta_bps": null,
+      "delta_dir": "down"
     },
     "dxy": {
-      "value": 103.144,
-      "delta_pct": 0.14,
+      "value": 103.402,
+      "delta_pct": 0.25,
       "delta_dir": "up"
     },
     "wti": {
-      "value": 88.32,
-      "delta_pct": 3.58,
+      "value": 88.85,
+      "delta_pct": 0.68,
       "delta_dir": "up"
     },
     "vix": {
-      "value": 18.7,
-      "delta_pct": 6.98,
+      "value": 18.98,
+      "delta_pct": 1.55,
       "delta_dir": "up"
     },
     "fed_funds": {
@@ -116,8 +116,8 @@
     "tight": {
       "score": 2,
       "items": [
-        "10Y 4.88% > 4.0%",
-        "WTI $89.06 > $80"
+        "10Y 4.98% > 4.0%",
+        "WTI $88.85 > $80"
       ]
     },
     "neutral": {
@@ -125,32 +125,32 @@
       "items": [
         "Unemployment 4.1% \u2264 Est 4.3% (in-line)",
         "NFP +165K beat Est +100K",
-        "VIX 18.74 \u2264 20",
+        "VIX 18.98 \u2264 20",
         "CPI 4.1% (hot)",
         "Core CPI 2.9% (hot)",
         "PCE 3.6% (hot)",
-        "DXY 103.2 \u2265 103 (elevated)"
+        "DXY 103.4 \u2265 103 (elevated)"
       ]
     }
   },
   "liquidity": {
-    "us_score": 0.651,
-    "global_score": 0.1338,
-    "composite": 0.3924,
-    "composite_pctile": 39,
-    "net_us_liq_t": 5.785,
-    "walcl_t": 6.748,
-    "tga_b": 957.2,
+    "us_score": 0.7103,
+    "global_score": 0.1408,
+    "composite": 0.4256,
+    "composite_pctile": 43,
+    "net_us_liq_t": 5.839,
+    "walcl_t": 6.759,
+    "tga_b": 914.4,
     "rrp_b": 1.0,
-    "reserves_b": 2930.1,
+    "reserves_b": 2960.6,
     "nfci": -0.462,
     "anfci": -0.477,
-    "hy_oas": 3.3,
-    "ig_oas": 1.12,
-    "ecb_t": 6.539,
-    "boj_t": 3.917,
+    "hy_oas": 3.2,
+    "ig_oas": 1.11,
+    "ecb_t": 6.52,
+    "boj_t": 3.919,
     "pboc_t": 7.232,
-    "g4_total_t": 24.436
+    "g4_total_t": 24.43
   },
   "inflation_expectations": {
     "exp_1y": {
@@ -164,12 +164,12 @@
       "date": "Nov 2026"
     },
     "t5yie": {
-      "value": 2.25,
+      "value": 2.31,
       "source": "FRED T5YIE",
-      "date": "2026-11-10"
+      "date": "2026-11-12"
     },
     "t10yie": {
-      "value": 2.2,
+      "value": 2.24,
       "source": "FRED T10YIE",
       "date": "Nov 2026"
     },
