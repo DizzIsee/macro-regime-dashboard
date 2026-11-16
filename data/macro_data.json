@@ -1,7 +1,7 @@
 {
   "meta": {
-    "last_updated": "2026-11-14T01:13:25Z",
-    "next_update": "2026-11-14T13:00:00Z"
+    "last_updated": "2026-11-16T22:43:51Z",
+    "next_update": "2026-11-17T13:00:00Z"
   },
   "inflation_labor": {
     "cpi_yoy": {
@@ -70,28 +70,28 @@
   },
   "market_anchors": {
     "spx": {
-      "value": 7562,
-      "delta_pct": 0.4,
+      "value": 7417,
+      "delta_pct": 1.91,
       "delta_dir": "down"
     },
     "yield_10y": {
       "value": 5.15,
-      "delta_bps": 5,
-      "delta_dir": "up"
+      "delta_bps": null,
+      "delta_dir": "down"
     },
     "dxy": {
-      "value": 103.411,
-      "delta_pct": 0.25,
+      "value": 103.584,
+      "delta_pct": 0.14,
       "delta_dir": "up"
     },
     "wti": {
-      "value": 88.92,
-      "delta_pct": 0.76,
-      "delta_dir": "up"
+      "value": 85.06,
+      "delta_pct": 3.71,
+      "delta_dir": "down"
     },
     "vix": {
-      "value": 19.3,
-      "delta_pct": 3.26,
+      "value": 22.91,
+      "delta_pct": 18.83,
       "delta_dir": "up"
     },
     "fed_funds": {
@@ -114,22 +114,22 @@
       "items": []
     },
     "tight": {
-      "score": 2,
+      "score": 3,
       "items": [
-        "10Y 4.98% > 4.0%",
-        "WTI $88.80 > $80"
+        "10Y 5.15% > 4.0%",
+        "WTI $85.06 > $80",
+        "VIX 22.91 > 20"
       ]
     },
     "neutral": {
-      "score": 10,
+      "score": 9,
       "items": [
         "Unemployment 4.1% \u2264 Est 4.3% (in-line)",
         "NFP +165K beat Est +100K",
-        "VIX 19.01 \u2264 20",
         "CPI 4.1% (hot)",
         "Core CPI 2.9% (hot)",
         "PCE 3.6% (hot)",
-        "DXY 103.4 \u2265 103 (elevated)"
+        "DXY 103.6 \u2265 103 (elevated)"
       ]
     }
   },
@@ -145,12 +145,12 @@
     "reserves_b": 2960.6,
     "nfci": -0.462,
     "anfci": -0.477,
-    "hy_oas": 3.2,
+    "hy_oas": 3.23,
     "ig_oas": 1.11,
-    "ecb_t": 6.519,
-    "boj_t": 3.918,
+    "ecb_t": 6.504,
+    "boj_t": 3.929,
     "pboc_t": 7.232,
-    "g4_total_t": 24.428
+    "g4_total_t": 24.424
   },
   "inflation_expectations": {
     "exp_1y": {
@@ -164,12 +164,12 @@
       "date": "Nov 2026"
     },
     "t5yie": {
-      "value": 2.31,
+      "value": 2.25,
       "source": "FRED T5YIE",
-      "date": "2026-11-12"
+      "date": "2026-11-16"
     },
     "t10yie": {
-      "value": 2.24,
+      "value": 2.2,
       "source": "FRED T10YIE",
       "date": "Nov 2026"
     },
