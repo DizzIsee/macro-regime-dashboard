@@ -1,7 +1,7 @@
 {
   "meta": {
-    "last_updated": "2026-11-18T02:42:10Z",
-    "next_update": "2026-11-18T13:00:00Z"
+    "last_updated": "2026-11-18T21:05:13Z",
+    "next_update": "2026-11-19T13:00:00Z"
   },
   "inflation_labor": {
     "cpi_yoy": {
@@ -70,29 +70,29 @@
   },
   "market_anchors": {
     "spx": {
-      "value": 7341,
-      "delta_pct": 1.07,
+      "value": 7324,
+      "delta_pct": 0.23,
       "delta_dir": "down"
     },
     "yield_10y": {
-      "value": 5.1,
-      "delta_bps": -2,
+      "value": 5.12,
+      "delta_bps": null,
       "delta_dir": "down"
     },
     "dxy": {
-      "value": 103.608,
-      "delta_pct": 0.08,
+      "value": 103.772,
+      "delta_pct": 0.15,
       "delta_dir": "up"
     },
     "wti": {
-      "value": 85.11,
-      "delta_pct": 0.12,
-      "delta_dir": "up"
+      "value": 81.93,
+      "delta_pct": 3.32,
+      "delta_dir": "down"
     },
     "vix": {
-      "value": 25.46,
-      "delta_pct": 11.28,
-      "delta_dir": "up"
+      "value": 24.59,
+      "delta_pct": 3.38,
+      "delta_dir": "down"
     },
     "fed_funds": {
       "value": "3.75\u20134.00%",
@@ -117,8 +117,8 @@
       "score": 3,
       "items": [
         "10Y 5.12% > 4.0%",
-        "WTI $85.54 > $80",
-        "VIX 25.46 > 20"
+        "WTI $81.93 > $80",
+        "VIX 24.59 > 20"
       ]
     },
     "neutral": {
@@ -129,7 +129,7 @@
         "CPI 4.1% (hot)",
         "Core CPI 2.9% (hot)",
         "PCE 3.6% (hot)",
-        "DXY 103.5 \u2265 103 (elevated)"
+        "DXY 103.8 \u2265 103 (elevated)"
       ]
     }
   },
@@ -143,14 +143,14 @@
     "tga_b": 914.4,
     "rrp_b": 1.0,
     "reserves_b": 2960.6,
-    "nfci": -0.462,
-    "anfci": -0.477,
-    "hy_oas": 3.34,
-    "ig_oas": 1.12,
-    "ecb_t": 6.498,
-    "boj_t": 3.929,
+    "nfci": -0.478,
+    "anfci": -0.502,
+    "hy_oas": 3.43,
+    "ig_oas": 1.15,
+    "ecb_t": 6.484,
+    "boj_t": 3.932,
     "pboc_t": 7.232,
-    "g4_total_t": 24.418
+    "g4_total_t": 24.407
   },
   "inflation_expectations": {
     "exp_1y": {
@@ -164,12 +164,12 @@
       "date": "Nov 2026"
     },
     "t5yie": {
-      "value": 2.25,
+      "value": 2.26,
       "source": "FRED T5YIE",
-      "date": "2026-11-16"
+      "date": "2026-11-17"
     },
     "t10yie": {
-      "value": 2.2,
+      "value": 2.21,
       "source": "FRED T10YIE",
       "date": "Nov 2026"
     },
