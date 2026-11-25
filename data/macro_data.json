@@ -1,6 +1,6 @@
 {
   "meta": {
-    "last_updated": "2026-11-25T22:07:47Z",
+    "last_updated": "2026-11-25T22:53:09Z",
     "next_update": "2026-11-26T13:00:00Z"
   },
   "inflation_labor": {
@@ -80,13 +80,13 @@
       "delta_dir": "down"
     },
     "dxy": {
-      "value": 103.699,
-      "delta_pct": 0.28,
+      "value": 103.692,
+      "delta_pct": 0.29,
       "delta_dir": "down"
     },
     "wti": {
-      "value": 84.16,
-      "delta_pct": 4.25,
+      "value": 84.15,
+      "delta_pct": 4.24,
       "delta_dir": "up"
     },
     "vix": {
@@ -117,7 +117,7 @@
       "score": 3,
       "items": [
         "10Y 4.91% > 4.0%",
-        "WTI $84.16 > $80",
+        "WTI $84.15 > $80",
         "VIX 28.29 > 20"
       ]
     },
@@ -147,10 +147,10 @@
     "anfci": -0.443,
     "hy_oas": 3.72,
     "ig_oas": 1.22,
-    "ecb_t": 6.502,
-    "boj_t": 3.935,
+    "ecb_t": 6.503,
+    "boj_t": 3.936,
     "pboc_t": 7.232,
-    "g4_total_t": 24.411
+    "g4_total_t": 24.413
   },
   "inflation_expectations": {
     "exp_1y": {
