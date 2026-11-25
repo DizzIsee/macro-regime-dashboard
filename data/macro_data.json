@@ -1,7 +1,7 @@
 {
   "meta": {
-    "last_updated": "2026-11-25T03:55:36Z",
-    "next_update": "2026-11-25T13:00:00Z"
+    "last_updated": "2026-11-25T22:07:47Z",
+    "next_update": "2026-11-26T13:00:00Z"
   },
   "inflation_labor": {
     "cpi_yoy": {
@@ -23,16 +23,16 @@
       "date": "Oct 2026"
     },
     "pce_yoy": {
-      "value": 3.65,
+      "value": 3.84,
       "estimate": 2.8,
       "tag": "hot",
-      "date": "Sep 2026"
+      "date": "Oct 2026"
     },
     "core_pce_yoy": {
-      "value": 3.12,
+      "value": 3.26,
       "estimate": 2.8,
       "tag": "hot",
-      "date": "Sep 2026"
+      "date": "Oct 2026"
     },
     "unemployment": {
       "value": 4.1,
@@ -41,7 +41,7 @@
       "date": "Oct 2026"
     },
     "initial_claims": {
-      "value": 203.0,
+      "value": 189.0,
       "estimate": 210,
       "tag": "inline",
       "date": "Wkly"
@@ -70,29 +70,29 @@
   },
   "market_anchors": {
     "spx": {
-      "value": 7201,
-      "delta_pct": 0.49,
+      "value": 7183,
+      "delta_pct": 0.27,
       "delta_dir": "down"
     },
     "yield_10y": {
-      "value": 4.9,
-      "delta_bps": -1,
+      "value": 4.91,
+      "delta_bps": null,
       "delta_dir": "down"
     },
     "dxy": {
-      "value": 103.974,
-      "delta_pct": 0.29,
+      "value": 103.699,
+      "delta_pct": 0.28,
       "delta_dir": "down"
     },
     "wti": {
-      "value": 80.77,
-      "delta_pct": 1.48,
+      "value": 84.16,
+      "delta_pct": 4.25,
       "delta_dir": "up"
     },
     "vix": {
-      "value": 26.36,
-      "delta_pct": 0.94,
-      "delta_dir": "down"
+      "value": 28.29,
+      "delta_pct": 7.32,
+      "delta_dir": "up"
     },
     "fed_funds": {
       "value": "3.75\u20134.00%",
@@ -105,7 +105,7 @@
       "score": 3,
       "items": [
         "PPI 12.8% > Est 2.6%",
-        "Core PCE 3.1% > Est 2.8%",
+        "Core PCE 3.3% > Est 2.8%",
         "Fed on hold"
       ]
     },
@@ -116,9 +116,9 @@
     "tight": {
       "score": 3,
       "items": [
-        "10Y 4.92% > 4.0%",
-        "WTI $81.58 > $80",
-        "VIX 26.36 > 20"
+        "10Y 4.91% > 4.0%",
+        "WTI $84.16 > $80",
+        "VIX 28.29 > 20"
       ]
     },
     "neutral": {
@@ -128,8 +128,8 @@
         "NFP +165K beat Est +100K",
         "CPI 4.1% (hot)",
         "Core CPI 2.9% (hot)",
-        "PCE 3.6% (hot)",
-        "DXY 103.8 \u2265 103 (elevated)"
+        "PCE 3.8% (hot)",
+        "DXY 103.7 \u2265 103 (elevated)"
       ]
     }
   },
@@ -143,14 +143,14 @@
     "tga_b": 916.6,
     "rrp_b": 1.0,
     "reserves_b": 2979.7,
-    "nfci": -0.478,
-    "anfci": -0.502,
-    "hy_oas": 3.63,
-    "ig_oas": 1.2,
-    "ecb_t": 6.495,
-    "boj_t": 3.932,
+    "nfci": -0.444,
+    "anfci": -0.443,
+    "hy_oas": 3.72,
+    "ig_oas": 1.22,
+    "ecb_t": 6.502,
+    "boj_t": 3.935,
     "pboc_t": 7.232,
-    "g4_total_t": 24.401
+    "g4_total_t": 24.411
   },
   "inflation_expectations": {
     "exp_1y": {
@@ -164,9 +164,9 @@
       "date": "Nov 2026"
     },
     "t5yie": {
-      "value": 2.11,
+      "value": 2.13,
       "source": "FRED T5YIE",
-      "date": "2026-11-24"
+      "date": "2026-11-25"
     },
     "t10yie": {
       "value": 2.12,
@@ -174,9 +174,9 @@
       "date": "Nov 2026"
     },
     "core_pce_yoy": {
-      "value": 3.12,
+      "value": 3.26,
       "source": "BEA",
-      "date": "Sep 2026"
+      "date": "Oct 2026"
     },
     "sticky_cpi": {
       "value": 2.9,
