@@ -1,6 +1,6 @@
 {
   "meta": {
-    "last_updated": "2026-11-26T22:06:42Z",
+    "last_updated": "2026-11-26T22:43:50Z",
     "next_update": "2026-11-27T13:00:00Z"
   },
   "inflation_labor": {
@@ -80,7 +80,7 @@
       "delta_dir": "down"
     },
     "dxy": {
-      "value": 103.784,
+      "value": 103.788,
       "delta_pct": 0.2,
       "delta_dir": "down"
     },
@@ -147,10 +147,10 @@
     "anfci": -0.443,
     "hy_oas": 3.72,
     "ig_oas": 1.22,
-    "ecb_t": 6.499,
+    "ecb_t": 6.501,
     "boj_t": 3.933,
     "pboc_t": 7.232,
-    "g4_total_t": 24.405
+    "g4_total_t": 24.408
   },
   "inflation_expectations": {
     "exp_1y": {
