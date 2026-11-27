@@ -1,6 +1,6 @@
 {
   "meta": {
-    "last_updated": "2026-11-27T21:48:15Z",
+    "last_updated": "2026-11-27T22:26:20Z",
     "next_update": "2026-11-28T13:00:00Z"
   },
   "inflation_labor": {
@@ -147,10 +147,10 @@
     "anfci": -0.443,
     "hy_oas": 3.77,
     "ig_oas": 1.24,
-    "ecb_t": 6.477,
-    "boj_t": 3.924,
+    "ecb_t": 6.479,
+    "boj_t": 3.926,
     "pboc_t": 7.232,
-    "g4_total_t": 24.365
+    "g4_total_t": 24.369
   },
   "inflation_expectations": {
     "exp_1y": {
@@ -164,12 +164,12 @@
       "date": "Nov 2026"
     },
     "t5yie": {
-      "value": 2.13,
+      "value": 2.16,
       "source": "FRED T5YIE",
-      "date": "2026-11-25"
+      "date": "2026-11-27"
     },
     "t10yie": {
-      "value": 2.12,
+      "value": 2.15,
       "source": "FRED T10YIE",
       "date": "Nov 2026"
     },
