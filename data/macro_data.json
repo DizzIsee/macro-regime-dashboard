@@ -1,6 +1,6 @@
 {
   "meta": {
-    "last_updated": "2026-11-27T22:26:20Z",
+    "last_updated": "2026-11-28T03:02:43Z",
     "next_update": "2026-11-28T13:00:00Z"
   },
   "inflation_labor": {
@@ -75,9 +75,9 @@
       "delta_dir": "up"
     },
     "yield_10y": {
-      "value": 4.85,
-      "delta_bps": null,
-      "delta_dir": "down"
+      "value": 4.94,
+      "delta_bps": 9,
+      "delta_dir": "up"
     },
     "dxy": {
       "value": 104.014,
